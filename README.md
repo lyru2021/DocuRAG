@@ -1,0 +1,110 @@
+# DocuRAG
+
+A document knowledge base API built with FastAPI.
+
+## Project Overview
+
+DocuRAG is a backend learning project designed to support document ingestion, text processing, vector retrieval, and source-grounded question answering.
+
+The project is being developed incrementally, with a focus on API design, automated testing, configuration management, and reproducible development environments.
+
+## Current Features
+
+- FastAPI application initialization
+- Health check endpoint (`GET /health`)
+- Automatically generated Swagger UI documentation (`/docs`)
+- Environment-based configuration using Pydantic Settings
+- Basic API tests using pytest
+
+## Planned Features
+
+The following features are not yet implemented:
+
+- PDF and TXT document uploads
+- Document parsing and text chunking
+- Text embeddings and vector similarity search
+- PostgreSQL and pgvector integration
+- Redis caching
+- Source-grounded question answering
+- Docker Compose deployment
+- Retrieval evaluation with different chunk sizes and Top-K settings
+
+## Requirements
+
+- Python 3.11
+- Git
+- Linux or WSL Ubuntu
+
+## Local Setup
+
+Clone the repository or navigate to the project directory.
+
+Create a virtual environment:
+
+```bash
+python3.11 -m venv .venv
+source .venv/bin/activate
+```
+
+Install dependencies:
+
+```bash
+python -m pip install -r requirements.txt
+```
+
+Create the local configuration file:
+
+```bash
+cp .env.example .env
+```
+
+Start the API:
+
+```bash
+python -m uvicorn app.main:app --reload
+```
+
+## API Endpoints
+
+### Health Check
+
+```http
+GET /health
+```
+
+Expected successful response:
+
+```json
+{
+  "status": "ok"
+}
+```
+
+HTTP status: `200 OK`
+
+### API Documentation
+
+Swagger UI:
+
+http://127.0.0.1:8000/docs
+
+## Testing
+
+Run all tests:
+
+```bash
+python -m pytest -v
+```
+
+## Project Status
+
+Initial development stage.
+
+The project currently provides a minimal FastAPI application. Document ingestion, vector search, and question answering are planned for later development.
+
+## Security Notes
+
+- Local secrets are stored in `.env`.
+- `.env` is excluded from Git.
+- `.env.example` contains only non-sensitive example configuration.
+- Virtual environments and local document storage directories are excluded from version control.
