@@ -6,6 +6,8 @@ class Settings(BaseSettings):   #读取环境变量
     APP_ENV: str = "development"
     DEBUG: bool = False
 
+    DATABASE_URL: str
+    
     model_config = SettingsConfigDict(
         env_file=".env",        #可读取.env文件中的配置
         env_file_encoding="utf-8",

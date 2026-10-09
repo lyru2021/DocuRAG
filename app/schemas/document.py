@@ -17,6 +17,7 @@ class DocumentCreate(BaseModel):
 
 
 class DocumentRead(BaseModel):
+    model_config = ConfigDict(from_attributes=True) #允许 Pydantic 从 SQLAlchemy ORM 对象的属性读取字段
     id: int
     title: str
     filename: str

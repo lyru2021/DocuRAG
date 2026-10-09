@@ -1,14 +1,16 @@
 from typing import Annotated
 from fastapi import APIRouter, Depends, HTTPException, status
+from sqlalchemy.orm import Session
 
+from app.db.session import get_db
 from app.schemas.document import DocumentCreate, DocumentRead
-from app.services.document_store import DocumentStore, get_document_store
+from app.services.document_repository import DocumentRepository
 
 router = APIRouter(prefix="/documents",#给当前路由模块中的接口统一增加/documents前缀
                    tags=["Documents"])#使这些接口在Swagger UI中归类为Documents
 
-StoreDep = Annotated[DocumentStore, Depends(get_document_store)]
-#当路由函数需要 store 时，让 FastAPI 通过 get_document_store() 获取仓储对象。
+DbDep = Annotated[Session, Depends(get_db)]
+#定义一个依赖注入类型别名 DbDep，表示一个 SQLAlchemy 的 Session 对象，通过 get_db() 函数获取。
 
 @router.post(
     "", 
@@ -17,16 +19,18 @@ StoreDep = Annotated[DocumentStore, Depends(get_document_store)]
     )
 def create_document(
     data: DocumentCreate, 
-    store: StoreDep
+    db: DbDep
     ):
-    return store.create(data)
+    repository = DocumentRepository(db)
+    return repository.create(data)
 
 @router.get(
     "",
     response_model=list[DocumentRead]
 )
-def list_documents(store: StoreDep):
-    return store.list_all()
+def list_documents(db: DbDep):
+    repository = DocumentRepository(db)
+    return repository.list_all()
 
 @router.get(
     "/{document_id}",
@@ -34,9 +38,10 @@ def list_documents(store: StoreDep):
 )
 def get_document(
     document_id: int,
-    store: StoreDep
+    db: DbDep
 ):
-    document = store.get(document_id)
+    repository = DocumentRepository(db)
+    document = repository.get(document_id)
     if document is None:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
@@ -50,9 +55,10 @@ def get_document(
 )
 def delete_document(
     document_id: int,
-    store: StoreDep
+    db: DbDep
 ):
-    deleted = store.delete(document_id)
+    repository = DocumentRepository(db)
+    deleted = repository.delete(document_id)
     if not deleted:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
