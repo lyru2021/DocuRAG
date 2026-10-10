@@ -170,3 +170,4 @@ def test_delete_document_cascades_chunks(
     after = db_session.scalars(stmt).all()
     assert len(after) == 0
 
+

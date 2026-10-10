@@ -9,7 +9,7 @@ from sqlalchemy.orm import Session
 
 from app.db.session import get_db
 from app.main import app
-
+from app.models.document import Document
 
 def get_test_database_url() -> str:
     values = dotenv_values(".env.test")
@@ -72,3 +72,16 @@ def client(db_session):
             yield test_client
     finally:
         app.dependency_overrides.pop(get_db, None)
+
+
+@pytest.fixture
+def sample_document(db_session):
+    document = Document(
+        title="Sample Document",
+        filename="sample.pdf",
+    )
+    db_session.add(document)    #添加到session，SQLAlchemy开始跟踪这个对象
+    db_session.flush()          #flush() 会让 SQLAlchemy 执行 INSERT，但不会提交外层事务。
+    db_session.refresh(document)#重新读取数据库中的字段
+    
+    return document
