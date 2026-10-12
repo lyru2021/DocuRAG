@@ -29,3 +29,32 @@
 - Connection pool and index performance have not been benchmarked.
 - Tests currently run against a local PostgreSQL instance.
 - Redis, file upload, document parsing, and vector search are not yet implemented.
+
+
+## Day 5 — PDF/TXT Upload and Parsing
+
+### Implemented
+
+- Added `POST /documents/upload` using FastAPI `UploadFile`.
+- Restricted uploads to PDF and TXT files with a 10 MiB size limit.
+- Implemented PDF text extraction using PyMuPDF and strict UTF-8 TXT decoding.
+- Added text cleaning while preserving line and paragraph boundaries.
+- Added upload metadata fields through Alembic migration `958f10b430f0`.
+- Stored parsed text, media type, file size, SHA-256 hash, UUID, parsing status, and text length in PostgreSQL.
+- Added error handling for empty files, unsupported formats, invalid encoding, invalid PDFs, and PDFs without extractable text.
+- Used separate service and repository layers for parsing and persistence.
+
+### Verification
+
+- Upload API tests: **10 passed**.
+- Manually uploaded a TXT file and a text-based PDF.
+- Both uploads created queryable Document records.
+- Database text-content inspection and final regression test: pending confirmation.
+
+### Known Limitations
+
+- Scanned PDFs are not supported because OCR has not been implemented.
+- PDF extraction may be inaccurate for complex layouts, tables, or formulas.
+- Original uploaded files are not persisted; only metadata and extracted text are stored.
+- File uploads are limited to 10 MiB.
+- SHA-256 is recorded for identification; automatic deduplication is not implemented.

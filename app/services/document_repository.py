@@ -1,3 +1,4 @@
+from uuid import uuid4
 from sqlalchemy import select
 from sqlalchemy.orm import Session
 
@@ -49,3 +50,27 @@ class DocumentRepository:
             raise
 
         return True
+
+    def create_uploaded(self, upload_data: dict) -> Document:
+
+        document = Document(
+            title = upload_data["filename"],
+            filename = upload_data["filename"],
+            file_id = str(uuid4()),     #同文件上传为不同上传记录
+            media_type = upload_data["media_type"],
+            file_size = upload_data["file_size"],
+            content_hash = upload_data["content_hash"],
+            parse_status = "parsed",
+            text_length = upload_data["text_length"],
+            extracted_text = upload_data["text"]
+        )
+
+        try:
+            self.db.add(document)
+            self.db.commit()
+            self.db.refresh(document)
+        except Exception:
+            self.db.rollback()
+            raise
+        
+        return document
