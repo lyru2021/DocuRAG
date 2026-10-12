@@ -36,3 +36,6 @@ dist/
 # Local databases
 *.db
 *.sqlite3
+
+# Local samples
+local_samples/
