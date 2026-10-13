@@ -1,14 +1,11 @@
 from typing import Annotated
-
-from fastapi import (
-    APIRouter,
-    Depends,
-    File,
-    HTTPException,
-    UploadFile,
-)
+from fastapi import APIRouter, Depends,File, HTTPException, UploadFile
 from sqlalchemy.orm import Session
+from pathlib import Path
+from uuid import uuid4
 
+from app.core.config import get_settings
+from app.services.file_storage import LocalFileStorage
 from app.db.session import get_db
 from app.services.document_parser import DocumentParseError
 from app.services.document_repository import DocumentRepository
@@ -35,7 +32,29 @@ async def upload_document(
         upload_data = await process_upload(file)
 
         repository = DocumentRepository(db)
-        document = repository.create_uploaded(upload_data)
+        storage = LocalFileStorage(Path(get_settings().UPLOAD_DIR))
+        file_id = str(uuid4())
+
+        upload_data["file_id"] = file_id
+
+        saved_pdf = False
+
+        try:
+            raw_pdf = upload_data.get("raw_pdf")
+
+            if raw_pdf is not None:
+                storage.save_pdf(file_id, raw_pdf)
+                saved_pdf = True
+
+            document = DocumentRepository(db).create_uploaded(
+                upload_data
+            )
+
+        except Exception:
+            if saved_pdf:
+                storage.delete_pdf(file_id)
+            raise
+
 
         return {
             "id": document.id,

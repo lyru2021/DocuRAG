@@ -74,4 +74,5 @@ async def process_upload(file: UploadFile) -> dict:
         "file_size": len(data),
         "content_hash": hashlib.sha256(data).hexdigest(),
         "pages": pages,
+        "raw_pdf": data if extension == ".pdf" else None,
     }

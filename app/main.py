@@ -3,6 +3,7 @@ from fastapi import FastAPI
 from app.api.uploads import router as uploads_router
 from app.core.config import get_settings
 from app.api.documents import router as documents_router
+from app.api.papers import router as papers_router
 
 settings = get_settings()
 
@@ -14,6 +15,7 @@ app = FastAPI(
 
 app.include_router(documents_router)
 app.include_router(uploads_router)
+app.include_router(papers_router)
 
 @app.get("/health",status_code=200)
 def health_check():

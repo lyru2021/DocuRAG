@@ -7,6 +7,7 @@ from alembic import context
 
 from app.db.base import Base
 from app.models.document import Document, Chunk, DocumentPage
+from app.models.paper import PaperMetadata, PaperSection
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.

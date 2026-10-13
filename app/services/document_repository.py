@@ -56,7 +56,7 @@ class DocumentRepository:
         document = Document(
             title = upload_data["filename"],
             filename = upload_data["filename"],
-            file_id = str(uuid4()),     #同文件上传为不同上传记录
+            file_id=upload_data.get("file_id") or str(uuid4()),     #如果没有提供 file_id，仍使用原来的 UUID 生成逻辑
             media_type = upload_data["media_type"],
             file_size = upload_data["file_size"],
             content_hash = upload_data["content_hash"],

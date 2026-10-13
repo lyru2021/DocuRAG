@@ -5,6 +5,7 @@ class Settings(BaseSettings):   #读取环境变量
     APP_NAME: str = "DocuRAG"
     APP_ENV: str = "development"
     DEBUG: bool = False
+    UPLOAD_DIR: str = "data/uploads"
 
     DATABASE_URL: str
     
