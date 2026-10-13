@@ -58,3 +58,49 @@
 - Original uploaded files are not persisted; only metadata and extracted text are stored.
 - File uploads are limited to 10 MiB.
 - SHA-256 is recorded for identification; automatic deduplication is not implemented.
+## Day 6 — Chunking and PDF Evidence Mapping
+
+### Implemented
+
+- Fixed-window overlapping text chunking.
+- Character-based chunk sizes: 300 and 500.
+- Overlap: 50 characters.
+- Stored Chunk text, order, and source character offsets.
+- Added PDF page extraction with page-specific character offsets.
+- Added `document_pages` table and `page_start` / `page_end` fields.
+- Implemented cross-page Chunk mapping.
+- Preserved transaction-based Chunk replacement.
+
+### Verified Results
+
+- PDF page parsing and Chunk statistics tests: 6 passed.
+- ChunkRepository integration tests: 2 passed.
+- PDF page persistence and cross-page mapping tests: 2 passed.
+
+### Real Document Statistics
+
+**sample.txt**
+
+- Text length: 167 characters.
+- 300/50: 1 Chunk.
+- 500/50: 1 Chunk.
+
+**Linux C 指针与内存 Debug 实战任务.pdf**
+
+- Text length: 9,930 characters.
+- 300/50: 40 Chunks; average length 297.00 characters.
+- 500/50: 22 Chunks; average length 499.09 characters.
+
+### Retrieval Architecture Decision
+
+The project will prioritize structured paper evidence, metadata search, keyword retrieval, and Agent-based tool orchestration.
+
+Embedding and vector search are optional extensions. No Embedding model or vector dimension has been experimentally verified at this stage.
+
+### Limitations
+
+- PDF page numbers refer to physical PDF pages, not printed page labels.
+- Character offsets refer to normalized text, not original PDF byte positions.
+- Scanned PDFs still require OCR.
+- Current fixed-window chunking may split sentences or paragraphs.
+- Different chunk configurations are not yet independently persisted.

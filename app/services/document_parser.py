@@ -1,7 +1,7 @@
 import re
 
 import fitz
-
+from dataclasses import dataclass
 
 class DocumentParseError(Exception):
     """Raised when document text extraction fails."""
@@ -67,3 +67,67 @@ def parse_pdf(data: bytes) -> str:
         )
 
     return text
+
+@dataclass(frozen=True)
+class ParsedPage:
+    page_number: int
+    text: str
+    start_char: int
+    end_char: int
+
+@dataclass(frozen=True)
+class ParsedPDF:
+    text: str
+    pages: list[ParsedPage]
+
+def parse_pdf_with_pages(data: bytes) -> ParsedPDF:
+
+    pages: list[ParsedPage] = []
+    text_parts: list[str] = []
+    cursor = 0
+
+    try:
+        with fitz.open(stream = data, filename = "pdf") as pdf:
+            for page_number, page in enumerate(pdf, start = 1):
+                page_text = clean_text(
+                    page.get_text("text", sort = True)
+                )
+
+                if not page_text:
+                    continue
+
+                if text_parts:
+                    text_parts.append("\n\n")
+                    cursor += 2
+                
+                start = cursor
+                end = start + len(page_text)
+
+                pages.append(
+                    ParsedPage(
+                        page_number = page_number,
+                        text = page_text,
+                        start_char = start,
+                        end_char = end
+                    )
+                )
+
+                text_parts.append(page_text)
+                cursor = end
+
+    except Exception as exc:
+        raise DocumentParseError(
+            "PDF could not be opened or parsed."
+        ) from exc
+    full_text = "".join(text_parts)
+
+    if not full_text:
+        raise DocumentParseError(
+            "No extractable text found. "
+            "Scanned PDFs require OCR, which is not supported."
+        )
+
+    return ParsedPDF(
+        text=full_text,
+        pages=pages,
+    )

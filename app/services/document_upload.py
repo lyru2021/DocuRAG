@@ -3,7 +3,7 @@ from pathlib import Path
 
 from fastapi import UploadFile
 
-from app.services.document_parser import DocumentParseError, parse_pdf, parse_txt
+from app.services.document_parser import DocumentParseError, parse_pdf_with_pages, parse_txt
 
 MAX_FILE_SIZE = 10 * 1024 * 1024  # 10 MB
 READ_CHUNK_SIZE = 1024 * 1024  # 1 MB
@@ -49,9 +49,22 @@ async def process_upload(file: UploadFile) -> dict:
     if extension == ".pdf":
         if not data.startswith(b"%PDF-"):
             raise UploadValidationError("Invalid PDF file signature.", 415)
-        text = parse_pdf(data)
+        parsed = parse_pdf_with_pages(data)
+        text = parsed.text
+
+        pages = [
+            {
+                "page_number": page.page_number,
+                "content": page.text,
+                "start_char": page.start_char,
+                "end_char": page.end_char,
+            }
+            for page in parsed.pages
+        ]
     else:
         text = parse_txt(data)
+        pages = []
+
 
     return {
         "filename": filename,
@@ -59,5 +72,6 @@ async def process_upload(file: UploadFile) -> dict:
         "text": text,
         "text_length": len(text),
         "file_size": len(data),
-        "content_hash": hashlib.sha256(data).hexdigest()
+        "content_hash": hashlib.sha256(data).hexdigest(),
+        "pages": pages,
     }

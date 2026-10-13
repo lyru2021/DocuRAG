@@ -2,7 +2,7 @@ from uuid import uuid4
 from sqlalchemy import select
 from sqlalchemy.orm import Session
 
-from app.models.document import Document
+from app.models.document import Document, DocumentPage
 from app.schemas.document import DocumentCreate
 
 
@@ -67,8 +67,27 @@ class DocumentRepository:
 
         try:
             self.db.add(document)
+
+            # INSERT Document and obtain its primary key.
+            self.db.flush()
+
+            page_records = [
+                DocumentPage(
+                    document_id=document.id,
+                    page_number=page["page_number"],
+                    content=page["content"],
+                    start_char=page["start_char"],
+                    end_char=page["end_char"],
+                )
+                for page in upload_data.get("pages", [])
+            ]
+
+            self.db.add_all(page_records)
+
+            # Document and DocumentPage share one transaction.
             self.db.commit()
             self.db.refresh(document)
+
         except Exception:
             self.db.rollback()
             raise

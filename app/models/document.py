@@ -20,6 +20,7 @@ class Document(Base):
     text_length: Mapped[int | None] = mapped_column(Integer,nullable=True,)
     extracted_text: Mapped[str | None] = mapped_column(Text, nullable=True)
     chunks: Mapped[list["Chunk"]] = relationship(back_populates="document", cascade="all, delete-orphan", passive_deletes=True)
+    pages: Mapped[list["DocumentPage"]] = relationship(back_populates="document",cascade="all, delete-orphan",passive_deletes=True)
     
 class Chunk(Base):
     __tablename__ = "chunks"
@@ -30,3 +31,20 @@ class Chunk(Base):
     chunk_index: Mapped[int] = mapped_column(nullable=False)
     content: Mapped[str] = mapped_column(Text, nullable=False)
     document: Mapped["Document"] = relationship(back_populates="chunks")
+    start_char: Mapped[int | None] = mapped_column(Integer,nullable=True,)
+    end_char: Mapped[int | None] = mapped_column(Integer,nullable=True,)
+    page_start: Mapped[int | None] = mapped_column(Integer,nullable=True)
+    page_end: Mapped[int | None] = mapped_column(Integer,nullable=True)
+
+
+class DocumentPage(Base):
+    __tablename__ = "document_pages"
+
+    __table_args__ = (UniqueConstraint("document_id","page_number",name="uq_document_page_number"),)
+    id: Mapped[int] = mapped_column(primary_key=True,)
+    document_id: Mapped[int] = mapped_column(ForeignKey("documents.id",ondelete="CASCADE"), nullable=False,index=True)
+    page_number: Mapped[int] = mapped_column(Integer,nullable=False)
+    content: Mapped[str] = mapped_column(Text,nullable=False)
+    start_char: Mapped[int] = mapped_column(Integer,nullable=False)
+    end_char: Mapped[int] = mapped_column(Integer,nullable=False)
+    document: Mapped["Document"] = relationship(back_populates="pages")
