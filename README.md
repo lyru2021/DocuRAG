@@ -163,3 +163,21 @@ The project currently provides a minimal FastAPI application. Document ingestion
 - `.env` is excluded from Git.
 - `.env.example` contains only non-sensitive example configuration.
 - Virtual environments and local document storage directories are excluded from version control.
+
+### Database Architecture Notes
+
+**ORM Model vs. API Schema**
+
+SQLAlchemy ORM models define how data is mapped to PostgreSQL tables, including primary keys, foreign keys, constraints, and relationships. Pydantic schemas define how API requests are validated and how responses are serialized.
+
+**Transaction Management**
+
+A transaction is committed after a successful database write operation. If an operation fails before commit, the Session rolls back to prevent an incomplete transaction from affecting subsequent operations. Database-generated fields can be loaded using `refresh()`.
+
+**Data Persistence**
+
+Document records are stored in PostgreSQL rather than process memory. Records remain available after the FastAPI application restarts.
+
+**Testing**
+
+Database integration tests use a separate PostgreSQL test database and SQLAlchemy SAVEPOINT-based transaction isolation. Tests cover document CRUD, request validation, missing resources, and cascading deletes.
