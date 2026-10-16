@@ -1,5 +1,7 @@
-from app.services.text_chunker import split_text
+"""chunk 长度统计测试。"""
+
 from app.services.chunk_stats import calculate_chunk_stats
+from app.services.text_chunker import split_text
 
 
 def test_chunk_stats_300():

@@ -1,3 +1,5 @@
+"""chunk 证据一致性校验测试。"""
+
 from app.models.document import Chunk, DocumentPage
 from app.services.evidence_validator import validate_evidence
 

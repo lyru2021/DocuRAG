@@ -1,11 +1,16 @@
-from typing import Annotated
-from fastapi import APIRouter, Depends,File, HTTPException, UploadFile
-from sqlalchemy.orm import Session
+"""文档上传 API。
+
+负责把上传文件交给服务层校验、解析、保存原始 PDF，并返回上传结果元数据。
+"""
+
 from pathlib import Path
+from typing import Annotated
 from uuid import uuid4
 
+from fastapi import APIRouter, Depends, File, HTTPException, UploadFile
+from sqlalchemy.orm import Session
+
 from app.core.config import get_settings
-from app.services.file_storage import LocalFileStorage
 from app.db.session import get_db
 from app.services.document_parser import DocumentParseError
 from app.services.document_repository import DocumentRepository
@@ -13,6 +18,7 @@ from app.services.document_upload import (
     UploadValidationError,
     process_upload,
 )
+from app.services.file_storage import LocalFileStorage
 
 
 router = APIRouter(
@@ -28,6 +34,7 @@ async def upload_document(
     db: DbDep,
     file: UploadFile = File(...),
 ):
+    # 上传路由负责把校验、解析、落库和文件保存串起来，具体规则分散在服务层。
     try:
         upload_data = await process_upload(file)
 
@@ -46,15 +53,15 @@ async def upload_document(
                 storage.save_pdf(file_id, raw_pdf)
                 saved_pdf = True
 
-            document = DocumentRepository(db).create_uploaded(
+            document = repository.create_uploaded(
                 upload_data
             )
 
         except Exception:
+            # 数据库写入失败时清理已保存 PDF，避免文件系统和数据库状态不一致。
             if saved_pdf:
                 storage.delete_pdf(file_id)
             raise
-
 
         return {
             "id": document.id,
@@ -68,6 +75,7 @@ async def upload_document(
         }
 
     except UploadValidationError as exc:
+        # 上传业务校验已经携带合适的 HTTP 状态码。
         raise HTTPException(
             status_code=exc.status_code,
             detail=exc.message,
@@ -80,4 +88,5 @@ async def upload_document(
         ) from exc
 
     finally:
+        # 显式关闭上传文件，释放底层临时文件句柄。
         await file.close()

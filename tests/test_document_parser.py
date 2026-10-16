@@ -1,5 +1,7 @@
-import pytest
+"""TXT/PDF 文档解析服务测试。"""
+
 import fitz
+import pytest
 
 from app.services.document_parser import (
     DocumentParseError,

@@ -1,0 +1,3035 @@
+{
+  "schema_version": 1,
+  "experiment_id": "chunk300_overlap50",
+  "chunk_size": 300,
+  "overlap": 50,
+  "splitter": "app.services.text_chunker.split_text",
+  "generated_at": "2026-10-16T08:17:03.503144+00:00",
+  "document_ids": [
+    31,
+    32
+  ],
+  "total_chunks": 375,
+  "papers": [
+    {
+      "document_id": 31,
+      "title": "A_Comparative_Study_of_Deep_Audio_Models_for_Spectrogram-_and_Waveform-Based_SingFake_Detection.pdf",
+      "text_sha256": "f9f2c69d9140db7aeb5aecae0e06ab047e99870a2729327776c978cb151d32f1",
+      "text_length": 66102,
+      "page_count": 14,
+      "chunk_count": 265,
+      "chunks": [
+        {
+          "chunk_index": 0,
+          "start_char": 0,
+          "end_char": 300,
+          "page_start": 1,
+          "page_end": 1,
+          "content": "Received 15 April 2025, accepted 15 May 2025, date of publication 20 May 2025, date of current version 6 June 2025.\n\nDigital Object Identifier 10.1109/ACCESS.2025.3571728\n\nA Comparative Study of Deep Audio Models for\nSpectrogram- and Waveform-Based SingFake\nDetection\n\nMINH NGUYEN-DUC 1, LUONG VUONG "
+        },
+        {
+          "chunk_index": 1,
+          "start_char": 250,
+          "end_char": 550,
+          "page_start": 1,
+          "page_end": 1,
+          "content": "ingFake\nDetection\n\nMINH NGUYEN-DUC 1, LUONG VUONG NGUYEN 1, (Member, IEEE),\nHUY NGUYEN-HO-NHAT 1, TRI-HAI NGUYEN 2, (Member, IEEE),\nAND O-JOUN LEE 3, (Member, IEEE)\n1Department of Artificial Intelligence, FPT University, Da Nang 550000, Vietnam\n2Faculty of Information Technology, School of Technolog"
+        },
+        {
+          "chunk_index": 2,
+          "start_char": 500,
+          "end_char": 800,
+          "page_start": 1,
+          "page_end": 1,
+          "content": "lty of Information Technology, School of Technology, Van Lang University, Ho Chi Minh City 70000, Vietnam\n3Department of Artificial Intelligence, The Catholic University of Korea, Bucheon 03083, Republic of Korea\n\nCorresponding author: O-Joun Lee (ojlee@catholic.ac.kr)\n\nThis work was supported by AI"
+        },
+        {
+          "chunk_index": 3,
+          "start_char": 750,
+          "end_char": 1050,
+          "page_start": 1,
+          "page_end": 1,
+          "content": "lee@catholic.ac.kr)\n\nThis work was supported by AIT Laboratory, FPT University, Danang Campus, Vietnam, 2025. The work of O-Joun Lee was supported in\npart by the National Research Foundation of Korea (NRF) grant funded by Korean Government (MSIT) under Grant 2022R1F1A1065516,\nand in part by the Rese"
+        },
+        {
+          "chunk_index": 4,
+          "start_char": 1000,
+          "end_char": 1300,
+          "page_start": 1,
+          "page_end": 1,
+          "content": "er Grant 2022R1F1A1065516,\nand in part by the Research Fund of The Catholic University of Korea in 2025 under Grant M-2025-B0002-00053.\n\nABSTRACT Recent advancements in singing voice synthesis have significantly improved the quality\nof artificial singing voices, raising concerns about their potentia"
+        },
+        {
+          "chunk_index": 5,
+          "start_char": 1250,
+          "end_char": 1550,
+          "page_start": 1,
+          "page_end": 1,
+          "content": "ging voices, raising concerns about their potential misuse in generating deepfake singing,\nor ‘‘singfake’’ voices. Detecting these synthetic voices presents unique challenges due to the complex\nnature of singing, which involves pitch, timbre, and accompaniment variations. In this study, we conduct a"
+        },
+        {
+          "chunk_index": 6,
+          "start_char": 1500,
+          "end_char": 1800,
+          "page_start": 1,
+          "page_end": 1,
+          "content": "ompaniment variations. In this study, we conduct a\ncomparative analysis of two model types for singfake detection: (1) models utilizing Log-Mel spectrograms,\nsuch as Audio Spectrogram Transformer (AST) and Whisper, and (2) models that process raw waveform\ninputs, including UniSpeech-SAT and HuBERT. "
+        },
+        {
+          "chunk_index": 7,
+          "start_char": 1750,
+          "end_char": 2050,
+          "page_start": 1,
+          "page_end": 1,
+          "content": "eform\ninputs, including UniSpeech-SAT and HuBERT. Our experiments on the SingFake dataset evaluate these\nmodels under two input conditions—separated vocal tracks and full song mixtures—across different test\nsubsets. The results indicate that spectrogram-based models generally outperform waveform-bas"
+        },
+        {
+          "chunk_index": 8,
+          "start_char": 2000,
+          "end_char": 2300,
+          "page_start": 1,
+          "page_end": 1,
+          "content": "ram-based models generally outperform waveform-based models,\nnotably on unseen singers. Metrics such as Precision, Recall, F1-score, Equal Error Rate (EER), and Area\nUnder the Curve (AUC) provide insights into the strengths and weaknesses of each approach. Our findings\ncontribute to developing more "
+        },
+        {
+          "chunk_index": 9,
+          "start_char": 2250,
+          "end_char": 2550,
+          "page_start": 1,
+          "page_end": 1,
+          "content": "roach. Our findings\ncontribute to developing more effective deepfake singing detection methods, with implications for security,\nmedia authentication, and digital content protection.\n\nINDEX TERMS Singfake detection, singing voice synthesis, spectrogram-based models, waveform-based\nmodels, neural netw"
+        },
+        {
+          "chunk_index": 10,
+          "start_char": 2500,
+          "end_char": 2800,
+          "page_start": 1,
+          "page_end": 1,
+          "content": "m-based models, waveform-based\nmodels, neural networks.\n\nI. INTRODUCTION assistants. However, the increasing sophistication of these\nRecent advancements in singing voice synthesis have signif- technologies has raised concerns about their potential misuse,\nicantly improved the quality and realism of "
+        },
+        {
+          "chunk_index": 11,
+          "start_char": 2750,
+          "end_char": 3050,
+          "page_start": 1,
+          "page_end": 1,
+          "content": "suse,\nicantly improved the quality and realism of artificially gener- particularly in creating ‘‘singfake’’ voices—synthetic singing\nated singing voices. Techniques such as neural network-based voices that can be used to deceive listeners or manipulate\nsinging voice synthesis systems, leveraging gen"
+        },
+        {
+          "chunk_index": 12,
+          "start_char": 3000,
+          "end_char": 3300,
+          "page_start": 1,
+          "page_end": 1,
+          "content": "te\nsinging voice synthesis systems, leveraging generative adver- media content [4]. Such concerns are not unfounded, as the\nsarial networks (GANs), and transformer architectures have proliferation of deepfake audio has already demonstrated the\ncreated highly convincing synthetic singing voices [1], "
+        },
+        {
+          "chunk_index": 13,
+          "start_char": 3250,
+          "end_char": 3550,
+          "page_start": 1,
+          "page_end": 1,
+          "content": "d highly convincing synthetic singing voices [1], potential for malicious applications, including fraud, mis-\n[2], [3]. These advancements have found applications in information, and identity theft [5]. Consequently, scientists\nentertainment, music production, and personalized voice have recognized "
+        },
+        {
+          "chunk_index": 14,
+          "start_char": 3500,
+          "end_char": 3800,
+          "page_start": 1,
+          "page_end": 1,
+          "content": "roduction, and personalized voice have recognized the need to develop robust methods for\ndetecting synthetic singing voices to mitigate these risks.\nThe associate editor coordinating the review of this manuscript and Deepfake audio, which includes synthetic speech and\napproving it for publication wa"
+        },
+        {
+          "chunk_index": 15,
+          "start_char": 3750,
+          "end_char": 4050,
+          "page_start": 1,
+          "page_end": 1,
+          "content": "nthetic speech and\napproving it for publication was Domenico Rosaci . singing, has become a critical area of research due to its\n\n2025 The Authors. This work is licensed under a Creative Commons Attribution 4.0 License.\nVOLUME 13, 2025 For more information, see https://creativecommons.org/licenses/b"
+        },
+        {
+          "chunk_index": 16,
+          "start_char": 4000,
+          "end_char": 4300,
+          "page_start": 1,
+          "page_end": 2,
+          "content": "mation, see https://creativecommons.org/licenses/by/4.0/ 95739\n\nM. Nguyen-Duc et al.: Comparative Study of Deep Audio Models\n\npotential societal impact [6], [7], [8]. However, detecting to unseen singers. In contrast, waveform models perform\ndeepfake singing voices presents unique challenges com- we"
+        },
+        {
+          "chunk_index": 17,
+          "start_char": 4250,
+          "end_char": 4550,
+          "page_start": 2,
+          "page_end": 2,
+          "content": " singing voices presents unique challenges com- well on familiar voices, emphasizing the impact of input\npared to detecting synthetic speech [9]. Singing voices often representation.\nexhibit greater variability in pitch, timbre, and dynamics, • Our findings suggest exploring hybrid models and\nand th"
+        },
+        {
+          "chunk_index": 18,
+          "start_char": 4500,
+          "end_char": 4800,
+          "page_start": 2,
+          "page_end": 2,
+          "content": "indings suggest exploring hybrid models and\nand they are frequently accompanied by instrumental music, diverse training data to improve SingFake detection in\nwhich can obscure artifacts indicative of synthesis [10]. practical settings.\nThese factors make singfake detection a more complex The remaind"
+        },
+        {
+          "chunk_index": 19,
+          "start_char": 4750,
+          "end_char": 5050,
+          "page_start": 2,
+          "page_end": 2,
+          "content": "make singfake detection a more complex The remainder of this paper is structured as follows:\ntask, necessitating specialized approaches. Researchers have Section II reviews related work on speech and SingFake\nproposed various methods for detecting synthetic singing detection. Section III outlines th"
+        },
+        {
+          "chunk_index": 20,
+          "start_char": 5000,
+          "end_char": 5300,
+          "page_start": 2,
+          "page_end": 2,
+          "content": "nthetic singing detection. Section III outlines the evaluated models, including\nvoices, ranging from traditional signal processing techniques their architectures and fine-tuning. Section IV presents the\nto advanced deep learning models [11], [12], [13]. These experimental setup, quantitative metrics"
+        },
+        {
+          "chunk_index": 21,
+          "start_char": 5250,
+          "end_char": 5550,
+          "page_start": 2,
+          "page_end": 2,
+          "content": "3]. These experimental setup, quantitative metrics (Precision, Recall,\nmethods aim to identify subtle discrepancies between F1, EER, AUC), and a qualitative analysis of model behavior.\ngenuine and synthetic singing voices, leveraging spectral Section V concludes with key insights and their implicati"
+        },
+        {
+          "chunk_index": 22,
+          "start_char": 5500,
+          "end_char": 5800,
+          "page_start": 2,
+          "page_end": 2,
+          "content": " V concludes with key insights and their implications\npatterns, temporal dynamics, and acoustic characteristics. for media authentication.\nIn this paper, we propose a comparative analysis of\ntwo types of models for singfake detection, focusing on\nII. RELATED WORK\ntheir effectiveness in binary classi"
+        },
+        {
+          "chunk_index": 23,
+          "start_char": 5750,
+          "end_char": 6050,
+          "page_start": 2,
+          "page_end": 2,
+          "content": " RELATED WORK\ntheir effectiveness in binary classification tasks. The first\nThis section reviews recent advancements in speech deep-\ntype of model operates on Log-Mel spectrograms, which\nfake detection and SingFake detection. Speech deepfake\nprovide a time-frequency representation of audio signals.\n"
+        },
+        {
+          "chunk_index": 24,
+          "start_char": 6000,
+          "end_char": 6300,
+          "page_start": 2,
+          "page_end": 2,
+          "content": "a time-frequency representation of audio signals.\ndetection focuses on distinguishing AI-generated speech\nExamples of such models include the Audio Spectrogram\nfrom human speech, leveraging handcrafted features, deep\nTransformer [14] and Whisper [15]. These models have\nneural networks, and self-supe"
+        },
+        {
+          "chunk_index": 25,
+          "start_char": 6250,
+          "end_char": 6550,
+          "page_start": 2,
+          "page_end": 2,
+          "content": ". These models have\nneural networks, and self-supervised models. SingFake\ndemonstrated strong performance in audio-related tasks by\ndetection, a specialized domain within deepfake detection,\ncapturing intricate spectral patterns and temporal dependen-\ndeals with synthetic singing voices, which prese"
+        },
+        {
+          "chunk_index": 26,
+          "start_char": 6500,
+          "end_char": 6800,
+          "page_start": 2,
+          "page_end": 2,
+          "content": "-\ndeals with synthetic singing voices, which present additional\ncies. The second type of model processes raw waveform\nchallenges due to the complex interplay of pitch, rhythm,\ninputs directly, bypassing the need for handcrafted feature\nand timbre. Both fields have progressed through feature\nextracti"
+        },
+        {
+          "chunk_index": 27,
+          "start_char": 6750,
+          "end_char": 7050,
+          "page_start": 2,
+          "page_end": 2,
+          "content": "th fields have progressed through feature\nextraction. Notable examples include UniSpeech-SAT [16]\nengineering, novel model architectures, and cross-domain\nand HuBERT [17], which leverage end-to-end learning to\nlearning strategies.\nextract discriminative features from raw audio data. By com-\nparing t"
+        },
+        {
+          "chunk_index": 28,
+          "start_char": 7000,
+          "end_char": 7300,
+          "page_start": 2,
+          "page_end": 2,
+          "content": "ive features from raw audio data. By com-\nparing these two approaches, we aim to provide insights\ninto their respective strengths and limitations, contributing A. SPEECH DEEPFAKE DETECTION\nto developing more effective singfake detection systems. The field of speech deepfake detection has rapidly adv"
+        },
+        {
+          "chunk_index": 29,
+          "start_char": 7250,
+          "end_char": 7550,
+          "page_start": 2,
+          "page_end": 2,
+          "content": "field of speech deepfake detection has rapidly advanced,\nFigure 1 illustrates the comparison of the spectrogram-based driven by the integration of deep learning techniques with\nand the raw audio-based models. acoustic data analysis. In particular, convolutional neural\nnetworks (CNNs) have shown stro"
+        },
+        {
+          "chunk_index": 30,
+          "start_char": 7500,
+          "end_char": 7800,
+          "page_start": 2,
+          "page_end": 2,
+          "content": "nvolutional neural\nnetworks (CNNs) have shown strong potential for modeling\ncomplex auditory patterns and detecting subtle anomalies in\nspeech signals. This approach aligns with broader research\ntrends in audio-based diagnostics and classification, where\nCNNs have been successfully applied to a vari"
+        },
+        {
+          "chunk_index": 31,
+          "start_char": 7750,
+          "end_char": 8050,
+          "page_start": 2,
+          "page_end": 2,
+          "content": "here\nCNNs have been successfully applied to a variety of acoustic\nsensing tasks beyond speech processing. For instance, CNNs\nhave been utilized in non-speech domains such as internal\npipe corrosion detection using ultrasound signals [18], dysna-\ntremia quantification via acoustic microbeams [19], di"
+        },
+        {
+          "chunk_index": 32,
+          "start_char": 8000,
+          "end_char": 8300,
+          "page_start": 2,
+          "page_end": 2,
+          "content": "ia quantification via acoustic microbeams [19], diabetes\ndiagnosis through high-frequency ultrasound data [20],\nautomated cell-type classification from label-free acousticFIGURE 1. Comparison of input representations and model architectures\nfor singfake detection. The spectrogram-based model (left) "
+        },
+        {
+          "chunk_index": 33,
+          "start_char": 8250,
+          "end_char": 8550,
+          "page_start": 2,
+          "page_end": 2,
+          "content": "ake detection. The spectrogram-based model (left) processes signals [21], estimation of cancer cell deformability using\nlog-Mel features, while the raw audio-based model (right) directly learns acoustic trapping [22], and classification of breast cancer\nfrom waveform signals.\ncells through high-freq"
+        },
+        {
+          "chunk_index": 34,
+          "start_char": 8500,
+          "end_char": 8800,
+          "page_start": 2,
+          "page_end": 2,
+          "content": "cer\nfrom waveform signals.\ncells through high-frequency acoustic tweezers [23]. These\napplications highlight the versatility and robustness of\nOur study makes the following key contributions to the CNN-based architectures in interpreting nuanced acoustic\nfield of singfake detection: features, which "
+        },
+        {
+          "chunk_index": 35,
+          "start_char": 8750,
+          "end_char": 9050,
+          "page_start": 2,
+          "page_end": 2,
+          "content": "stic\nfield of singfake detection: features, which is equally critical in distinguishing authentic\n• We compare spectrogram-based (AST, Whisper) and speech from AI-generated deepfakes.\nwaveform-based (UniSpeech-SAT, HuBERT) models Speech deepfake detection has evolved through several\nacross seen and "
+        },
+        {
+          "chunk_index": 36,
+          "start_char": 9000,
+          "end_char": 9300,
+          "page_start": 2,
+          "page_end": 2,
+          "content": "ction has evolved through several\nacross seen and unseen singer datasets to highlight their innovative approaches, each contributing valuable insights\nrespective strengths. and methodologies [24], [25], [26], [27]. Hamza et al.\n• We deploy the experiments on the SingFake datasets to [28] investigate"
+        },
+        {
+          "chunk_index": 37,
+          "start_char": 9250,
+          "end_char": 9550,
+          "page_start": 2,
+          "page_end": 3,
+          "content": "ments on the SingFake datasets to [28] investigated the detection of audio deepfakes using\ndemonstrate that spectrogram models generalize better machine learning and deep learning methods. Their approach\n\n95740 VOLUME 13, 2025\n\nM. Nguyen-Duc et al.: Comparative Study of Deep Audio Models\n\nfocused on"
+        },
+        {
+          "chunk_index": 38,
+          "start_char": 9500,
+          "end_char": 9800,
+          "page_start": 3,
+          "page_end": 3,
+          "content": "Comparative Study of Deep Audio Models\n\nfocused on extracting audio features using MFCC, a widely- challenging In-the-Wild [31] dataset, they achieved an EER\nused technique in speech recognition. The study uses the of 6.71%, surpassing other models like XLSR + Conformer\nFake-or-Real [29] dataset, wh"
+        },
+        {
+          "chunk_index": 39,
+          "start_char": 9750,
+          "end_char": 10050,
+          "page_start": 3,
+          "page_end": 3,
+          "content": "ike XLSR + Conformer\nFake-or-Real [29] dataset, which is split into four subsets (EER = 8.42%).\n(for-rece, for-2-sec, for-norm, and for-original) based on While these studies demonstrate effective approaches to\naudio length and bit rate. When applying various machine audio deepfake detection, they s"
+        },
+        {
+          "chunk_index": 40,
+          "start_char": 10000,
+          "end_char": 10300,
+          "page_start": 3,
+          "page_end": 3,
+          "content": "g various machine audio deepfake detection, they share common characteristics\nlearning algorithms to these datasets, they achieved impres- in their methodology and evaluation. Most do not com-\nsive results—with SVM reaching 98.83% accuracy on the pare models using log-mel spectrograms versus raw aud"
+        },
+        {
+          "chunk_index": 41,
+          "start_char": 10250,
+          "end_char": 10550,
+          "page_start": 3,
+          "page_end": 3,
+          "content": "e models using log-mel spectrograms versus raw audio\nfor-rerec dataset and VGG-16 achieving 93% accuracy on the waveforms, which is crucial for tasks like singing fake\nfor-original dataset. detection where pitch variation and vibrato play a significant\nBuilding on acoustic features, Kawa et al. [30]"
+        },
+        {
+          "chunk_index": 42,
+          "start_char": 10500,
+          "end_char": 10800,
+          "page_start": 3,
+          "page_end": 3,
+          "content": "nt\nBuilding on acoustic features, Kawa et al. [30] instead role. Additionally, evaluation metrics are often limited, with\nexplored a different direction by investigating using Whisper accuracy or EER being the sole measures, making it harder\nas a feature extractor for deepfake audio detection. Their"
+        },
+        {
+          "chunk_index": 43,
+          "start_char": 10750,
+          "end_char": 11050,
+          "page_start": 3,
+          "page_end": 3,
+          "content": "ture extractor for deepfake audio detection. Their to assess performance comprehensively.\nresearch leveraged this pre-trained automatic speech recog-\nnition model. It demonstrated that using Whisper features B. SINGFAKE DETECTION\nin combination with models like LCNN, MesoNet, and Recent advancements"
+        },
+        {
+          "chunk_index": 44,
+          "start_char": 11000,
+          "end_char": 11300,
+          "page_start": 3,
+          "page_end": 3,
+          "content": "models like LCNN, MesoNet, and Recent advancements in singing voice deepfake detection\nSpecRNet improves performance on the In-The-Wild [31] have explored a diverse range of feature extraction methods\ndataset. For example, SpecRNet using Whisper (frozen) and model architectures, reflecting the compl"
+        },
+        {
+          "chunk_index": 45,
+          "start_char": 11250,
+          "end_char": 11550,
+          "page_start": 3,
+          "page_end": 3,
+          "content": "zen) and model architectures, reflecting the complexity of the task\nfeatures achieved an EER of 0.3644. Their work further and the unique challenges posed by musical content [38],\nexplored the impact of fine-tuning Whisper for the detection [39], [40]. One of the primary areas of investigation invol"
+        },
+        {
+          "chunk_index": 46,
+          "start_char": 11500,
+          "end_char": 11800,
+          "page_start": 3,
+          "page_end": 3,
+          "content": "]. One of the primary areas of investigation involves\ntask, particularly with MFCC + Whisper (tuned), where the comparing different audio representations, ranging from tra-\nWhisper features are concatenated with MFCC features. This ditional handcrafted features to advanced pre-trained embed-\napproac"
+        },
+        {
+          "chunk_index": 47,
+          "start_char": 11750,
+          "end_char": 12050,
+          "page_start": 3,
+          "page_end": 3,
+          "content": "ed features to advanced pre-trained embed-\napproach yielded even better results, with their best model, dings. Gohari et al. [41] evaluated two CNN-based fake audio\nMesoNet with MFCC + Whisper (tuned), achieving an EER detection systems using a variety of audio representations,\nof 0.2672. categorize"
+        },
+        {
+          "chunk_index": 48,
+          "start_char": 12000,
+          "end_char": 12300,
+          "page_start": 3,
+          "page_end": 3,
+          "content": "ty of audio representations,\nof 0.2672. categorized into handcrafted, learning-based, and pre-trained\nMeanwhile, Hua et al. [32] introduced an entirely different features. Figure 2 illustrates the idea of Gohari’s study,\napproach with their TSSDNet model. They developed an in which handcrafted featu"
+        },
+        {
+          "chunk_index": 49,
+          "start_char": 12250,
+          "end_char": 12550,
+          "page_start": 3,
+          "page_end": 3,
+          "content": "odel. They developed an in which handcrafted features include log-spectrograms,\nend-to-end deep neural network (DNN) for synthetic speech mel-spectrograms (80-band mel-filterbank), LFCC (40 coef-\ndetection that operates directly on raw audio waveforms with- ficients plus derivatives), MFCC, and Cons"
+        },
+        {
+          "chunk_index": 50,
+          "start_char": 12500,
+          "end_char": 12800,
+          "page_start": 3,
+          "page_end": 3,
+          "content": "s with- ficients plus derivatives), MFCC, and Constant-Q Transform\nout requiring handcrafted features. Their End-to-End Res- (CQT), all extracted with a 25 ms window length and\nTSSDNet achieved remarkable results, with an EER of 0.74% a 10 ms hop size. Learning-based features utilize LEAF\non the ASV"
+        },
+        {
+          "chunk_index": 51,
+          "start_char": 12750,
+          "end_char": 13050,
+          "page_start": 3,
+          "page_end": 3,
+          "content": "e. Learning-based features utilize LEAF\non the ASVspoof2019 [33] development set and 1.64% on the (40 filters) and SincConv (64 filters). In contrast, pre-\nASVspoof2019 [33] evaluation set, outperforming traditional trained features incorporate Whisper Tiny, WavLM Base, and\nmethods like CQCC + GMM. "
+        },
+        {
+          "chunk_index": 52,
+          "start_char": 13000,
+          "end_char": 13300,
+          "page_start": 3,
+          "page_end": 3,
+          "content": "er Tiny, WavLM Base, and\nmethods like CQCC + GMM. Their model also demonstrated Wav2Vec 2.0 XLS-R 300M, which leverage deep learning\nexcellent cross-dataset generalization, achieving an EER of models trained on large speech datasets. Experiments on\n1.95% on the ASVspoof2015 [34] evaluation set. the "
+        },
+        {
+          "chunk_index": 53,
+          "start_char": 13250,
+          "end_char": 13550,
+          "page_start": 3,
+          "page_end": 3,
+          "content": ".95% on the ASVspoof2015 [34] evaluation set. the CtrSVDD [42] and ASVspoof 2019 [33] datasets reveal\nAddressing the challenge of fake audio detection across that feature effectiveness is highly task-dependent. Features\ndifferent datasets, Wang et al. [35] proposed a multi-view that perform well for"
+        },
+        {
+          "chunk_index": 54,
+          "start_char": 13500,
+          "end_char": 13800,
+          "page_start": 3,
+          "page_end": 3,
+          "content": ". [35] proposed a multi-view that perform well for speech deepfake detection do not\nfeature-based approach. Their method combines prosodic, necessarily yield similar results for singing voice detection\npronunciation, and wav2vec features to improve the gener- and vice versa. For instance, Mel scale-"
+        },
+        {
+          "chunk_index": 55,
+          "start_char": 13750,
+          "end_char": 14050,
+          "page_start": 3,
+          "page_end": 3,
+          "content": "he gener- and vice versa. For instance, Mel scale-based features, which\nalization of fake audio detection models. Using an attention highlight characteristics beneficial for speech processing,\nmechanism to fuse these features, they achieved significant tend to underperform in singing voice detection"
+        },
+        {
+          "chunk_index": 56,
+          "start_char": 14000,
+          "end_char": 14300,
+          "page_start": 3,
+          "page_end": 3,
+          "content": "nt tend to underperform in singing voice detection. Conversely,\nperformance improvements in cross-dataset testing. Their log spectrograms feature better capture of the full frequency\nresults showed that the fusion of duration, pronunciation, and content and are more effective for analyzing singing v"
+        },
+        {
+          "chunk_index": 57,
+          "start_char": 14250,
+          "end_char": 14550,
+          "page_start": 3,
+          "page_end": 3,
+          "content": "ent and are more effective for analyzing singing voices\nwav2vec features improved detection performance, reducing but less suitable for plain speech.\nthe EER from 6.59% to 3.96% on the ASVspoof2015 [34] In addition, Zang et al. [10] introduced the SingFake\ndataset. dataset and benchmarked four detec"
+        },
+        {
+          "chunk_index": 58,
+          "start_char": 14500,
+          "end_char": 14800,
+          "page_start": 3,
+          "page_end": 3,
+          "content": "ngFake\ndataset. dataset and benchmarked four detection models using dif-\nIn more recent work, Xiao et al. [36] introduced the ferent audio-processing techniques. AASIST, Spectrogram+\nXLSR-Mamba model, which combines the XLSR speech ResNet, LFCC+ResNet, and Wac2Vec2+AASIST. AASIST\nrepresentation from"
+        },
+        {
+          "chunk_index": 59,
+          "start_char": 14750,
+          "end_char": 15050,
+          "page_start": 3,
+          "page_end": 3,
+          "content": "t, and Wac2Vec2+AASIST. AASIST\nrepresentation from wav2vec 2.0 with the Dual-Column employs raw waveforms as input, integrating graph neural\nBidirectional Mamba (DuaBiMamba) architecture for audio networks with spectro-temporal attention. Spectrogram+\ndeepfake detection. When evaluated on ASVspoof 2"
+        },
+        {
+          "chunk_index": 60,
+          "start_char": 15000,
+          "end_char": 15300,
+          "page_start": 3,
+          "page_end": 3,
+          "content": "+\ndeepfake detection. When evaluated on ASVspoof 2021 [37] ResNet utilizes linear spectrograms processed via ResNet18,\nand In-the-Wild [31] datasets, XLSR-Mamba achieved an while LFCC+ResNet extracts 60-dimensional Linear-\nEER of 0.93% on the ASVspoof 2021 [37] LA set and Frequency Cepstral Coeffici"
+        },
+        {
+          "chunk_index": 61,
+          "start_char": 15250,
+          "end_char": 15550,
+          "page_start": 3,
+          "page_end": 3,
+          "content": "f 2021 [37] LA set and Frequency Cepstral Coefficients (LFCC) before passing\n1.88% on the DF set, outperforming other models such as them to ResNet18. Lastly, Wac2Vec2+AASIST incorporates\nXLSR + AASIST and XLSR + Conformer. Even on the more wav2vec2.0 for self-supervised feature extraction from\n\nVOL"
+        },
+        {
+          "chunk_index": 62,
+          "start_char": 15500,
+          "end_char": 15800,
+          "page_start": 3,
+          "page_end": 4,
+          "content": "0 for self-supervised feature extraction from\n\nVOLUME 13, 2025 95741\n\nM. Nguyen-Duc et al.: Comparative Study of Deep Audio Models\n\nstudies rely solely on the EER evaluation metric, potentially\noverlooking other critical performance aspects such as false\npositive rates. Moreover, few works explicitl"
+        },
+        {
+          "chunk_index": 63,
+          "start_char": 15750,
+          "end_char": 16050,
+          "page_start": 4,
+          "page_end": 4,
+          "content": "alse\npositive rates. Moreover, few works explicitly compare the\nimpact of different input representations, such as raw wave-\nform versus log-Mel spectrogram inputs, even though each\ncan capture distinct acoustic characteristics [46], [47], [48],\n[49] that may be crucial for distinguishing subtle art"
+        },
+        {
+          "chunk_index": 64,
+          "start_char": 16000,
+          "end_char": 16300,
+          "page_start": 4,
+          "page_end": 4,
+          "content": " that may be crucial for distinguishing subtle artifacts\nin singing voice deepfakes. Additionally, several of these\nstudies employ traditional CNN-based architectures, even\nFIGURE 2. Framework for singing voice deepfake detection using though modern transformer-based models have demonstrated\nhand-cr"
+        },
+        {
+          "chunk_index": 65,
+          "start_char": 16250,
+          "end_char": 16550,
+          "page_start": 4,
+          "page_end": 4,
+          "content": "transformer-based models have demonstrated\nhand-crafted, learning-based, and pre-trained audio features with CNN\nclassifiers (ResNet-18 and LCNN). superior capabilities in capturing long-range dependencies\nand complex temporal dynamics in audio signals. Addressing\nthese gaps through systematic compa"
+        },
+        {
+          "chunk_index": 66,
+          "start_char": 16500,
+          "end_char": 16800,
+          "page_start": 4,
+          "page_end": 4,
+          "content": "ls. Addressing\nthese gaps through systematic comparisons and leveraging\nmore advanced architectures could substantially enhance the\nspeech signals. Among them, the Wav2Vec2+AASIST effectiveness of SingFake detection models.\nmodel performs well when learning directly from song These studies demonstra"
+        },
+        {
+          "chunk_index": 67,
+          "start_char": 16750,
+          "end_char": 17050,
+          "page_start": 4,
+          "page_end": 4,
+          "content": "earning directly from song These studies demonstrate that singing voice deepfake\nmixtures, achieving the highest performance and robustness detection benefits from a multifaceted approach combining\namong all evaluated systems. Their study also highlighted robust feature extraction, context-aware mod"
+        },
+        {
+          "chunk_index": 68,
+          "start_char": 17000,
+          "end_char": 17300,
+          "page_start": 4,
+          "page_end": 4,
+          "content": "ghted robust feature extraction, context-aware modeling, and task-\nthat many state-of-the-art speech-based models degrade specific augmentations. However, overcoming the limitations\nsignificantly when applied directly to singing voice, above could pave the way for more comprehensive and\nemphasizing "
+        },
+        {
+          "chunk_index": 69,
+          "start_char": 17250,
+          "end_char": 17550,
+          "page_start": 4,
+          "page_end": 4,
+          "content": "ve the way for more comprehensive and\nemphasizing the need for domain-specific adaptations. effective solutions in the future. Our research, therefore,\nIn response to this challenge, Chen et al. [43] pro- builds upon this foundation by specifically focusing on\nposed SingGraph, a hybrid model that in"
+        },
+        {
+          "chunk_index": 70,
+          "start_char": 17500,
+          "end_char": 17800,
+          "page_start": 4,
+          "page_end": 4,
+          "content": "ocusing on\nposed SingGraph, a hybrid model that integrates MERT comparing spectrogram-based models (AST, Whisper) with\nfor pitch and rhythm extraction with Wav2Vec2.0 for the waveform-based models (UniSpeech-SAT, HuBERT) in the\nlinguistic analysis of lyrics. The proposed RawBoost and context of sing"
+        },
+        {
+          "chunk_index": 71,
+          "start_char": 17750,
+          "end_char": 18050,
+          "page_start": 4,
+          "page_end": 4,
+          "content": " lyrics. The proposed RawBoost and context of singfake detection. This comparison addresses\nbeat-matching augmentations substantially improve detec- a gap in the literature and provides valuable insights into\ntion performance. SingGraph sets a new state-of-the-art on the strengths and weaknesses of "
+        },
+        {
+          "chunk_index": 72,
+          "start_char": 18000,
+          "end_char": 18300,
+          "page_start": 4,
+          "page_end": 4,
+          "content": "ate-of-the-art on the strengths and weaknesses of different models for this\nthe SingFake dataset, achieving relative EER reductions specialized task. Furthermore, our comprehensive evaluation\nof 13.2% for seen singers and 24.3% for unseen singers. using multiple metrics (Precision, Recall, F1 score,"
+        },
+        {
+          "chunk_index": 73,
+          "start_char": 18250,
+          "end_char": 18550,
+          "page_start": 4,
+          "page_end": 4,
+          "content": "ing multiple metrics (Precision, Recall, F1 score, EER,\nHowever, a key limitation of this study is its reliance on and AUC) offers a more nuanced understanding of model\nMERT as the sole acoustic feature extractor, which may not performance, contributing to the advancement of the field.\nfully capture"
+        },
+        {
+          "chunk_index": 74,
+          "start_char": 18500,
+          "end_char": 18800,
+          "page_start": 4,
+          "page_end": 4,
+          "content": "ing to the advancement of the field.\nfully capture all relevant audio characteristics needed for\nrobust detection.\nIII. METHODOLOGIES\nFurther exploring the potential of large-scale pre-trained\nThis work uses pre-trained deep learning models for the\nmodels, Sharma et al. [44] evaluated the effectiven"
+        },
+        {
+          "chunk_index": 75,
+          "start_char": 18750,
+          "end_char": 19050,
+          "page_start": 4,
+          "page_end": 4,
+          "content": "odels, Sharma et al. [44] evaluated the effectiveness of\nsinger fake detection task. Specifically, we utilize models\nWhisper encodings as feature representations, testing them\npre-trained on large-scale datasets and adapt them for\non isolated vocals and full mixtures of the SingFake dataset.\nbinary "
+        },
+        {
+          "chunk_index": 76,
+          "start_char": 19000,
+          "end_char": 19300,
+          "page_start": 4,
+          "page_end": 4,
+          "content": "and full mixtures of the SingFake dataset.\nbinary classification by adding an audio classification head\nUnder various conditions, performance is assessed using EER\nconsisting of a linear layer on top of the pooled output.\nacross different Whisper model sizes and two classifiers—\nAdditionally, we inc"
+        },
+        {
+          "chunk_index": 77,
+          "start_char": 19250,
+          "end_char": 19550,
+          "page_start": 4,
+          "page_end": 4,
+          "content": "el sizes and two classifiers—\nAdditionally, we incorporate their corresponding pre-trained\nCNN and ResNet34. Whisper (medium) encodings combined\nfeature extractors to process audio inputs efficiently. To opti-\nwith the ResNet34 classifier consistently delivered the best\nmize performance for our spec"
+        },
+        {
+          "chunk_index": 78,
+          "start_char": 19500,
+          "end_char": 19800,
+          "page_start": 4,
+          "page_end": 4,
+          "content": "y delivered the best\nmize performance for our specific task, we fine-tune these\nperformance across all testing scenarios on the SingFake\nmodels on the SingFake [10] dataset, allowing them to\ndataset. However, a key limitation of this work is its exclusive\nlearn task-specific representations while re"
+        },
+        {
+          "chunk_index": 79,
+          "start_char": 19750,
+          "end_char": 20050,
+          "page_start": 4,
+          "page_end": 4,
+          "content": "usive\nlearn task-specific representations while retaining knowledge\nreliance on Whisper encodings, potentially overlooking other\nfrom their pre-training. This approach enables the effective\ncomplementary cues.\nclassification of real and fake singing voices while ben-\nFinally, Wei et al. [45] propose"
+        },
+        {
+          "chunk_index": 80,
+          "start_char": 20000,
+          "end_char": 20300,
+          "page_start": 4,
+          "page_end": 4,
+          "content": "voices while ben-\nFinally, Wei et al. [45] proposed a more holistic\nefiting from the generalization capabilities of large-scale\napproach by incorporating both vocal and background\npre-training.\nforgery information. Their Hybrid Frontend architecture\nextracts generalized features from vocals using Si"
+        },
+        {
+          "chunk_index": 81,
+          "start_char": 20250,
+          "end_char": 20550,
+          "page_start": 4,
+          "page_end": 4,
+          "content": "extracts generalized features from vocals using SincConv\nand processes background music via a fine-tuned pre-trained A. AUDIO SPECTROGRAM TRANSFORMER (AST)\nmodel with adapters. The results on the WildSVDD [7] The Audio Spectrogram Transformer (AST) [14] is a\ndataset demonstrate improved accuracy ove"
+        },
+        {
+          "chunk_index": 82,
+          "start_char": 20500,
+          "end_char": 20800,
+          "page_start": 4,
+          "page_end": 4,
+          "content": "14] is a\ndataset demonstrate improved accuracy over vocal-only sys- deep learning model designed for audio classification tasks\ntems, highlighting the importance of contextual background by leveraging the Transformer architecture. AST operates\ninformation in deepfake detection for musical content. d"
+        },
+        {
+          "chunk_index": 83,
+          "start_char": 20750,
+          "end_char": 21050,
+          "page_start": 4,
+          "page_end": 4,
+          "content": "ation in deepfake detection for musical content. directly on spectrogram inputs, treating them as structured\nDespite these promising approaches, several limitations image-like data. Given an input waveform x(t) of duration\nremain common across the current literature. First, most t seconds, we comput"
+        },
+        {
+          "chunk_index": 84,
+          "start_char": 21000,
+          "end_char": 21300,
+          "page_start": 4,
+          "page_end": 5,
+          "content": "rrent literature. First, most t seconds, we compute a log Mel filterbank (fbank)\n\n95742 VOLUME 13, 2025\n\nM. Nguyen-Duc et al.: Comparative Study of Deep Audio Models\n\nspectrogram S ∈R128×T : The spectrogram values are globally normalized:\nS = log (Mel (STFT(x(t)))) (1) 2(S −min(S)) S′ = −1 (7)\nmax(S"
+        },
+        {
+          "chunk_index": 85,
+          "start_char": 21250,
+          "end_char": 21550,
+          "page_start": 5,
+          "page_end": 5,
+          "content": "l (STFT(x(t)))) (1) 2(S −min(S)) S′ = −1 (7)\nmax(S) −min(S)\nThe STFT is computed using a 25 ms Hamming window\nwith a 10 ms hop, and the Mel filterbank consists of ensuring that all values are in the range [−1, 1] for numerical\n128 frequency bands. The number of time frames is stability. The encoder "
+        },
+        {
+          "chunk_index": 86,
+          "start_char": 21500,
+          "end_char": 21800,
+          "page_start": 5,
+          "page_end": 5,
+          "content": "e number of time frames is stability. The encoder consists of a two-layer convolutional\napproximately T = 100t, resulting in a spectrogram of size stem followed by Transformer blocks. The spectrogram is\n128 × 100t. The spectrogram S is divided into overlapping first passed through a convolutional tr"
+        },
+        {
+          "chunk_index": 87,
+          "start_char": 21750,
+          "end_char": 22050,
+          "page_start": 5,
+          "page_end": 5,
+          "content": "verlapping first passed through a convolutional transformation:\npatches Pi ∈R16×16, which are flattened and projected to a\nH0 = Conv2D(S′) with GELU activation (8)768-dimensional embedding:\nzi = Wp · vec(Pi) + bp, zi ∈R768 (2) where H0 represents the feature map output after the\nconvolutional stem. "
+        },
+        {
+          "chunk_index": 88,
+          "start_char": 22000,
+          "end_char": 22300,
+          "page_start": 5,
+          "page_end": 5,
+          "content": " feature map output after the\nconvolutional stem. Positional embeddings Esin are added\nwhere Wp ∈ R768×256 is the linear projection matrix, H1 = H0 + Esin. The feature sequence is then processed\nand vec(Pi) ∈R256 is the vectorized form of the patch. through L Transformer layers:\nA classification tok"
+        },
+        {
+          "chunk_index": 89,
+          "start_char": 22250,
+          "end_char": 22550,
+          "page_start": 5,
+          "page_end": 5,
+          "content": "through L Transformer layers:\nA classification token z[CLS] is prepended to the patch\nH(l) = TransformerLayer(l)(H(l−1)), l = 1, 2, . . . , L (9)embeddings, and learnable positional embeddings Epos ∈\nR(N+1)×768 are added:\nwhere each Transformer layer consists of Multi-head self-\nZ0 = z[CLS], z1, z2,"
+        },
+        {
+          "chunk_index": 90,
+          "start_char": 22500,
+          "end_char": 22800,
+          "page_start": 5,
+          "page_end": 5,
+          "content": " consists of Multi-head self-\nZ0 = z[CLS], z1, z2, . . . , zN + Epos (3) attention (MHSA), Pre-activation residual connections, and\nLayer normalization. The final encoder output is Z = H(L).\nThe sequence Z0 is processed by a Transformer encoder The decoder operates on tokenized text sequences. Let Y"
+        },
+        {
+          "chunk_index": 91,
+          "start_char": 22750,
+          "end_char": 23050,
+          "page_start": 5,
+          "page_end": 5,
+          "content": "ecoder operates on tokenized text sequences. Let Y =\nwith L = 12 layers and H = 12 attention heads: (y1, y2, . . . , yN) be the target token sequence, where each\nZ(l) = TransformerLayer(l)(Z(l−1)), l = 1, 2, . . . , 12 yi represents a subword unit obtained via byte-level BPE\ntokenization. The decode"
+        },
+        {
+          "chunk_index": 92,
+          "start_char": 23000,
+          "end_char": 23300,
+          "page_start": 5,
+          "page_end": 5,
+          "content": "tained via byte-level BPE\ntokenization. The decoder input embeddings are computed\n(4)\nas:\nThe final representation of the classification token z(L)[CLS] is Ey = WeY + Elearned (10)passed through a linear classifier with sigmoid activation:\nˆy = σ(Wc · z(L)[CLS] + bc) (5) where We is the embedding ma"
+        },
+        {
+          "chunk_index": 93,
+          "start_char": 23250,
+          "end_char": 23550,
+          "page_start": 5,
+          "page_end": 5,
+          "content": "· z(L)[CLS] + bc) (5) where We is the embedding matrix, and Elearned represents learned positional embeddings. The decoder follows the\nwhere Wc ∈RC×768, bc ∈RC, and C is the number Transformer decoder structure:\nof classes. The sigmoid function σ is used for multi-\nD(l) = TransformerDecoder(l)(D(l−1"
+        },
+        {
+          "chunk_index": 94,
+          "start_char": 23500,
+          "end_char": 23800,
+          "page_start": 5,
+          "page_end": 5,
+          "content": "used for multi-\nD(l) = TransformerDecoder(l)(D(l−1), Z), l = 1, 2, . . . , Llabel classification. In our study, we utilize a fine-tuned\nAST model [50] trained on the AudioSet [51] dataset to (11)\nperform weakly labeled audio event classification, enabling\nwhere D(l) is the output at layer l.The deco"
+        },
+        {
+          "chunk_index": 95,
+          "start_char": 23750,
+          "end_char": 24050,
+          "page_start": 5,
+          "page_end": 5,
+          "content": "bling\nwhere D(l) is the output at layer l.The decoder attends to both\neffective and robust feature extraction from spectrogram\nthe encoder output Z and previous decoder states. The final\nrepresentations.\ndecoder output is projected to the vocabulary space:\n\nB. WHISPER P(yt|y<t, x) = softmax(WoD(L) +"
+        },
+        {
+          "chunk_index": 96,
+          "start_char": 24000,
+          "end_char": 24300,
+          "page_start": 5,
+          "page_end": 5,
+          "content": "space:\n\nB. WHISPER P(yt|y<t, x) = softmax(WoD(L) + bo) (12)\nWhisper [15], developed by OpenAI, is a speech-processing\nmodel based on an encoder-decoder Transformer architec- where:\nture, designed to transcribe and process large-scale audio • Wo is the output projection matrix.\ndata. Given an input a"
+        },
+        {
+          "chunk_index": 97,
+          "start_char": 24250,
+          "end_char": 24550,
+          "page_start": 5,
+          "page_end": 5,
+          "content": "e output projection matrix.\ndata. Given an input audio waveform x(t), sampled at • bo is the bias vector.\n16 kHz, Whisper computes an 80-channel log-magnitude Mel • P(yt|y<t, x) represents the probability distribution over\nspectrogram S ∈R80×T using a 25 ms window and 10 ms the vocabulary at time st"
+        },
+        {
+          "chunk_index": 98,
+          "start_char": 24500,
+          "end_char": 24800,
+          "page_start": 5,
+          "page_end": 5,
+          "content": "a 25 ms window and 10 ms the vocabulary at time step t.\nstride: Whisper generates transcriptions by sampling from this prob-\nS = log |STFT(x(t))|2 · M (6) ability distribution in an autoregressive manner. In this study,\nwe fine-tune Whisper-medium [52] on the FLEURS [53]\nwhere: subset of the google/"
+        },
+        {
+          "chunk_index": 99,
+          "start_char": 24750,
+          "end_char": 25050,
+          "page_start": 5,
+          "page_end": 5,
+          "content": "2] on the FLEURS [53]\nwhere: subset of the google/xtreme_s dataset for an audio\n• STFT(x(t)) is the Short-Time Fourier Transform (STFT) binary classification problem.\nof the input signal.\n• | · |2 represents the squared magnitude. C. HuBERT\n• M is a Mel filterbank matrix mapping the spectrogram Hidd"
+        },
+        {
+          "chunk_index": 100,
+          "start_char": 25000,
+          "end_char": 25300,
+          "page_start": 5,
+          "page_end": 5,
+          "content": "Mel filterbank matrix mapping the spectrogram Hidden Unit BERT (HuBERT) [17] is a self-supervised\nto 80 Mel frequency bands. speech representation learning framework that employs the\n• T is the number of time frames in the spectrogram, masked prediction of discrete units to learn rich contextual\ndet"
+        },
+        {
+          "chunk_index": 101,
+          "start_char": 25250,
+          "end_char": 25550,
+          "page_start": 5,
+          "page_end": 6,
+          "content": "ion of discrete units to learn rich contextual\ndetermined by the stride. representations from unlabeled audio data. Given a raw audio\n\nVOLUME 13, 2025 95743\n\nM. Nguyen-Duc et al.: Comparative Study of Deep Audio Models\n\nwaveform x(t) sampled at 16 kHz, the signal is passed HuBERT with enhanced speak"
+        },
+        {
+          "chunk_index": 102,
+          "start_char": 25500,
+          "end_char": 25800,
+          "page_start": 6,
+          "page_end": 6,
+          "content": "z, the signal is passed HuBERT with enhanced speaker awareness capabilities.\nthrough a 7-layer convolutional encoder: As in HuBERT, the raw waveform x(t) is first passed through\n′×d a convolutional encoder to obtain frame-level features: z = ConvNet(x(t)) ∈RT (13)\n′×d z = ConvNet(x(t)) ∈RT (19)\nwher"
+        },
+        {
+          "chunk_index": 103,
+          "start_char": 25750,
+          "end_char": 26050,
+          "page_start": 6,
+          "page_end": 6,
+          "content": "x(t)) ∈RT (13)\n′×d z = ConvNet(x(t)) ∈RT (19)\nwhere ConvNet is a 7-layer CNN with strides [5, 2, 2, 2, 2, 2, 2],\nkernel widths [10, 3, 3, 3, 3, 2, 2], T ′ is the downsampled The masked inputs ˜z are fed to a Transformer encoder:\nnumber of time steps (20ms framerate), and d = 512 is the h(l) = Transf"
+        },
+        {
+          "chunk_index": 104,
+          "start_char": 26000,
+          "end_char": 26300,
+          "page_start": 6,
+          "page_end": 6,
+          "content": "(20ms framerate), and d = 512 is the h(l) = TransformerLayer(l)(h(l−1)), l = 1, . . . , L (20)\nfeature dimension. A span-based masking scheme is applied\nh(0) = ˜z + Epos (21)to z. Let M ⊂{1, . . . , T ′} denote the set of start indices for\nmasked spans. For each i ∈M, a contiguous segment of Let rs "
+        },
+        {
+          "chunk_index": 105,
+          "start_char": 26250,
+          "end_char": 26550,
+          "page_start": 6,
+          "page_end": 6,
+          "content": "ns. For each i ∈M, a contiguous segment of Let rs be the speaker representation of utterance s,\nlength ℓis masked: extracted from an intermediate layer:\n∀i ∈M, zi:i+ℓ−1 ←[MASK] (14) 1 Ts\nrs = X h(l)t , h(l)t ∈Rd′ (22)\nwhere: Ts t=1\n• ℓ= 10, where Ts is the number of frames in utterance s. To encoura"
+        },
+        {
+          "chunk_index": 106,
+          "start_char": 26500,
+          "end_char": 26800,
+          "page_start": 6,
+          "page_end": 6,
+          "content": "is the number of frames in utterance s. To encourage\n• |M| = p · T ′, with p ∈(0, 1) denoting the masking speaker discrimination, a contrastive loss is applied using a\nprobability (e.g., 8%). normalized temperature-scaled cosine similarity:\nThe masked sequence is passed to a BERT-style Trans-\nexp(si"
+        },
+        {
+          "chunk_index": 107,
+          "start_char": 26750,
+          "end_char": 27050,
+          "page_start": 6,
+          "page_end": 6,
+          "content": "d sequence is passed to a BERT-style Trans-\nexp(sim(rs, rs+)/τ)\nformer encoder: Lspk = −log (23)\nPs−exp(sim(rs, rs−)/τ) h(l) = TransformerLayer(l)(h(l−1)), l = 1, 2, . . . , L (15)\nh(0) = z + Epos (16) where: a⊤b\n• sim(a, b) = ∥a∥∥b∥is cosine similarity,\nwhere: • s+ is a positive sample from the sam"
+        },
+        {
+          "chunk_index": 108,
+          "start_char": 27000,
+          "end_char": 27300,
+          "page_start": 6,
+          "page_end": 6,
+          "content": "ity,\nwhere: • s+ is a positive sample from the same speaker,\n• L ∈{12, 24, 48} (BASE, LARGE, X-LARGE), • s−are negative samples from different speakers,\n• h(l) ∈RT ′×d′ with d′ ∈{768, 1024, 1280}, • τ is a temperature hyperparameter.\n• Epos are sinusoidal or learned positional embeddings. To simulat"
+        },
+        {
+          "chunk_index": 109,
+          "start_char": 27250,
+          "end_char": 27550,
+          "page_start": 6,
+          "page_end": 6,
+          "content": "oidal or learned positional embeddings. To simulate multi-speaker environments, utterance mixing\nDiscrete targets are generated via K-means clustering. is performed:\nIn the first iteration, MFCC features f (t) are extracted and\nˆx(t) = αx1(t) + (1 −α)x2(t) (24)clustered:\nct = arg min ∥f (t) −µk∥22 ("
+        },
+        {
+          "chunk_index": 110,
+          "start_char": 27500,
+          "end_char": 27800,
+          "page_start": 6,
+          "page_end": 6,
+          "content": ")x2(t) (24)clustered:\nct = arg min ∥f (t) −µk∥22 (17) where x1(t), x2(t) are utterances from different speakers, α ∈ k∈{1,...,K} [0.5, 1.0] is the dominant speaker ratio (often sampled from\na Beta distribution favoring higher α). The mixed waveformwhere:\nˆx(t) is processed identically to regular inp"
+        },
+        {
+          "chunk_index": 111,
+          "start_char": 27750,
+          "end_char": 28050,
+          "page_start": 6,
+          "page_end": 6,
+          "content": "ere:\nˆx(t) is processed identically to regular inputs, encouraging\n• K is the number of clusters (e.g., 100),\nrobustness to overlapping speech. As in HuBERT, the model\n• µk ∈Rdf are K-means centroids over MFCC features. is also trained to predict cluster assignments for masked\nIn subsequent iteratio"
+        },
+        {
+          "chunk_index": 112,
+          "start_char": 28000,
+          "end_char": 28300,
+          "page_start": 6,
+          "page_end": 6,
+          "content": "ster assignments for masked\nIn subsequent iterations, MFCCs f (t) are replaced by frames:\nHuBERT’s learned representations h(L)t . The model is trained\nto classify masked time steps into the correct cluster Lhubert = − X log P(ct | h(L)t ) (25)\nassignments: t∈M\nThe final loss is a weighted sum of th"
+        },
+        {
+          "chunk_index": 113,
+          "start_char": 28250,
+          "end_char": 28550,
+          "page_start": 6,
+          "page_end": 6,
+          "content": "nments: t∈M\nThe final loss is a weighted sum of the HuBERT loss and\nL = − X log P(ct | h(L)t ) (18) the speaker-aware contrastive loss:\nt∈M\nLtotal = Lhubert + λLspk (26)\nwhere P(ct | h(L)t ) = Softmax(Wh(L)t + b), W ∈RK×d′\nand b ∈RK are classifier weights and biases, ct is the where λ controls the t"
+        },
+        {
+          "chunk_index": 114,
+          "start_char": 28500,
+          "end_char": 28800,
+          "page_start": 6,
+          "page_end": 6,
+          "content": "ights and biases, ct is the where λ controls the trade-off between content and speaker\nground-truth cluster ID at time t from K-means. This study modeling (e.g., λ = 1.0). We fine-tune the UniSpeech-SAT-\nuses the HuBERT-Base model [54] (12 layers, 768 dimen- Base [56] model, which was pretrained on "
+        },
+        {
+          "chunk_index": 115,
+          "start_char": 28750,
+          "end_char": 29050,
+          "page_start": 6,
+          "page_end": 6,
+          "content": "8 dimen- Base [56] model, which was pretrained on the LibriSpeech\nsions) pre-trained on LibriSpeech 960h [55] dataset. It is fine- 960h [55] dataset, for audio deepfake detection. The final\ntuned to distinguish genuine versus synthetically generated classification head applies a sigmoid activation o"
+        },
+        {
+          "chunk_index": 116,
+          "start_char": 29000,
+          "end_char": 29300,
+          "page_start": 6,
+          "page_end": 6,
+          "content": "classification head applies a sigmoid activation over the\nsinging voice using supervised classification. [CLS] representation:\nˆy = σ(Wh[CLS] + b) (27)\nD. UniSpeech-SAT\nLclf = −y log ˆy −(1 −y) log(1 −ˆy) (28)\nUniSpeech-SAT (Universal Speech representation learning\nwith Speaker Aware pre-training) ["
+        },
+        {
+          "chunk_index": 117,
+          "start_char": 29250,
+          "end_char": 29550,
+          "page_start": 6,
+          "page_end": 7,
+          "content": "tation learning\nwith Speaker Aware pre-training) [16] is a self-supervised where y ∈{0, 1} is the ground truth (0 = fake, 1 = real), ˆy is\nspeech representation learning framework that extends the model’s prediction.\n\n95744 VOLUME 13, 2025\n\nM. Nguyen-Duc et al.: Comparative Study of Deep Audio Model"
+        },
+        {
+          "chunk_index": 118,
+          "start_char": 29500,
+          "end_char": 29800,
+          "page_start": 7,
+          "page_end": 7,
+          "content": "-Duc et al.: Comparative Study of Deep Audio Models\n\nIV. EXPERIMENTS when there is a trade-off between Precision and Recall. It is\nA. DATASETS computed as:\nThis study utilizes the publicly available SingFake [10] 2 × Precision × Recall\ndataset, originally designed for Singing Voice Deepfake F1 = (31"
+        },
+        {
+          "chunk_index": 119,
+          "start_char": 29750,
+          "end_char": 30050,
+          "page_start": 7,
+          "page_end": 7,
+          "content": "nally designed for Singing Voice Deepfake F1 = (31)\nPrecision + Recall\nDetection (SVDD). The dataset contains 28.93 hours of\nbonafide and 29.40 hours of deepfake song clips sourced from Secondly, the models are evaluated by Equal Error Rate\nuser-generated platforms, spanning five languages and fea- "
+        },
+        {
+          "chunk_index": 120,
+          "start_char": 30000,
+          "end_char": 30300,
+          "page_start": 7,
+          "page_end": 7,
+          "content": "rated platforms, spanning five languages and fea- (EER) [63], [64]. Unlike Precision and Recall, which\nturing 40 singers alongside their AI-generated counterparts. primarily focus on correctly identifying positive instances,\nTo ensure relevance to SVDD, instrumental segments (e.g., EER evaluates the"
+        },
+        {
+          "chunk_index": 121,
+          "start_char": 30250,
+          "end_char": 30550,
+          "page_start": 7,
+          "page_end": 7,
+          "content": "DD, instrumental segments (e.g., EER evaluates the model’s overall decision boundary by\nIntro, Outro) were excluded during the dataset’s creation, considering both the False Acceptance Rate (FAR) and\nretaining only vocal-active regions (e.g., Verse, Chorus). The the False Rejection Rate (FRR). It is"
+        },
+        {
+          "chunk_index": 122,
+          "start_char": 30500,
+          "end_char": 30800,
+          "page_start": 7,
+          "page_end": 7,
+          "content": "Chorus). The the False Rejection Rate (FRR). It is defined as the\ndata set preprocessing pipeline first applied Demucs [57], point where these two rates are equal, providing a single\na U-Net-based source separation model, to isolate vocals threshold-independent performance measure. While the F1-\nfro"
+        },
+        {
+          "chunk_index": 123,
+          "start_char": 30750,
+          "end_char": 31050,
+          "page_start": 7,
+          "page_end": 7,
+          "content": "independent performance measure. While the F1-\nfrom song mixtures, followed by PyAnnote [58]’s Voice score attempts to balance Precision and Recall, it does not\nActivity Detection (VAD) to segment vocal regions into clips, explicitly account for the trade-off between FAR and FRR.\nwhich were resample"
+        },
+        {
+          "chunk_index": 124,
+          "start_char": 31000,
+          "end_char": 31300,
+          "page_start": 7,
+          "page_end": 7,
+          "content": "trade-off between FAR and FRR.\nwhich were resampled at 16 kHz. After processing, the final In contrast, EER directly reflects the model’s ability to\nclips in the dataset have an average length of 13.75 seconds. minimize both errors simultaneously. It is particularly useful\nWe trained the models on t"
+        },
+        {
+          "chunk_index": 125,
+          "start_char": 31250,
+          "end_char": 31550,
+          "page_start": 7,
+          "page_end": 7,
+          "content": " is particularly useful\nWe trained the models on the SingFake training split in applications like speaker verification and fraud detection,\nunder two distinct input conditions: (1) separated vocal tracks where an optimal trade-off is necessary to ensure security and\nand (2) original song mixtures, f"
+        },
+        {
+          "chunk_index": 126,
+          "start_char": 31500,
+          "end_char": 31800,
+          "page_start": 7,
+          "page_end": 7,
+          "content": "ure security and\nand (2) original song mixtures, followed by an evaluation of usability.\nthe test sets. For evaluation, we focus on two test subsets: Finally, the Area Under the Curve (AUC) [59], [60], [62],\nT01, containing clips from singers present in the training data [65] of the Receiver Operati"
+        },
+        {
+          "chunk_index": 127,
+          "start_char": 31750,
+          "end_char": 32050,
+          "page_start": 7,
+          "page_end": 7,
+          "content": " in the training data [65] of the Receiver Operating Characteristic (ROC) curve\n(in-domain performance), and T02, comprising clips from six is considered. Unlike Precision, Recall, and F1-score, which\nsingers excluded during training (generalization capability). depend on a specific classification t"
+        },
+        {
+          "chunk_index": 128,
+          "start_char": 32000,
+          "end_char": 32300,
+          "page_start": 7,
+          "page_end": 7,
+          "content": "capability). depend on a specific classification threshold, AUC-ROC\nThe statistics for the final data set and its partitions are evaluates the model’s performance across all possible thresh-\nprovided in Table 1. olds, providing a more holistic assessment. The ROC curve\nplots the True Positive Rate ("
+        },
+        {
+          "chunk_index": 129,
+          "start_char": 32250,
+          "end_char": 32550,
+          "page_start": 7,
+          "page_end": 7,
+          "content": "ment. The ROC curve\nplots the True Positive Rate (TPR) against the False Positive\nB. EVALUATION METRICS Rate (FPR) at various thresholds, and AUC quantifies the\noverall ability of the model to separate positive and negativeGiven the imbalanced nature of the SingFake dataset and the\ninstances. AUC-RO"
+        },
+        {
+          "chunk_index": 130,
+          "start_char": 32500,
+          "end_char": 32800,
+          "page_start": 7,
+          "page_end": 7,
+          "content": " of the SingFake dataset and the\ninstances. AUC-ROC also incorporates information about theneed for a comprehensive comparison between two types of\nEER because the EER point corresponds to a specific locationmodels—one including AST and Whisper with spectrogram\non the ROC curve where the False Accep"
+        },
+        {
+          "chunk_index": 131,
+          "start_char": 32750,
+          "end_char": 33050,
+          "page_start": 7,
+          "page_end": 7,
+          "content": "spectrogram\non the ROC curve where the False Acceptance Rate (FAR)inputs and the other consisting of UniSpeech-SAT and\nequals the False Rejection Rate (FRR). However, while EERHuBERT with raw waveform inputs—various metrics that\nfocuses on a single threshold where these error rates areaccount for th"
+        },
+        {
+          "chunk_index": 132,
+          "start_char": 33000,
+          "end_char": 33300,
+          "page_start": 7,
+          "page_end": 7,
+          "content": "hreshold where these error rates areaccount for this imbalance are employed to ensure a thorough\nbalanced, AUC provides a more comprehensive measure byevaluation of the results. Firstly, Precision, Recall, and F1-\nconsidering performance across all thresholds. This makesscore are used. Precision, Re"
+        },
+        {
+          "chunk_index": 133,
+          "start_char": 33250,
+          "end_char": 33550,
+          "page_start": 7,
+          "page_end": 7,
+          "content": "hresholds. This makesscore are used. Precision, Recall, and F1-score are key\nAUC particularly useful for comparing different classifiersevaluation metrics used in classification tasks, particularly in\nand evaluating models on imbalanced datasets.imbalanced datasets where accuracy may be misleading ["
+        },
+        {
+          "chunk_index": 134,
+          "start_char": 33500,
+          "end_char": 33800,
+          "page_start": 7,
+          "page_end": 7,
+          "content": "lanced datasets where accuracy may be misleading [59],\nOverall, the evaluation framework employed in this study[60], [61], [62]. Precision measures how many of the\nis carefully designed to address the challenges posed by thepredicted positive instances are correct, reflecting the model’s\nimbalanced "
+        },
+        {
+          "chunk_index": 135,
+          "start_char": 33750,
+          "end_char": 34050,
+          "page_start": 7,
+          "page_end": 7,
+          "content": "es are correct, reflecting the model’s\nimbalanced SingFake dataset and to provide a comprehen-reliability in identifying positive cases, and is defined as:\nsive comparison between spectrogram-based models (AST,\nTP Whisper) and raw waveform-based models (UniSpeech-SAT, Precision = (29) TP + FP, HuBER"
+        },
+        {
+          "chunk_index": 136,
+          "start_char": 34000,
+          "end_char": 34300,
+          "page_start": 7,
+          "page_end": 7,
+          "content": "ls (UniSpeech-SAT, Precision = (29) TP + FP, HuBERT). Together, these metrics ensure a nuanced and\nwhere TP (True Positives) are correctly predicted positive fair assessment of each model’s strengths and weaknesses,\ninstances, and FP (False Positives) are incorrectly predicted ultimately guiding fut"
+        },
+        {
+          "chunk_index": 137,
+          "start_char": 34250,
+          "end_char": 34550,
+          "page_start": 7,
+          "page_end": 7,
+          "content": ") are incorrectly predicted ultimately guiding future improvements in fake singer\npositive instances. Recall, also known as sensitivity, evaluates detection systems.\nthe model’s ability to capture all actual positive instances,\nshowing how well it avoids false negatives, and is given by: C. EXPERIME"
+        },
+        {
+          "chunk_index": 138,
+          "start_char": 34500,
+          "end_char": 34800,
+          "page_start": 7,
+          "page_end": 7,
+          "content": "oids false negatives, and is given by: C. EXPERIMENTAL RESULTS\nTable 2 and Figure 3 present the Precision, Recall, and F1\nTP\nRecall = , (30) scores of SingFake detection models on Mixture datasets,\nTP + FN whereas Table 3 and Figure 4 display these metrics for\nwhere FN (False Negatives) are actual p"
+        },
+        {
+          "chunk_index": 139,
+          "start_char": 34750,
+          "end_char": 35050,
+          "page_start": 7,
+          "page_end": 7,
+          "content": "etrics for\nwhere FN (False Negatives) are actual positive instances Vocal datasets. The performance of all models degrades\nincorrectly classified as negative. F1-score is the harmonic progressively from the training data to T01 and then to T02,\nmean of Precision and Recall, balancing both metrics to"
+        },
+        {
+          "chunk_index": 140,
+          "start_char": 35000,
+          "end_char": 35300,
+          "page_start": 7,
+          "page_end": 8,
+          "content": "of Precision and Recall, balancing both metrics to indicating that the models struggle more as the test sets\nprovide a single performance measure, especially useful become more challenging. This trend is consistently reflected\n\nVOLUME 13, 2025 95745\n\nM. Nguyen-Duc et al.: Comparative Study of Deep A"
+        },
+        {
+          "chunk_index": 141,
+          "start_char": 35250,
+          "end_char": 35550,
+          "page_start": 8,
+          "page_end": 8,
+          "content": "\nM. Nguyen-Duc et al.: Comparative Study of Deep Audio Models\n\nTABLE 1. SingFake dataset statistics.\n\nTABLE 2. The comparison results between SingFake detection models on mixture datasets according to precision, recall, and F1-Score metrics.\n\nFIGURE 3. The comparison results between SingFake detecti"
+        },
+        {
+          "chunk_index": 142,
+          "start_char": 35500,
+          "end_char": 35800,
+          "page_start": 8,
+          "page_end": 8,
+          "content": "3. The comparison results between SingFake detection models on mixture datasets according to precision, recall, and F1-Score Metrics.\n\nin the F1-score, balancing Precision and Recall. Precision performs the best with an F1-score of 0.9759, surpassing AST\nand Recall decrease as the test sets become h"
+        },
+        {
+          "chunk_index": 143,
+          "start_char": 35750,
+          "end_char": 36050,
+          "page_start": 8,
+          "page_end": 8,
+          "content": " AST\nand Recall decrease as the test sets become harder, leading (F1: 0.9149). UniSpeech-SAT and HuBERT also demonstrate\nto lower F1-scores across all models. strong performance, achieving an F1-score of 0.9759 and\nDuring training, all models achieve high Precision, Recall, 0.9602, respectively. A k"
+        },
+        {
+          "chunk_index": 144,
+          "start_char": 36000,
+          "end_char": 36300,
+          "page_start": 8,
+          "page_end": 8,
+          "content": " high Precision, Recall, 0.9602, respectively. A key observation across all models is\nand F1-scores, with values exceeding 0.9. In the Mixture case, the tendency to overfit the training data, as their scores remain\nUniSpeech-SAT achieves the highest performance, with an near perfection.\nF1-score of "
+        },
+        {
+          "chunk_index": 145,
+          "start_char": 36250,
+          "end_char": 36550,
+          "page_start": 8,
+          "page_end": 8,
+          "content": "performance, with an near perfection.\nF1-score of 0.975, slightly outperforming AST (F1: 0.968) When evaluated on the Mixture case of T01, AST and\nand HuBERT (F1: 0.9604). However, Whisper exhibits lower UniSpeech-SAT maintain strong performance, with Recall\nPrecision (0.8914), Recall (0.9166), and "
+        },
+        {
+          "chunk_index": 146,
+          "start_char": 36500,
+          "end_char": 36800,
+          "page_start": 8,
+          "page_end": 8,
+          "content": "h Recall\nPrecision (0.8914), Recall (0.9166), and F1-score (0.9038), and F1-scores above 0.9. AST achieves a Recall of 0.9588 and\nindicating that it misclassifies some fake or real samples more an F1-score of 0.9635, while UniSpeech-SAT attains a Recall\nfrequently than the other models. In the Vocal"
+        },
+        {
+          "chunk_index": 147,
+          "start_char": 36750,
+          "end_char": 37050,
+          "page_start": 8,
+          "page_end": 9,
+          "content": "all\nfrequently than the other models. In the Vocal case, Whisper of 0.9842 and an F1-score of 0.9765. Whisper lags, with\n\n95746 VOLUME 13, 2025\n\nM. Nguyen-Duc et al.: Comparative Study of Deep Audio Models\n\nTABLE 3. The comparison results between SingFake detection models on vocal datasets according"
+        },
+        {
+          "chunk_index": 148,
+          "start_char": 37000,
+          "end_char": 37300,
+          "page_start": 9,
+          "page_end": 9,
+          "content": "gFake detection models on vocal datasets according to precision, recall, and F1-Score metrics.\n\nFIGURE 4. The comparison results between SingFake detection models on vocal datasets according to precision, recall, and F1-Score Metrics.\n\na Recall of 0.8809, show weaker generalization. HuBERT, TABLE 4."
+        },
+        {
+          "chunk_index": 149,
+          "start_char": 37250,
+          "end_char": 37550,
+          "page_start": 9,
+          "page_end": 9,
+          "content": "8809, show weaker generalization. HuBERT, TABLE 4. EER results of SingFake detection models on mixture datasets.\nin particular, experiences a significant drop in Recall,\nreaching only 0.7172 compared to the other models. In the\nVocal case, HuBERT performs the best, attaining an F1-score\nof 0.9753 an"
+        },
+        {
+          "chunk_index": 150,
+          "start_char": 37500,
+          "end_char": 37800,
+          "page_start": 9,
+          "page_end": 9,
+          "content": "forms the best, attaining an F1-score\nof 0.9753 and an impressive Recall of 0.9676. UniSpeech-\nSAT follows closely, achieving an F1-score of 0.9709.\nWhisper and AST still perform strongly, with F1-scores of\n0.9384 and 0.9476, respectively. Raw waveform-based mod-\nels (UniSpeech-SAT, HuBERT) still pe"
+        },
+        {
+          "chunk_index": 151,
+          "start_char": 37750,
+          "end_char": 38050,
+          "page_start": 9,
+          "page_end": 9,
+          "content": "rm-based mod-\nels (UniSpeech-SAT, HuBERT) still perform well despite\nsome weaknesses. However, HuBERT’s drop in Recall in the\nMixture case suggests that it struggles to detect some fake\nsamples. spectrogram-based models (AST, Whisper) perform better\nWhen the models are tested on the Mixture case of "
+        },
+        {
+          "chunk_index": 152,
+          "start_char": 38000,
+          "end_char": 38300,
+          "page_start": 9,
+          "page_end": 9,
+          "content": "When the models are tested on the Mixture case of on the more challenging T02 dataset, while raw waveform\nT02, AST becomes the most robust, demonstrating the best models struggle significantly in this setting.\nbalance between Precision and Recall, resulting in an F1- Examining the Equal Error Rate ("
+        },
+        {
+          "chunk_index": 153,
+          "start_char": 38250,
+          "end_char": 38550,
+          "page_start": 9,
+          "page_end": 9,
+          "content": "sulting in an F1- Examining the Equal Error Rate (EER), as shown in\nscore of 0.8514. Whisper follows closely but experiences a Table 4 and 5, Figure 5 and 6 provide further insight into\nnoticeable drop, attaining an F1-score of 0.7884. UniSpeech- model generalization. On the training data, Whisper e"
+        },
+        {
+          "chunk_index": 154,
+          "start_char": 38500,
+          "end_char": 38800,
+          "page_start": 9,
+          "page_end": 9,
+          "content": "el generalization. On the training data, Whisper exhibits\nSAT also suffers from performance degradation, achieving the highest EER (0.1433) among all models in the Mixture\nan F1-score of 0.7775. HuBERT, however, faces the largest case, indicating a higher misclassification rate. In contrast,\nperform"
+        },
+        {
+          "chunk_index": 155,
+          "start_char": 38750,
+          "end_char": 39050,
+          "page_start": 9,
+          "page_end": 9,
+          "content": "igher misclassification rate. In contrast,\nperformance decline, with its F1-score decreasing to 0.5908. AST, UniSpeech-SAT, and HuBERT show lower EERs\nIn the Vocal case, AST and Whisper handle the challenges (0.0494, 0.0368, and 0.0597, respectively), suggesting better\nposed by T02 better than the o"
+        },
+        {
+          "chunk_index": 156,
+          "start_char": 39000,
+          "end_char": 39300,
+          "page_start": 9,
+          "page_end": 9,
+          "content": ", suggesting better\nposed by T02 better than the other two models, maintaining generalization. However, in the Vocal case, Whisper achieves\nrelatively strong Precision and F1-scores. AST achieves the lowest EER (0.0358), while AST performs the worst\na Precision of 0.7928 and an F1-score of 0.8384, w"
+        },
+        {
+          "chunk_index": 157,
+          "start_char": 39250,
+          "end_char": 39550,
+          "page_start": 9,
+          "page_end": 9,
+          "content": "a Precision of 0.7928 and an F1-score of 0.8384, while (0.1290). UniSpeech-SAT and HuBERT exhibit intermediate\nWhisper attains a Precision of 0.8298 and an F1-score performance, with EERs of 0.0996 and 0.0587, respectively,\nof 0.8451. A key takeaway from this comparison is that demonstrating better "
+        },
+        {
+          "chunk_index": 158,
+          "start_char": 39500,
+          "end_char": 39800,
+          "page_start": 9,
+          "page_end": 10,
+          "content": "from this comparison is that demonstrating better stability than in the Mixture scenario.\n\nVOLUME 13, 2025 95747\n\nM. Nguyen-Duc et al.: Comparative Study of Deep Audio Models\n\nTABLE 6. AUC results of SingFake detection models on mixture datasets.\n\nFIGURE 5. EER Results of SingFake detection models o"
+        },
+        {
+          "chunk_index": 159,
+          "start_char": 39750,
+          "end_char": 40050,
+          "page_start": 10,
+          "page_end": 10,
+          "content": "GURE 5. EER Results of SingFake detection models on mixture datasets.\n\nTABLE 5. EER Results of SingFake detection models on vocal datasets.\n\nFIGURE 7. AUC results of SingFake detection models on mixture datasets.\n\n0.1920, respectively. This trend remains consistent in the\nVocal case, where AST and W"
+        },
+        {
+          "chunk_index": 160,
+          "start_char": 40000,
+          "end_char": 40300,
+          "page_start": 10,
+          "page_end": 10,
+          "content": "ains consistent in the\nVocal case, where AST and Whisper perform better, while\nUniSpeech-SAT and HuBERT struggle. The results reaffirm\nthat spectrogram-based models (AST, Whisper) handle the\nchallenges of the T02 dataset better than raw waveform\nmodels, which suffer significant degradation in their "
+        },
+        {
+          "chunk_index": 161,
+          "start_char": 40250,
+          "end_char": 40550,
+          "page_start": 10,
+          "page_end": 10,
+          "content": "ls, which suffer significant degradation in their ability\nto differentiate between real and fake samples.\nIn addition to EER, analyzing the Area Under the Curve\n(AUC), as shown in Table 6 and 7, Figure 7 and 8, provides\nfurther insights into the models’ performance. On the training\nFIGURE 6. EER res"
+        },
+        {
+          "chunk_index": 162,
+          "start_char": 40500,
+          "end_char": 40800,
+          "page_start": 10,
+          "page_end": 10,
+          "content": "ls’ performance. On the training\nFIGURE 6. EER results of SingFake detection models on vocal datasets. data of the Mixture, UniSpeech-SAT achieves the highest\nAUC (0.9935), followed closely by AST (0.9898) and\nHuBERT (0.98), indicating strong discriminative capabilities.\nOn the Mixture of T01, AST a"
+        },
+        {
+          "chunk_index": 163,
+          "start_char": 40750,
+          "end_char": 41050,
+          "page_start": 10,
+          "page_end": 10,
+          "content": "inative capabilities.\nOn the Mixture of T01, AST and Whisper perform Whisper, however, has a lower AUC (0.9354), suggesting that\nsimilarly in the Mixture case, with an EER of 0.1008. it struggles to distinguish fake from real. In the Vocal case,\nHowever, UniSpeech-SAT and HuBERT outperform them, Whi"
+        },
+        {
+          "chunk_index": 164,
+          "start_char": 41000,
+          "end_char": 41300,
+          "page_start": 10,
+          "page_end": 10,
+          "content": "ver, UniSpeech-SAT and HuBERT outperform them, Whisper slightly outperforms other models with an AUC of\nachieving lower EERs of 0.0759 and 0.0948, respectively. 0.9934, while AST, UniSpeech-SAT, and HuBERT achieve\nIn the Vocal case, UniSpeech-SAT and HuBERT maintain similar values (0.9898, 0.9935, a"
+        },
+        {
+          "chunk_index": 165,
+          "start_char": 41250,
+          "end_char": 41550,
+          "page_start": 10,
+          "page_end": 10,
+          "content": " HuBERT maintain similar values (0.9898, 0.9935, and 0.98, respectively).\nslightly lower EERs than in the Mixture scenario (0.0587 and On the Mixture of T01, UniSpeech-SAT continues to\n0.0840), while AST and Whisper continue to struggle, with lead in AUC performance (0.9728), demonstrating better\nEE"
+        },
+        {
+          "chunk_index": 166,
+          "start_char": 41500,
+          "end_char": 41800,
+          "page_start": 10,
+          "page_end": 10,
+          "content": " AUC performance (0.9728), demonstrating better\nEERs of 0.1092 and 0.1429. This pattern suggests that raw generalization. AST, Whisper, and HuBERT perform slightly\nwaveform models (UniSpeech-SAT, HuBERT) remain more worse but remain competitive, with AUCs of 0.9602, 0.9625,\nstable across different e"
+        },
+        {
+          "chunk_index": 167,
+          "start_char": 41750,
+          "end_char": 42050,
+          "page_start": 10,
+          "page_end": 10,
+          "content": " AUCs of 0.9602, 0.9625,\nstable across different evaluation settings, even though they and 0.9655, respectively. In the Vocal case, UniSpeech-SAT\nface difficulties detecting particular fakes. achieves the highest AUC (0.9812), while AST, Whisper, and\nOn the Mixture of T02, all models experience incr"
+        },
+        {
+          "chunk_index": 168,
+          "start_char": 42000,
+          "end_char": 42300,
+          "page_start": 10,
+          "page_end": 10,
+          "content": "\nOn the Mixture of T02, all models experience increased HuBERT exhibit slightly lower values (0.9535, 0.9315, and\nEERs, indicating greater difficulty in distinguishing between 0.9705, respectively). On the Mixture of T02, AST demon-\nreal and fake samples. UniSpeech-SAT and HuBERT strates the highest"
+        },
+        {
+          "chunk_index": 169,
+          "start_char": 42250,
+          "end_char": 42550,
+          "page_start": 10,
+          "page_end": 10,
+          "content": "ples. UniSpeech-SAT and HuBERT strates the highest AUC (0.9513), showing better robustness\nexhibit the highest EERs (0.1954 and 0.2163), suggesting than the other models. In contrast, Whisper, UniSpeech-SAT,\nweaker generalization on this dataset. Meanwhile, AST and HuBERT degrade significantly, with"
+        },
+        {
+          "chunk_index": 170,
+          "start_char": 42500,
+          "end_char": 42800,
+          "page_start": 10,
+          "page_end": 11,
+          "content": "nwhile, AST and HuBERT degrade significantly, with AUCs of 0.8893,\nand Whisper perform better, with EERs of 0.1166 and 0.8791, and 0.8562, respectively. In the Vocal case, all models\n\n95748 VOLUME 13, 2025\n\nM. Nguyen-Duc et al.: Comparative Study of Deep Audio Models\n\nTABLE 7. AUC results of SingFak"
+        },
+        {
+          "chunk_index": 171,
+          "start_char": 42750,
+          "end_char": 43050,
+          "page_start": 11,
+          "page_end": 11,
+          "content": "Deep Audio Models\n\nTABLE 7. AUC results of SingFake detection models on vocal datasets. which comprises unseen singers. The following section\nprovides qualitative explanations for these observations.\nFirstly, input representation affects feature specificity\nin singer fake detection, with raw wavefor"
+        },
+        {
+          "chunk_index": 172,
+          "start_char": 43000,
+          "end_char": 43300,
+          "page_start": 11,
+          "page_end": 11,
+          "content": "ificity\nin singer fake detection, with raw waveform models\ncapturing fine-grained temporal details for seen singers\n(T01). In contrast, log Mel spectrogram models emphasize\nspectral patterns, enabling better generalization to unseen\nsingers (T02). Raw waveform models like HuBERT and\nUniSpeech-SAT pr"
+        },
+        {
+          "chunk_index": 173,
+          "start_char": 43250,
+          "end_char": 43550,
+          "page_start": 11,
+          "page_end": 11,
+          "content": "w waveform models like HuBERT and\nUniSpeech-SAT process audio directly and learn fine-grained\nfeatures like phase information, temporal artifacts, and\nrecording inconsistencies. These models perform well for\nseen singers (T01) because they capture singer-specific\nnuances in the training data. Howeve"
+        },
+        {
+          "chunk_index": 174,
+          "start_char": 43500,
+          "end_char": 43800,
+          "page_start": 11,
+          "page_end": 11,
+          "content": "nger-specific\nnuances in the training data. However, they may struggle\nwith unseen singers (T02) because the vocal characteristics\nand synthetic artifacts in new data can differ significantly,\nand they may overlook certain inconsistencies present in\nthe frequency domain. In contrast, log Mel spectro"
+        },
+        {
+          "chunk_index": 175,
+          "start_char": 43750,
+          "end_char": 44050,
+          "page_start": 11,
+          "page_end": 11,
+          "content": "the frequency domain. In contrast, log Mel spectrogram\nmodels, such as AST and Whisper, transform audio into\na frequency-based representation that mimics human per-\nception. This method highlights harmonic structures and\nspectral anomalies—such as unnatural resonances—that are\nmore apparent in the f"
+        },
+        {
+          "chunk_index": 176,
+          "start_char": 44000,
+          "end_char": 44300,
+          "page_start": 11,
+          "page_end": 11,
+          "content": "natural resonances—that are\nmore apparent in the frequency domain while ignoring\nphase-related information. Because of this abstraction, these\nFIGURE 8. AUC results of SingFake detection models on vocal datasets. models are better generalized to unseen singers (T02). They\ncan detect consistent spect"
+        },
+        {
+          "chunk_index": 177,
+          "start_char": 44250,
+          "end_char": 44550,
+          "page_start": 11,
+          "page_end": 11,
+          "content": "en singers (T02). They\ncan detect consistent spectral artifacts, such as unnatural\nharmonic distributions or missing overtones, which are\nshow some level of degradation, except for HuBERT, which common in synthetic voices, even in new datasets.\nremains relatively stable. UniSpeech-SAT suffers the mo"
+        },
+        {
+          "chunk_index": 178,
+          "start_char": 44500,
+          "end_char": 44800,
+          "page_start": 11,
+          "page_end": 11,
+          "content": "ns relatively stable. UniSpeech-SAT suffers the most, Secondly, pre-training objectives and architectural biases\nachieving the lowest AUC of 0.872, while Whisper and affect model performance in singer fake detection. Self-\nAST still outperform UniSpeech-SAT and HuBERT. These supervised models like H"
+        },
+        {
+          "chunk_index": 179,
+          "start_char": 44750,
+          "end_char": 45050,
+          "page_start": 11,
+          "page_end": 11,
+          "content": "ech-SAT and HuBERT. These supervised models like HuBERT and UniSpeech-SAT are\nresults highlight AST’s robustness, particularly in more pre-trained on raw audio using tasks like masked prediction\nchallenging datasets, while raw waveform models struggle and speaker representation learning. This allows"
+        },
+        {
+          "chunk_index": 180,
+          "start_char": 45000,
+          "end_char": 45300,
+          "page_start": 11,
+          "page_end": 11,
+          "content": "e and speaker representation learning. This allows them to cap-\nwith generalization as task difficulty increases. ture detailed acoustic patterns. However, they may not have\nThese results show spectrogram-based models (AST, mechanisms to ignore singer-specific traits, making them less\nWhisper) demon"
+        },
+        {
+          "chunk_index": 181,
+          "start_char": 45250,
+          "end_char": 45550,
+          "page_start": 11,
+          "page_end": 11,
+          "content": "r-specific traits, making them less\nWhisper) demonstrate more consistent performance across adaptable to unseen singers. Alternatively, transformer-based\ndatasets. AST, in particular, proves to be the most robust, spectrogram models like AST and Whisper are pre-trained\nespecially in challenging cond"
+        },
+        {
+          "chunk_index": 182,
+          "start_char": 45500,
+          "end_char": 45800,
+          "page_start": 11,
+          "page_end": 11,
+          "content": "per are pre-trained\nespecially in challenging conditions like T02. While Whisper on audio classification and speech recognition tasks. This\nshows improvement in the Vocal T02 case, it remains slightly pre-training helps them focus more on content rather than\nweaker overall. However, Whisper struggle"
+        },
+        {
+          "chunk_index": 183,
+          "start_char": 45750,
+          "end_char": 46050,
+          "page_start": 11,
+          "page_end": 11,
+          "content": "her than\nweaker overall. However, Whisper struggles in Mixture cases speaker identity. Their attention mechanisms allow them\nand performs worse than other models on T01. On the to capture long-range spectral dependencies, making them\nother hand, raw waveform-based models (UniSpeech-SAT, more effecti"
+        },
+        {
+          "chunk_index": 184,
+          "start_char": 46000,
+          "end_char": 46300,
+          "page_start": 11,
+          "page_end": 11,
+          "content": "waveform-based models (UniSpeech-SAT, more effective at detecting synthetic artifacts like inconsistent\nHuBERT) perform well on the training and T01 datasets, with harmonics.\nUniSpeech-SAT achieving the strongest performance in the In conclusion, raw waveform models perform well for\nT01 cases. Never"
+        },
+        {
+          "chunk_index": 185,
+          "start_char": 46250,
+          "end_char": 46550,
+          "page_start": 11,
+          "page_end": 11,
+          "content": " waveform models perform well for\nT01 cases. Nevertheless, both models degrade significantly seen singers (T01) by detecting the training data’s phase\non T02, with HuBERT suffering the most. These results errors, temporal artifacts, and vocoder-specific fingerprints.\nhighlight that while raw wavefor"
+        },
+        {
+          "chunk_index": 186,
+          "start_char": 46500,
+          "end_char": 46800,
+          "page_start": 11,
+          "page_end": 11,
+          "content": "fic fingerprints.\nhighlight that while raw waveform models excel in simpler For unseen singers (T02), spectrogram-based models are\nscenarios, spectrogram-based models offer greater stability better at generalizing because they detect spectral anomalies,\nand generalization in complex datasets, making"
+        },
+        {
+          "chunk_index": 187,
+          "start_char": 46750,
+          "end_char": 47050,
+          "page_start": 11,
+          "page_end": 11,
+          "content": "es,\nand generalization in complex datasets, making them more leverage diverse pretraining, and normalize singer identity.\nreliable for singfake detection in real-world applications. Hybrid models might potentially be developed to improve\nperformance across both scenarios. These models would\nD. DISCU"
+        },
+        {
+          "chunk_index": 188,
+          "start_char": 47000,
+          "end_char": 47300,
+          "page_start": 11,
+          "page_end": 11,
+          "content": "across both scenarios. These models would\nD. DISCUSSION combine waveform and spectrogram features, leveraging\nFollowing the experimental results, models utilizing raw architectures designed to capture temporal and spectral cues.\nwaveform inputs, including HuBERT and UniSpeech-SAT,\nachieve superior p"
+        },
+        {
+          "chunk_index": 189,
+          "start_char": 47250,
+          "end_char": 47550,
+          "page_start": 11,
+          "page_end": 11,
+          "content": "uding HuBERT and UniSpeech-SAT,\nachieve superior performance on T01, which consists of seen V. CONCLUSION\nsingers. In contrast, models employing log Mel spectrogram The proliferation of deepfake singing voices necessitates\ninputs, including AST and Whisper, perform better on T02, robust detection me"
+        },
+        {
+          "chunk_index": 190,
+          "start_char": 47500,
+          "end_char": 47800,
+          "page_start": 11,
+          "page_end": 12,
+          "content": "hisper, perform better on T02, robust detection methods to mitigate potential media\n\nVOLUME 13, 2025 95749\n\nM. Nguyen-Duc et al.: Comparative Study of Deep Audio Models\n\nauthentication and security risks. In this study, we compared [15] A. Radford, J. Wook Kim, T. Xu, G. Brockman, C. McLeavey, and\nt"
+        },
+        {
+          "chunk_index": 191,
+          "start_char": 47750,
+          "end_char": 48050,
+          "page_start": 12,
+          "page_end": 12,
+          "content": ". Wook Kim, T. Xu, G. Brockman, C. McLeavey, and\nthe performance of spectrogram-based and waveform-based I. Sutskever, ‘‘Robust speech recognition via large-scale weak supervi-\nsion,’’ 2022, arXiv:2212.04356.\ndeep learning models for singfake detection. Our results [16] S. Chen, Y. Wu, C. Wang, Z. C"
+        },
+        {
+          "chunk_index": 192,
+          "start_char": 48000,
+          "end_char": 48300,
+          "page_start": 12,
+          "page_end": 12,
+          "content": "on. Our results [16] S. Chen, Y. Wu, C. Wang, Z. Chen, Z. Chen, S. Liu, J. Wu, Y. Qian,\nindicate that while both approaches achieve high accuracy F. Wei, J. Li, and X. Yu, ‘‘UniSpeech-SAT: Universal speech representation\non in-domain data, spectrogram-based models, such as AST learning with speaker "
+        },
+        {
+          "chunk_index": 193,
+          "start_char": 48250,
+          "end_char": 48550,
+          "page_start": 12,
+          "page_end": 12,
+          "content": "m-based models, such as AST learning with speaker aware pre-training,’’ 2021, arXiv:2110.05752.\nand Whisper, demonstrate superior generalization, mainly [17] W.-N. Hsu, B. Bolte, Y.-H. Hubert Tsai, K. Lakhotia, R. Salakhutdinov, and\nA. Mohamed, ‘‘HuBERT: Self-supervised speech representation learnin"
+        },
+        {
+          "chunk_index": 194,
+          "start_char": 48500,
+          "end_char": 48800,
+          "page_start": 12,
+          "page_end": 12,
+          "content": "ERT: Self-supervised speech representation learning\nwhen tested on unseen singers. Waveform-based models, by masked prediction of hidden units,’’ 2021, arXiv:2106.07447.\nincluding UniSpeech-SAT and HuBERT, exhibit strong [18] Y. Sung, H.-J. Jeon, D. Kim, M.-S. Kim, J. Choi, H. R. Jo, J. Oh,\nperforma"
+        },
+        {
+          "chunk_index": 195,
+          "start_char": 48750,
+          "end_char": 49050,
+          "page_start": 12,
+          "page_end": 12,
+          "content": "Kim, M.-S. Kim, J. Choi, H. R. Jo, J. Oh,\nperformance on training data but struggle more with out-of- O.-J. Lee, and H. G. Lim, ‘‘Internal pipe corrosion assessment method\nin water distribution system using ultrasound and convolutional neural\ndistribution samples, as reflected in lower F1-scores, AU"
+        },
+        {
+          "chunk_index": 196,
+          "start_char": 49000,
+          "end_char": 49300,
+          "page_start": 12,
+          "page_end": 12,
+          "content": "ution samples, as reflected in lower F1-scores, AUC, networks,’’ NPJ Clean Water, vol. 7, no. 1, p. 63, Jul. 2024, doi:\nand higher EERs. These findings highlight the advantages 10.1038/s41545-024-00358-x.\nof spectral feature representations for singfake detection [19] J. W. Nam, H.-J. Jeon, J. E. Le"
+        },
+        {
+          "chunk_index": 197,
+          "start_char": 49250,
+          "end_char": 49550,
+          "page_start": 12,
+          "page_end": 12,
+          "content": "ake detection [19] J. W. Nam, H.-J. Jeon, J. E. Lee, O.-J. Lee, and H. G. Lim, ‘‘Quantification\nof dysnatremia using single-beam acoustic microbeam and convolutional\nand suggest that future research should explore hybrid neural networks,’’ IEEE Sensors J., vol. 24, no. 7, pp. 9626–9638,\nmodels combi"
+        },
+        {
+          "chunk_index": 198,
+          "start_char": 49500,
+          "end_char": 49800,
+          "page_start": 12,
+          "page_end": 12,
+          "content": "rs J., vol. 24, no. 7, pp. 9626–9638,\nmodels combining spectral and waveform-based features. Apr. 2024.\nAdditionally, incorporating more diverse training data could [20] J. E. Lee, H.-J. Jeon, O.-J. Lee, and H. G. Lim, ‘‘Diagnosis of diabetes mel-\nfurther enhance the robustness of detection models. "
+        },
+        {
+          "chunk_index": 199,
+          "start_char": 49750,
+          "end_char": 50050,
+          "page_start": 12,
+          "page_end": 12,
+          "content": "rther enhance the robustness of detection models. Our litus using high frequency ultrasound and convolutional neural network,’’\nUltrasonics, vol. 136, Jan. 2024, Art. no. 107167. [Online]. Available:\nstudy provides a foundation for improving deepfake singing https://www.sciencedirect.com/science/art"
+        },
+        {
+          "chunk_index": 200,
+          "start_char": 50000,
+          "end_char": 50300,
+          "page_start": 12,
+          "page_end": 12,
+          "content": " singing https://www.sciencedirect.com/science/article/pii/S0041624X23002433\nvoice detection, with broader applications in AI-driven media [21] H.-J. Jeon, H. G. Lim, K. K. Shung, O.-J. Lee, and M. G. Kim, ‘‘Automated\nsecurity and authentication. cell-type classification combining dilated convolutio"
+        },
+        {
+          "chunk_index": 201,
+          "start_char": 50250,
+          "end_char": 50550,
+          "page_start": 12,
+          "page_end": 12,
+          "content": "l-type classification combining dilated convolutional neural networks\nwith label-free acoustic sensing,’’ Sci. Rep., vol. 12, no. 1, p. 19873,\nNov. 2022, doi: 10.1038/s41598-022-22075-6.\nACKNOWLEDGMENT [22] O.-J. Lee, H. G. Lim, K. K. Shung, J.-T. Kim, and H. H. Kim,\n(Minh Nguyen-Duc and Luong Vuong"
+        },
+        {
+          "chunk_index": 202,
+          "start_char": 50500,
+          "end_char": 50800,
+          "page_start": 12,
+          "page_end": 12,
+          "content": "m, and H. H. Kim,\n(Minh Nguyen-Duc and Luong Vuong Nguyen are co-first ‘‘Automated estimation of cancer cell deformability with machine learning\nauthors.) and acoustic trapping,’’ Sci. Rep., vol. 12, no. 1, p. 6891, Apr. 2022, doi:\n10.1038/s41598-022-10882-w.\n[23] H. G. Lim, O.-J. Lee, K. K. Shung, "
+        },
+        {
+          "chunk_index": 203,
+          "start_char": 50750,
+          "end_char": 51050,
+          "page_start": 12,
+          "page_end": 12,
+          "content": "-10882-w.\n[23] H. G. Lim, O.-J. Lee, K. K. Shung, J.-T. Kim, and H. H. Kim,\nREFERENCES ‘‘Classification of breast cancer cells using the integration of high-\n[1] Y. Liu, Y. Fang, and Z. Lin, ‘‘DiVISe: Direct visual-input speech frequency single-beam acoustic tweezers and convolutional neural net-\nsy"
+        },
+        {
+          "chunk_index": 204,
+          "start_char": 51000,
+          "end_char": 51300,
+          "page_start": 12,
+          "page_end": 12,
+          "content": "acoustic tweezers and convolutional neural net-\nsynthesis preserving speaker characteristics and intelligibility,’’ 2025, works,’’ Cancers, vol. 12, no. 5, p. 1212, May 2020. [Online]. Available:\narXiv:2503.05223. https://www.mdpi.com/2072-6694/12/5/1212\n[2] R. Luo, T.-E. Lin, H. Zhang, Y. Wu, X. Li"
+        },
+        {
+          "chunk_index": 205,
+          "start_char": 51250,
+          "end_char": 51550,
+          "page_start": 12,
+          "page_end": 12,
+          "content": "1212\n[2] R. Luo, T.-E. Lin, H. Zhang, Y. Wu, X. Liu, M. Yang, Y. Li, [24] L. Pham, P. Lam, D. Tran, H. Tang, T. Nguyen, A. Schindler, F. Skopik,\nL. Chen, J. Li, L. Zhang, Y. Chen, H. Alinejad-Rokny, and F. Huang, A. Polonsky, and C. Vu, ‘‘A comprehensive survey with critical analysis\n‘‘OpenOmni: Adv"
+        },
+        {
+          "chunk_index": 206,
+          "start_char": 51500,
+          "end_char": 51800,
+          "page_start": 12,
+          "page_end": 12,
+          "content": "sive survey with critical analysis\n‘‘OpenOmni: Advancing open-source omnimodal large language models for deepfake speech detection,’’ 2024, arXiv:2409.15180.\nwith progressive multimodal alignment and real-time self-aware emotional [25] Z. Almutairi and H. Elgibreen, ‘‘A review of modern audio deepfa"
+        },
+        {
+          "chunk_index": 207,
+          "start_char": 51750,
+          "end_char": 52050,
+          "page_start": 12,
+          "page_end": 12,
+          "content": "nd H. Elgibreen, ‘‘A review of modern audio deepfake\nspeech synthesis,’’ 2025, arXiv:2501.04561. detection methods: Challenges and future directions,’’ Algorithms, vol. 15,\n[3] Y. Xiao, L. He, H. Guo, F. Xie, and T. Lee, ‘‘PodAgent: A comprehensive no. 5, p. 155, May 2022. [Online]. Available: https"
+        },
+        {
+          "chunk_index": 208,
+          "start_char": 52000,
+          "end_char": 52300,
+          "page_start": 12,
+          "page_end": 12,
+          "content": "o. 5, p. 155, May 2022. [Online]. Available: https://www.mdpi.com/1999-\nframework for podcast generation,’’ 2025, arXiv:2503.00455. 4893/15/5/155\n[4] Y.-P. Cho, F.-R. Yang, Y.-C. Chang, C.-T. Cheng, X.-H. Wang, and [26] M. S. Rana, M. N. Nobi, B. Murali, and A. H. Sung, ‘‘Deepfake\nY.-W. Liu, ‘‘A sur"
+        },
+        {
+          "chunk_index": 209,
+          "start_char": 52250,
+          "end_char": 52550,
+          "page_start": 12,
+          "page_end": 12,
+          "content": "ali, and A. H. Sung, ‘‘Deepfake\nY.-W. Liu, ‘‘A survey on recent deep learning-driven singing voice detection: A systematic literature review,’’ IEEE Access, vol. 10,\nsynthesis systems,’’ 2021, arXiv:2110.02511. pp. 25494–25513, 2022.\n[5] A. Alali and G. Theodorakopoulos, ‘‘Partial fake speech attack"
+        },
+        {
+          "chunk_index": 210,
+          "start_char": 52500,
+          "end_char": 52800,
+          "page_start": 12,
+          "page_end": 12,
+          "content": " G. Theodorakopoulos, ‘‘Partial fake speech attacks in the real [27] M. Li, Y. Ahmadiadli, and X.-P. Zhang, ‘‘A survey on speech deepfake\nworld using deepfake audio,’’ J. Cybersecurity Privacy, vol. 5, no. 1, p. 6, detection,’’ ACM Comput. Surv., vol. 57, no. 7, p. 165, Feb. 2025, doi:\nFeb. 2025. [O"
+        },
+        {
+          "chunk_index": 211,
+          "start_char": 52750,
+          "end_char": 53050,
+          "page_start": 12,
+          "page_end": 12,
+          "content": ". 57, no. 7, p. 165, Feb. 2025, doi:\nFeb. 2025. [Online]. Available: https://www.mdpi.com/2624-800X/5/1/6 10.1145/3714458.\n[6] K. T. Mai, S. Bray, T. Davies, and L. D. Griffin, ‘‘Warning: Humans cannot [28] A. Hamza, A. R. R. Javed, F. Iqbal, N. Kryvinska, A. S. Almadhor, Z. Jalil,\nreliably detect s"
+        },
+        {
+          "chunk_index": 212,
+          "start_char": 53000,
+          "end_char": 53300,
+          "page_start": 12,
+          "page_end": 12,
+          "content": "inska, A. S. Almadhor, Z. Jalil,\nreliably detect speech deepfakes,’’ PLoS ONE, vol. 18, no. 8, Aug. 2023, and R. Borghol, ‘‘Deepfake audio detection via MFCC features using\nArt. no. e0285333, doi: 10.1371/journal.pone.0285333. machine learning,’’ IEEE Access, vol. 10, pp. 134018–134028, 2022.\n[7] Y."
+        },
+        {
+          "chunk_index": 213,
+          "start_char": 53250,
+          "end_char": 53550,
+          "page_start": 12,
+          "page_end": 12,
+          "content": "E Access, vol. 10, pp. 134018–134028, 2022.\n[7] Y. Zhang, Y. Zang, J. Shi, R. Yamamoto, T. Toda, and Z. Duan, ‘‘SVDD [29] R. Reimao and V. Tzerpos, ‘‘FoR: A dataset for synthetic speech\n2024: The inaugural singing voice deepfake detection challenge,’’ 2024, detection,’’ in Proc. Int. Conf. Speech Te"
+        },
+        {
+          "chunk_index": 214,
+          "start_char": 53500,
+          "end_char": 53800,
+          "page_start": 12,
+          "page_end": 12,
+          "content": "’ 2024, detection,’’ in Proc. Int. Conf. Speech Technol. Hum.-Comput. Dialogue\narXiv:2408.16132. (SpeD), Oct. 2019, pp. 1–10.\n[8] D. Afchar, G. Meseguer-Brocal, and R. Hennequin, ‘‘Detecting music\n[30] P. Kawa, M. Plata, M. Czuba, P. Szymański, and P. Syga, ‘‘Improved\ndeepfakes is easy but actually "
+        },
+        {
+          "chunk_index": 215,
+          "start_char": 53750,
+          "end_char": 54050,
+          "page_start": 12,
+          "page_end": 12,
+          "content": ". Syga, ‘‘Improved\ndeepfakes is easy but actually hard,’’ 2024, arXiv:2405.04181.\nDeepFake detection using whisper features,’’ 2023, arXiv:2306.01428.\n[9] Y. Li, M. Milling, L. Specia, and B. W. Schuller, ‘‘From audio deepfake\n[31] N. M. Müller, P. Czempin, F. Dieckmann, A. Froghyar, and K. Böttinge"
+        },
+        {
+          "chunk_index": 216,
+          "start_char": 54000,
+          "end_char": 54300,
+          "page_start": 12,
+          "page_end": 12,
+          "content": "zempin, F. Dieckmann, A. Froghyar, and K. Böttinger,\ndetection to AI-generated music detection—A pathway and overview,’’\n‘‘Does audio deepfake detection generalize?’’ 2022, arXiv:2203.16263.\n2024, arXiv:2412.00571.\n[32] G. Hua, A. B. J. Teoh, and H. Zhang, ‘‘Towards end-to-end synthetic[10] Y. Zang,"
+        },
+        {
+          "chunk_index": 217,
+          "start_char": 54250,
+          "end_char": 54550,
+          "page_start": 12,
+          "page_end": 12,
+          "content": "Zhang, ‘‘Towards end-to-end synthetic[10] Y. Zang, Y. Zhang, M. Heydari, and Z. Duan, ‘‘SingFake: Singing voice\nspeech detection,’’ IEEE Signal Process. Lett., vol. 28, pp. 1265–1269, deepfake detection,’’ 2023, arXiv:2309.07525.\n2021, doi: 10.1109/LSP.2021.3089437.[11] O. C. Phukan, S. Jain, S. R. "
+        },
+        {
+          "chunk_index": 218,
+          "start_char": 54500,
+          "end_char": 54800,
+          "page_start": 12,
+          "page_end": 12,
+          "content": "SP.2021.3089437.[11] O. C. Phukan, S. Jain, S. R. Behera, A. B. Buduru, R. Sharma, and\nS. R. M. Prasanna, ‘‘Are music foundation models better at singing voice [33] X. Wang et al., ‘‘ASVspoof 2019: A large-scale public database of\ndeepfake detection? Far-better fuse them with speech foundation model"
+        },
+        {
+          "chunk_index": 219,
+          "start_char": 54750,
+          "end_char": 55050,
+          "page_start": 12,
+          "page_end": 12,
+          "content": " Far-better fuse them with speech foundation models,’’ synthesized, converted and replayed speech,’’ 2019, arXiv:1911.01601.\n2024, arXiv:2409.14131. [34] Z. Wu, T. Kinnunen, N. Evans, J. Yamagishi, C. Hanilçi, M. Sahidullah,\n[12] A. Guragain, T. Liu, Z. Pan, H. B. Sailor, and Q. Wang, ‘‘Speech found"
+        },
+        {
+          "chunk_index": 220,
+          "start_char": 55000,
+          "end_char": 55300,
+          "page_start": 12,
+          "page_end": 12,
+          "content": " Z. Pan, H. B. Sailor, and Q. Wang, ‘‘Speech foundation and A. Sizov, ‘‘ASVspoof 2015: The first automatic speaker verification\nmodel ensembles for the controlled singing voice deepfake detection spoofing and countermeasures challenge,’’ in Proc. INTERSPEECH,\n(CTRSVDD) challenge 2024,’’ in Proc. IEE"
+        },
+        {
+          "chunk_index": 221,
+          "start_char": 55250,
+          "end_char": 55550,
+          "page_start": 12,
+          "page_end": 12,
+          "content": "ERSPEECH,\n(CTRSVDD) challenge 2024,’’ in Proc. IEEE Spoken Lang. Technol. Work- Sep. 2015, pp. 2037–2041.\nshop (SLT), Dec. 2024, pp. 774–781. [35] C. Wang, J. Yi, J. Tao, C. Zhang, S. Zhang, and X. Chen, ‘‘Detection of\n[13] D. Desblancs, G. Meseguer-Brocal, R. Hennequin, and M. Moussallam, cross-dat"
+        },
+        {
+          "chunk_index": 222,
+          "start_char": 55500,
+          "end_char": 55800,
+          "page_start": 12,
+          "page_end": 12,
+          "content": "Brocal, R. Hennequin, and M. Moussallam, cross-dataset fake audio based on prosodic and pronunciation features,’’\n‘‘From real to cloned singer identification,’’ 2024, arXiv:2407.08647. 2023, arXiv:2305.13700.\n[14] Y. Gong, Y.-A. Chung, and J. Glass, ‘‘AST: Audio spectrogram trans- [36] Y. Xiao and R"
+        },
+        {
+          "chunk_index": 223,
+          "start_char": 55750,
+          "end_char": 56050,
+          "page_start": 12,
+          "page_end": 13,
+          "content": "‘‘AST: Audio spectrogram trans- [36] Y. Xiao and R. Kumar Das, ‘‘XLSR-mamba: A dual-column bidirectional\nformer,’’ 2021, arXiv:2104.01778. state space model for spoofing attack detection,’’ 2024, arXiv:2411.10027.\n\n95750 VOLUME 13, 2025\n\nM. Nguyen-Duc et al.: Comparative Study of Deep Audio Models\n\n"
+        },
+        {
+          "chunk_index": 224,
+          "start_char": 56000,
+          "end_char": 56300,
+          "page_start": 13,
+          "page_end": 13,
+          "content": "c et al.: Comparative Study of Deep Audio Models\n\n[37] J. Yamagishi, X. Wang, M. Todisco, M. Sahidullah, J. Patino, A. Nautsch, [61] A. Bansal and A. Singhrova, ‘‘Performance analysis of supervised\nX. Liu, K. Aik Lee, T. Kinnunen, N. Evans, and H. Delgado, ‘‘ASVspoof machine learning algorithms for "
+        },
+        {
+          "chunk_index": 225,
+          "start_char": 56250,
+          "end_char": 56550,
+          "page_start": 13,
+          "page_end": 13,
+          "content": "lgado, ‘‘ASVspoof machine learning algorithms for diabetes and breast cancer dataset,’’ in\n2021: Accelerating progress in spoofed and deepfake speech detection,’’ Proc. Int. Conf. Artif. Intell. Smart Syst. (ICAIS), Mar. 2021, pp. 137–143.\n2021, arXiv:2109.00537. [62] M. Sokolova, N. Japkowicz, and "
+        },
+        {
+          "chunk_index": 226,
+          "start_char": 56500,
+          "end_char": 56800,
+          "page_start": 13,
+          "page_end": 13,
+          "content": "v:2109.00537. [62] M. Sokolova, N. Japkowicz, and S. Szpakowicz, ‘‘Beyond accuracy, F-\n[38] R. Monir, D. Kostrzewa, and D. Mrozek, ‘‘Singing voice detection: score and ROC: A family of discriminant measures for performance\nA survey,’’ Entropy, vol. 24, no. 1, p. 114, Jan. 2022. [Online]. Available: "
+        },
+        {
+          "chunk_index": 227,
+          "start_char": 56750,
+          "end_char": 57050,
+          "page_start": 13,
+          "page_end": 13,
+          "content": "4, no. 1, p. 114, Jan. 2022. [Online]. Available: evaluation,’’ in Proc. 19th Austral. Joint Conf. Artif. Intell., vol. 4304, 2006,\nhttps://www.mdpi.com/1099-4300/24/1/114 pp. 1015–1021.\n[39] K. Lee, K. Choi, and J. Nam, ‘‘Revisiting singing voice detection: [63] L. Zhang, X. Wang, E. Cooper, N. Eva"
+        },
+        {
+          "chunk_index": 228,
+          "start_char": 57000,
+          "end_char": 57300,
+          "page_start": 13,
+          "page_end": 13,
+          "content": "tection: [63] L. Zhang, X. Wang, E. Cooper, N. Evans, and J. Yamagishi, ‘‘Range-based\nA quantitative review and the future outlook,’’ 2018, arXiv:1806.01180. equal error rate for spoof localization,’’ 2023, arXiv:2305.17739.\n[40] S. D. You, Y.-C. Wu, and S.-H. Peng, ‘‘Comparative study of singing [6"
+        },
+        {
+          "chunk_index": 229,
+          "start_char": 57250,
+          "end_char": 57550,
+          "page_start": 13,
+          "page_end": 13,
+          "content": " and S.-H. Peng, ‘‘Comparative study of singing [64] J.-M. Cheng and H.-C. Wang, ‘‘A method of estimating the equal error rate\nvoice detection methods,’’ Multimedia Tools Appl., vol. 75, no. 23, for automatic speaker verification,’’ in Proc. Joint 1st Workshop Mobile\npp. 15509–15524, Dec. 2016, doi:"
+        },
+        {
+          "chunk_index": 230,
+          "start_char": 57500,
+          "end_char": 57800,
+          "page_start": 13,
+          "page_end": 13,
+          "content": "t Workshop Mobile\npp. 15509–15524, Dec. 2016, doi: 10.1007/s11042-015-2894-9. Future Symp. Trends Commun., Jan. 2005, pp. 285–288.\n[41] M. Gohari, D. Salvi, P. Bestagini, and N. Adami, ‘‘Audio features [65] M. E. Schuckers, ‘‘Receiver operating characteristic curve and equal error\ninvestigation for "
+        },
+        {
+          "chunk_index": 231,
+          "start_char": 57750,
+          "end_char": 58050,
+          "page_start": 13,
+          "page_end": 13,
+          "content": "cteristic curve and equal error\ninvestigation for singing voice deepfake detection,’’ in Proc. IEEE rate,’’ in Computational Methods in Biometric Authentication: Statistical\nInt. Conf. Acoust., Speech Signal Process. (ICASSP), Apr. 2025, pp. 1–5. Methods for Performance Evaluation. London, U.K.: Spr"
+        },
+        {
+          "chunk_index": 232,
+          "start_char": 58000,
+          "end_char": 58300,
+          "page_start": 13,
+          "page_end": 13,
+          "content": "hods for Performance Evaluation. London, U.K.: Springer, 2010,\npp. 155–204, doi: 10.1007/978-1-84996-202-5_5.[42] Y. Zang, J. Shi, Y. Zhang, R. Yamamoto, J. Han, Y. Tang, S. Xu,\nW. Zhao, J. Guo, T. Toda, and Z. Duan, ‘‘CtrSVDD: A benchmark\ndataset and baseline analysis for controlled singing voice d"
+        },
+        {
+          "chunk_index": 233,
+          "start_char": 58250,
+          "end_char": 58550,
+          "page_start": 13,
+          "page_end": 13,
+          "content": "d baseline analysis for controlled singing voice deepfake\ndetection,’’ in Proc. INTERSPEECH, Sep. 2024, pp. 4783–4787, doi:\n10.21437/INTERSPEECH.2024-2242.\n[43] X. Chen, H. Wu, J.-S. Roger Jang, and H.-Y. Lee, ‘‘Singing voice graph\nmodeling for SingFake detection,’’ 2024, arXiv:2406.03111.\n[44] F. S"
+        },
+        {
+          "chunk_index": 234,
+          "start_char": 58500,
+          "end_char": 58800,
+          "page_start": 13,
+          "page_end": 13,
+          "content": "ake detection,’’ 2024, arXiv:2406.03111.\n[44] F. Sharma and P. Gupta, ‘‘Deepfake detection of singing voices with\nwhisper encodings,’’ 2025, arXiv:2501.18919.\n[45] Z. Wei, D. Ye, J. Deng, and Y. Lin, ‘‘From voices to beats: Enhancing music\ndeepfake detection by identifying forgeries in background,’’"
+        },
+        {
+          "chunk_index": 235,
+          "start_char": 58750,
+          "end_char": 59050,
+          "page_start": 13,
+          "page_end": 13,
+          "content": "etection by identifying forgeries in background,’’ in Proc. IEEE\nInt. Conf. Acoust., Speech Signal Process. (ICASSP), Apr. 2025, pp. 1–5.\n[46] S. Qu, J. Li, W. Dai, and S. Das, ‘‘Understanding audio pattern using con- MINH NGUYEN-DUC is currently pursuing the\nvolutional neural network from raw wavef"
+        },
+        {
+          "chunk_index": 236,
+          "start_char": 59000,
+          "end_char": 59300,
+          "page_start": 13,
+          "page_end": 13,
+          "content": "suing the\nvolutional neural network from raw waveforms,’’ 2016, arXiv:1611.09524. bachelor’s degree in artificial intelligence with\n[47] H. Muckenhirn, V. Abrol, M. Magimai-Doss, and S. Marcel, ‘‘Under- FPT University, Da Nang. He has led multi-\nstanding and visualizing raw waveform-based CNNs,’’ in"
+        },
+        {
+          "chunk_index": 237,
+          "start_char": 59250,
+          "end_char": 59550,
+          "page_start": 13,
+          "page_end": 13,
+          "content": "ding and visualizing raw waveform-based CNNs,’’ in Proc. INTER- ple research projects in AI, including computer\nSPEECH, Sep. 2019, pp. 2345–2349. vision, natural language processing, and ensemble\n[48] A. Mukhamediya, S. Fazli, and A. Zollanvari, ‘‘On the effect of log-Mel learning, with his work acc"
+        },
+        {
+          "chunk_index": 238,
+          "start_char": 59500,
+          "end_char": 59800,
+          "page_start": 13,
+          "page_end": 13,
+          "content": " the effect of log-Mel learning, with his work accepted at international\nspectrogram parameter tuning for deep learning-based speech emotion conferences, such as ICIT, ICCE-Asia, ICASCA,\nrecognition,’’ IEEE Access, vol. 11, pp. 61950–61957, 2023. and ICDTA. Notably, his hybrid recommenda-\n[49] H. Me"
+        },
+        {
+          "chunk_index": 239,
+          "start_char": 59750,
+          "end_char": 60050,
+          "page_start": 13,
+          "page_end": 13,
+          "content": " ICDTA. Notably, his hybrid recommenda-\n[49] H. Meng, T. Yan, F. Yuan, and H. Wei, ‘‘Speech emotion recognition tion system combining matrix factorization and\nfrom 3D log-Mel spectrograms with deep learning network,’’ IEEE Access, GraphSAGE was presented at the 2024 IEEE\nvol. 7, pp. 125868–125881, 2"
+        },
+        {
+          "chunk_index": 240,
+          "start_char": 60000,
+          "end_char": 60300,
+          "page_start": 13,
+          "page_end": 13,
+          "content": "nted at the 2024 IEEE\nvol. 7, pp. 125868–125881, 2019. International Conference on Consumer Electronics-Asia. His technical\n[50] MIT. (2025). Ast Fine-Tuned on Audioset. Accessed: Mar. 23, 2025. expertise spans deep learning frameworks (PyTorch and TensorFlow) and\n[Online]. Available: https://huggin"
+        },
+        {
+          "chunk_index": 241,
+          "start_char": 60250,
+          "end_char": 60550,
+          "page_start": 13,
+          "page_end": 13,
+          "content": "ensorFlow) and\n[Online]. Available: https://huggingface.co/MIT/ast-finetuned-audioset- generative AI, alongside leadership roles in collaborative AI projects. His\n10-10-0.4593 research interests include image processing, audio processing, transfer\n[51] J. F. Gemmeke, D. P. W. Ellis, D. Freedman, A. "
+        },
+        {
+          "chunk_index": 242,
+          "start_char": 60500,
+          "end_char": 60800,
+          "page_start": 13,
+          "page_end": 13,
+          "content": "1] J. F. Gemmeke, D. P. W. Ellis, D. Freedman, A. Jansen, W. Lawrence, learning, and AI solutions for real-world applications. He has also won\nR. C. Moore, M. Plakal, and M. Ritter, ‘‘Audio set: An ontology and awards for his research on beehive monitoring, securing 1st prize at\nhuman-labeled datase"
+        },
+        {
+          "chunk_index": 243,
+          "start_char": 60750,
+          "end_char": 61050,
+          "page_start": 13,
+          "page_end": 13,
+          "content": "toring, securing 1st prize at\nhuman-labeled dataset for audio events,’’ in Proc. IEEE Int. Conf. Acoust.,\nResConnect 2024 and 3rd prize at ResFes 2024.\nSpeech Signal Process. (ICASSP), Mar. 2017, pp. 776–780.\n[52] S. Gandhi. (2025). Whisper Medium Fine-Tuned on Fleurs for Lan-\nguage Identification. "
+        },
+        {
+          "chunk_index": 244,
+          "start_char": 61000,
+          "end_char": 61300,
+          "page_start": 13,
+          "page_end": 13,
+          "content": "ne-Tuned on Fleurs for Lan-\nguage Identification. Accessed: Mar. 23, 2025. [Online]. Available:\nhttps://huggingface.co/sanchit-gandhi/whisper-medium-fleurs-lang-id\n[53] A. Conneau, M. Ma, S. Khanuja, Y. Zhang, V. Axelrod, S. Dalmia, J. Riesa,\nC. Rivera, and A. Bapna, ‘‘FLEURS: Few-shot learning eval"
+        },
+        {
+          "chunk_index": 245,
+          "start_char": 61250,
+          "end_char": 61550,
+          "page_start": 13,
+          "page_end": 13,
+          "content": "ra, and A. Bapna, ‘‘FLEURS: Few-shot learning evaluation of\nuniversal representations of speech,’’ 2022, arXiv:2205.12446.\n[54] Facebook. (2025). Hubert Base Model Pretrained on 960H\nof LibriSpeech. Accessed: Mar. 23, 2025. [Online]. Available:\nhttps://huggingface.co/facebook/hubert-base-ls960\n[55] "
+        },
+        {
+          "chunk_index": 246,
+          "start_char": 61500,
+          "end_char": 61800,
+          "page_start": 13,
+          "page_end": 13,
+          "content": "://huggingface.co/facebook/hubert-base-ls960\n[55] V. Panayotov, G. Chen, D. Povey, and S. Khudanpur, ‘‘Librispeech:\nAn ASR corpus based on public domain audio books,’’ in Proc. IEEE\nLUONG VUONG NGUYEN (Member, IEEE)\nInt. Conf. Acoust., Speech Signal Process. (ICASSP), Apr. 2015,\nreceived the B.S. de"
+        },
+        {
+          "chunk_index": 247,
+          "start_char": 61750,
+          "end_char": 62050,
+          "page_start": 13,
+          "page_end": 13,
+          "content": "Process. (ICASSP), Apr. 2015,\nreceived the B.S. degree from the Department pp. 5206–5210.\nof Mathematics, Da Nang University of Edu-\n[56] Microsoft. (2025). Unispeech-Sat Base Model Pretrained on 960H\ncation and Science, Vietnam, in July 2009, the of LibriSpeech. Accessed: Mar. 23, 2025. [Online]. A"
+        },
+        {
+          "chunk_index": 248,
+          "start_char": 62000,
+          "end_char": 62300,
+          "page_start": 13,
+          "page_end": 13,
+          "content": " LibriSpeech. Accessed: Mar. 23, 2025. [Online]. Available:\nhttps://huggingface.co/microsoft/unispeech-sat-base M.S. degree from the Department of Computer\nEngineering, Da Nang University of Technol-[57] A. Défossez, ‘‘Hybrid spectrogram and waveform source separation,’’\n2021, arXiv:2111.03600. ogy,"
+        },
+        {
+          "chunk_index": 249,
+          "start_char": 62250,
+          "end_char": 62550,
+          "page_start": 13,
+          "page_end": 13,
+          "content": " source separation,’’\n2021, arXiv:2111.03600. ogy, Vietnam, in April 2013, and the Ph.D.\n[58] H. Bredin, R. Yin, J. M. Coria, G. Gelly, P. Korshunov, M. Lavechin, degree in computer science and engineering\nD. Fustes, H. Titeux, W. Bouaziz, and M.-P. Gill, ‘‘Pyannote.Audio: Neural from Chung-Ang Univ"
+        },
+        {
+          "chunk_index": 250,
+          "start_char": 62500,
+          "end_char": 62800,
+          "page_start": 13,
+          "page_end": 13,
+          "content": "Gill, ‘‘Pyannote.Audio: Neural from Chung-Ang University, Seoul, South Korea,\nbuilding blocks for speaker diarization,’’ 2019, arXiv:1911.01255. in 2022. He has been a Lecturer and a Researcher\n[59] D. Powers and Ailab, ‘‘Evaluation: From precision, recall and F-measure to with the Department of Art"
+        },
+        {
+          "chunk_index": 251,
+          "start_char": 62750,
+          "end_char": 63050,
+          "page_start": 13,
+          "page_end": 13,
+          "content": "recall and F-measure to with the Department of Artificial Intelligence, FPT University, Da Nang,\nroc, informedness, markedness & correlation,’’ J. Mach. Learn. Technol., Vietnam, since October 2022. He has been an Adjunct Professor with the\nvol. 2, pp. 2229–3981, Jan. 2011. Department of Artificial "
+        },
+        {
+          "chunk_index": 252,
+          "start_char": 63000,
+          "end_char": 63300,
+          "page_start": 13,
+          "page_end": 13,
+          "content": "p. 2229–3981, Jan. 2011. Department of Artificial Intelligence, The Catholic University of Korea,\n[60] M. Vakili, M. Ghamsari, and M. Rezaei, ‘‘Performance analysis and Bucheon, South Korea, since November 2022. His research interests include\ncomparison of machine and deep learning algorithms for Io"
+        },
+        {
+          "chunk_index": 253,
+          "start_char": 63250,
+          "end_char": 63550,
+          "page_start": 13,
+          "page_end": 14,
+          "content": "son of machine and deep learning algorithms for IoT data knowledge engineering in data science by using data mining, machine\nclassification,’’ 2020, arXiv:2001.09636. learning, ambient intelligence, and logical reasoning.\n\nVOLUME 13, 2025 95751\n\nM. Nguyen-Duc et al.: Comparative Study of Deep Audio "
+        },
+        {
+          "chunk_index": 254,
+          "start_char": 63500,
+          "end_char": 63800,
+          "page_start": 14,
+          "page_end": 14,
+          "content": "guyen-Duc et al.: Comparative Study of Deep Audio Models\n\nHUY NGUYEN-HO-NHAT is currently pursuing 2024. His research interests include intelligent systems, the Internet of\nthe bachelor’s degree in artificial intelligence with Things, and UAV-based Applications. He received the Best Paper Award at\nF"
+        },
+        {
+          "chunk_index": 255,
+          "start_char": 63750,
+          "end_char": 64050,
+          "page_start": 14,
+          "page_end": 14,
+          "content": "pplications. He received the Best Paper Award at\nFPT University, Da Nang. His research interest IEEE ICTC 2022 and ICIT 2023 and 2024. He served as a reviewer and a\nincludes AI solutions for real-world challenges. TPC member for several international journals and conferences and is also\nHis work on "
+        },
+        {
+          "chunk_index": 256,
+          "start_char": 64000,
+          "end_char": 64300,
+          "page_start": 14,
+          "page_end": 14,
+          "content": " journals and conferences and is also\nHis work on ‘‘Short-Time Fourier Transform for an Academic Editor of the PLOS One.\nDetecting the Queen Bee State’’ was accepted at\nthe 2024 International Conference on Intelligence\nof Things (ICIT). Beyond this, he has explored\nvarious AI domains, including natu"
+        },
+        {
+          "chunk_index": 257,
+          "start_char": 64250,
+          "end_char": 64550,
+          "page_start": 14,
+          "page_end": 14,
+          "content": "he has explored\nvarious AI domains, including natural language\nprocessing and computer vision, with a strong\nemphasis on efficient model deployment and scalable AI applications. His\nwork interests include AI-driven automation, optimized model deployment,\nand scalable solutions for sustainable develo"
+        },
+        {
+          "chunk_index": 258,
+          "start_char": 64500,
+          "end_char": 64800,
+          "page_start": 14,
+          "page_end": 14,
+          "content": "ent,\nand scalable solutions for sustainable development.\n\nO-JOUN LEE (Member, IEEE) received the\nB.Eng. degree in software science from Dankook\nTRI-HAI NGUYEN (Member, IEEE) received the University, in 2015, and the Ph.D. degree in com-\nB.S. degree (Hons.) in computer science from puter science and "
+        },
+        {
+          "chunk_index": 259,
+          "start_char": 64750,
+          "end_char": 65050,
+          "page_start": 14,
+          "page_end": 14,
+          "content": "Hons.) in computer science from puter science and engineering from Chung-Ang\nthe University of Information Technology, VNU- University, in 2019. He has been an Assis-\nHCM, Ho Chi Minh City, Vietnam, in 2015, tant Professor with The Catholic University\nthe M.Eng. degree in information and commu- of K"
+        },
+        {
+          "chunk_index": 260,
+          "start_char": 65000,
+          "end_char": 65300,
+          "page_start": 14,
+          "page_end": 14,
+          "content": "y\nthe M.Eng. degree in information and commu- of Korea, Republic of Korea, since September\nnication technology from Soongsil University, 2021. Also, he was a full-time Researcher with\nSeoul, South Korea, in 2017, and the Ph.D. Pohang University of Science and Technol-\ndegree in computer science and "
+        },
+        {
+          "chunk_index": 261,
+          "start_char": 65250,
+          "end_char": 65550,
+          "page_start": 14,
+          "page_end": 14,
+          "content": "ience and Technol-\ndegree in computer science and engineering from ogy, Republic of Korea, from September 2019 to\nChung-Ang University, Seoul, in 2022. He is cur- August 2021. His research interests include networked data analysis based\nrently a Lecturer with the Faculty of Information on unsupervis"
+        },
+        {
+          "chunk_index": 262,
+          "start_char": 65500,
+          "end_char": 65800,
+          "page_start": 14,
+          "page_end": 14,
+          "content": "urer with the Faculty of Information on unsupervised/self-supervised representation learning and graph neural\nTechnology, School of Technology, Van Lang University, Ho Chi Minh networks. He has applied the networked data analysis models and methods to\nCity. Before joining Van Lang University, he was"
+        },
+        {
+          "chunk_index": 263,
+          "start_char": 65750,
+          "end_char": 66050,
+          "page_start": 14,
+          "page_end": 14,
+          "content": "o\nCity. Before joining Van Lang University, he was a Research Professor various unstructured data, such as social media, bibliographic data, medical\nwith the Department of Computer Science and Engineering, Seoul National knowledge base, and traffic flow data.\nUniversity of Science and Technology (Se"
+        },
+        {
+          "chunk_index": 264,
+          "start_char": 66000,
+          "end_char": 66102,
+          "page_start": 14,
+          "page_end": 14,
+          "content": "low data.\nUniversity of Science and Technology (SeoulTech), Seoul, from 2022 to\n\n95752 VOLUME 13, 2025"
+        }
+      ]
+    },
+    {
+      "document_id": 32,
+      "title": "A_Lightweight_Audio-Visual_Framework_for_Deepfake_Detection.pdf",
+      "text_sha256": "2a50e69af82d46b8113111c1f266f05a346b103080db3b6a3697d19a7cd561ce",
+      "text_length": 27535,
+      "page_count": 6,
+      "chunk_count": 110,
+      "chunks": [
+        {
+          "chunk_index": 0,
+          "start_char": 0,
+          "end_char": 300,
+          "page_start": 1,
+          "page_end": 1,
+          "content": "2026 Fourth International Conference on Secure Cyber Computing and Communication (ICSCCC)\n\nA Lightweight Audio-Visual Framework for\nDeepfake Detection\n\nBindushree C Nandini S B Bhavya M\nDepartment of CSE Department of CSE Department of AIML\nRamaiah Institute of Technology Ramaiah Institute of Techno"
+        },
+        {
+          "chunk_index": 1,
+          "start_char": 250,
+          "end_char": 550,
+          "page_start": 1,
+          "page_end": 1,
+          "content": "nstitute of Technology Ramaiah Institute of Technology Ramaiah Institute of Technology\nBengaluru, India Bengaluru, India Bengaluru, India\nbindusreec06@gmail.com nandini@msrit.edu10.1109/ICSCCC69031.2026.11600238\nDOI: Abstract—The area of multimodal deepfake detection has come To address these limita"
+        },
+        {
+          "chunk_index": 2,
+          "start_char": 500,
+          "end_char": 800,
+          "page_start": 1,
+          "page_end": 1,
+          "content": "eepfake detection has come To address these limitations, multimodal deepfake detection\n| to the forefront because of the rapid progress being made in has emerged as an effective approach by jointly analyzing\ntechniques to edit audio-visual media. The existing techniques audio and visual information."
+        },
+        {
+          "chunk_index": 3,
+          "start_char": 750,
+          "end_char": 1050,
+          "page_start": 1,
+          "page_end": 1,
+          "content": " existing techniques audio and visual information. Multimodal systems improveIEEE for unimodal deepfake detection may not be effective as they\ndetection reliability by exploiting cross-modal inconsisten-\ncies, but many existing methods suffer from overconfident©2026 mayThis notpapergeneralize,descri"
+        },
+        {
+          "chunk_index": 4,
+          "start_char": 1000,
+          "end_char": 1300,
+          "page_start": 1,
+          "page_end": 1,
+          "content": "erconfident©2026 mayThis notpapergeneralize,describesasathelightweightmedia coulddeepfakebe editedmultimodalindependently.classi-\nfier employing a late fusion scheme to simultaneously analyze predictions under domain shift and inconsistent modality-\nthe audio and visual features for enhanced classif"
+        },
+        {
+          "chunk_index": 5,
+          "start_char": 1250,
+          "end_char": 1550,
+          "page_start": 1,
+          "page_end": 1,
+          "content": "the audio and visual features for enhanced classification. The level interpretations [18]. This emphasises the necessity of\nfeature embedding is then fused to perform classification using a a robust and coherent multimodal framework. Inspired by\nmultilayer perceptron classifier for four-class classi"
+        },
+        {
+          "chunk_index": 6,
+          "start_char": 1500,
+          "end_char": 1800,
+          "page_start": 1,
+          "page_end": 1,
+          "content": "ilayer perceptron classifier for four-class classification, which\nthese difficulties, this study suggests a multimodal deepfake includes real audio-visual media, partially manipulated audio-\nvisual media, and completely manipulated audio-visual media. detection system that classifies real and deepfa"
+        },
+        {
+          "chunk_index": 7,
+          "start_char": 1750,
+          "end_char": 2050,
+          "page_start": 1,
+          "page_end": 1,
+          "content": ". detection system that classifies real and deepfake content into\nFor correcting overconfident predictions made by the model in four classes using visual and audio feature representations via\nthe new domain, temperature scaling is utilized in the inference a late fusion technique. Temperature scalin"
+        },
+        {
+          "chunk_index": 8,
+          "start_char": 2000,
+          "end_char": 2300,
+          "page_start": 1,
+          "page_end": 1,
+          "content": "erence a late fusion technique. Temperature scaling is used during in-\nstep to perform model calibration. The experiments validate the ference to increase the network’s resilience to domain transfer.979-8-3315-7954-8/26/$31.00 high level of detection effectiveness with a high accuracy of| Additional"
+        },
+        {
+          "chunk_index": 9,
+          "start_char": 2250,
+          "end_char": 2550,
+          "page_start": 1,
+          "page_end": 1,
+          "content": " effectiveness with a high accuracy of| Additionally, a probabilistic modality reasoning technique is 98.75% in the test data set and high F-scores for manipulated\nclasses, which proves the efficacy of the proposed new approach used to extract accurate audio and video predictions from the\nto audio-v"
+        },
+        {
+          "chunk_index": 10,
+          "start_char": 2500,
+          "end_char": 2800,
+          "page_start": 1,
+          "page_end": 1,
+          "content": "te audio and video predictions from the\nto audio-visual media. multimodal output. The experimental findings show that the(ICSCCC) Index Terms—Deepfake Detection, Multimodal Learning, suggested approach has a high degree of accuracy for both\nAudio-Visual Fusion, Temperature Scaling, Domain Shift trai"
+        },
+        {
+          "chunk_index": 11,
+          "start_char": 2750,
+          "end_char": 3050,
+          "page_start": 1,
+          "page_end": 1,
+          "content": "ual Fusion, Temperature Scaling, Domain Shift training and testing data.\nThe key contributions of this work are as follows:\nI. INTRODUCTION\n• A lightweight multimodal deepfake detection framework\nIn recent times, the exponential growth of the use of deepCommunications is developed by combining Mobil"
+        },
+        {
+          "chunk_index": 12,
+          "start_char": 3000,
+          "end_char": 3300,
+          "page_start": 1,
+          "page_end": 1,
+          "content": "deepCommunications is developed by combining MobileNetV3 (visual, 576- fake audio-visual material has become an issue of concern in\nand online media and online communication, as it affects trust, D) and Wav2Vec2 (audio, 768-D) using a late fusion\nstrategy, enabling efficient four-class classificatio"
+        },
+        {
+          "chunk_index": 13,
+          "start_char": 3250,
+          "end_char": 3550,
+          "page_start": 1,
+          "page_end": 1,
+          "content": "ategy, enabling efficient four-class classification of real\nsecurity, and authenticity. The facial and verbal characteris-\nand manipulated audio-visual content.\ntics of people can be easily altered, such that realistic fake\n• Model confidence is calibrated at inference time usingComputing audio-visu"
+        },
+        {
+          "chunk_index": 14,
+          "start_char": 3500,
+          "end_char": 3800,
+          "page_start": 1,
+          "page_end": 1,
+          "content": "brated at inference time usingComputing audio-visual material can be produced that may be difficult\ntemperature scaling (T = 2.0), improving prediction\nreliability under domain shift without requiring additionalCyber togenerativedistinguishmodelsfromandrealpost-processingaudio-visual material.method"
+        },
+        {
+          "chunk_index": 15,
+          "start_char": 3750,
+          "end_char": 4050,
+          "page_start": 1,
+          "page_end": 1,
+          "content": "andrealpost-processingaudio-visual material.methodsAdvancesfurther addin\ncomputation or retraining.\n• A compact MLP classifier (512→256→4) is built on theSecure toincreasinglythe realismchallengingof such [1],content,[2]. making reliable detection\non 1344-dimensional fused representation, achieving "
+        },
+        {
+          "chunk_index": 16,
+          "start_char": 4000,
+          "end_char": 4300,
+          "page_start": 1,
+          "page_end": 1,
+          "content": " 1344-dimensional fused representation, achieving a test Early detection of deepfakes is vital to prevent spreading\naccuracy of 98.75% and a weighted F1-score of 0.988\nmisinformation, the misuse of identity, and long-term societal\non the FakeAVCeleb dataset.\nimpact. The available techniques for dete"
+        },
+        {
+          "chunk_index": 17,
+          "start_char": 4250,
+          "end_char": 4550,
+          "page_start": 1,
+          "page_end": 1,
+          "content": "dataset.\nimpact. The available techniques for detection were initially\n• The framework demonstrates reliable detection perfor-Conference focused on unimodal analysis, targeting either visual artifacts\nmance across four manipulation categories—Real, Fake-\nin video frames or acoustic anomalies within "
+        },
+        {
+          "chunk_index": 18,
+          "start_char": 4500,
+          "end_char": 4800,
+          "page_start": 1,
+          "page_end": 1,
+          "content": "ake-\nin video frames or acoustic anomalies within speech signals.\nVid, FakeAud, and BothFake—even under class imbal-\nMachine learning techniques based on Convolutional Neural\nance and diverse audio-visual forgery scenarios.\nNetworks (CNNs) have seen enhancements in detecting forgedInternational\nvisu"
+        },
+        {
+          "chunk_index": 19,
+          "start_char": 4750,
+          "end_char": 5050,
+          "page_start": 1,
+          "page_end": 1,
+          "content": "enhancements in detecting forgedInternational\nvisual content, while transformer-based models have proved The remainder of this paper is organized as follows. Sec-\nsuccessful at detecting the existence of synthetic audio [3]. tion II reviews existing work on deepfake detection. Sec-Fourth\nHowever, un"
+        },
+        {
+          "chunk_index": 20,
+          "start_char": 5000,
+          "end_char": 5300,
+          "page_start": 1,
+          "page_end": 1,
+          "content": "work on deepfake detection. Sec-Fourth\nHowever, unimodal systems often fail when manipulations tion III presents the proposed framework, including the dataset,\n2026 occur in only one modality or when the testing data differs preprocessing steps, feature extraction, fusion strategy, and\nfrom the trai"
+        },
+        {
+          "chunk_index": 21,
+          "start_char": 5250,
+          "end_char": 5550,
+          "page_start": 1,
+          "page_end": 1,
+          "content": "ure extraction, fusion strategy, and\nfrom the training distribution. confidence calibration. Section IV presents and analyzes the\n\n979-8-3315-7954-8/26/$31.00 ©2026 IEEE\n514 Authorized licensed use limited to: China University of Geosciences Wuhan Campus. Downloaded on September 08,2026 at 08:13:50 "
+        },
+        {
+          "chunk_index": 22,
+          "start_char": 5500,
+          "end_char": 5800,
+          "page_start": 1,
+          "page_end": 2,
+          "content": "mpus. Downloaded on September 08,2026 at 08:13:50 UTC from IEEE Xplore. Restrictions apply.\n\n2026 Fourth International Conference on Secure Cyber Computing and Communication (ICSCCC)\n\nexperimental results. Section V concludes the paper and out- for handling well-synchronized samples for deeper model"
+        },
+        {
+          "chunk_index": 23,
+          "start_char": 5750,
+          "end_char": 6050,
+          "page_start": 2,
+          "page_end": 2,
+          "content": "andling well-synchronized samples for deeper models like\nlines directions for future research. CNN-LSTM. Chen et al. [10] proposed a graph representation\napproach with multi-dimensional features to capture struc-\nII. LITERATURE REVIEW tural relationships between facial regions, further improving\nDee"
+        },
+        {
+          "chunk_index": 24,
+          "start_char": 6000,
+          "end_char": 6300,
+          "page_start": 2,
+          "page_end": 2,
+          "content": "hips between facial regions, further improving\nDeepfake detection has received considerable attention due detection robustness. Vision Transformer models introduced\nto the rapid progress of generative models capable of ma- by Soudy et al. [14] based on global dependencies between\nnipulating facial a"
+        },
+        {
+          "chunk_index": 25,
+          "start_char": 6250,
+          "end_char": 6550,
+          "page_start": 2,
+          "page_end": 2,
+          "content": "on global dependencies between\nnipulating facial appearance and speech. Early research was frames further increased model complexity.\nprimarily focused on identifying visual artifacts introduced At the same time, other researchers worked on audio deep-\nduring face swapping and synthesis. Tian et al."
+        },
+        {
+          "chunk_index": 26,
+          "start_char": 6500,
+          "end_char": 6800,
+          "page_start": 2,
+          "page_end": 2,
+          "content": "p-\nduring face swapping and synthesis. Tian et al. [1] proposed fake detection. Akmal and Suryani [15] employed deep models\na detection framework designed for protecting images and in classifying audio clips as human or computer-generated,\nvideos from deepfake manipulation by examining visual incon-"
+        },
+        {
+          "chunk_index": 27,
+          "start_char": 6750,
+          "end_char": 7050,
+          "page_start": 2,
+          "page_end": 2,
+          "content": "m deepfake manipulation by examining visual incon- while Giri et al. [16] and Mart´ın-Do˜nas [17] demonstrated how\nsistencies. Although it worked well on the selected datasets, the transformer model was effective in audio representation,\nthe technique showed limited robustness when evaluated on spec"
+        },
+        {
+          "chunk_index": 28,
+          "start_char": 7000,
+          "end_char": 7300,
+          "page_start": 2,
+          "page_end": 2,
+          "content": "e showed limited robustness when evaluated on specifically through the use of Wav2Vec2, in audio deepfake\nvideos with varying compression and real-world distortions. detection. Nevertheless, audio-based systems failed when the\nA work by Chandel et al. [2] investigated various machine audio was genui"
+        },
+        {
+          "chunk_index": 29,
+          "start_char": 7250,
+          "end_char": 7550,
+          "page_start": 2,
+          "page_end": 2,
+          "content": ". [2] investigated various machine audio was genuine with only the visual being tampered with.\nlearning and deep learning algorithms to test their efficiency Despite the drawbacks of unimodal CNN-based deep-\non benchmark datasets in terms of their ability to detect fake detectors, multimodal techniq"
+        },
+        {
+          "chunk_index": 30,
+          "start_char": 7500,
+          "end_char": 7800,
+          "page_start": 2,
+          "page_end": 2,
+          "content": "ility to detect fake detectors, multimodal techniques that simulate the co-\ndeepfakes. Although this work showed an increase in classifi- processing of audio and video information emerged. This helps\ncation accuracy, it only concentrated on visual patterns and did to reduce the unreliability of unim"
+        },
+        {
+          "chunk_index": 31,
+          "start_char": 7750,
+          "end_char": 8050,
+          "page_start": 2,
+          "page_end": 2,
+          "content": "tterns and did to reduce the unreliability of unimodal deepfake detection as\nnot cover any audio-related manipulations or voice synthesis demonstrated by the study of Zhou and Lim [18], who proved\nattacks. the effectiveness of cross-modal contradictions for reliable\nGupta and Maind [3] analyzed the "
+        },
+        {
+          "chunk_index": 32,
+          "start_char": 8000,
+          "end_char": 8300,
+          "page_start": 2,
+          "page_end": 2,
+          "content": "ons for reliable\nGupta and Maind [3] analyzed the concept of deepfake detection. Another study by Sheeranali et al. [19] presented the\nvideo detection by employing deep neural networks and em- use of DualStreamNet for robust detection by processing audio\nphasized that CNN-based architectures perform"
+        },
+        {
+          "chunk_index": 33,
+          "start_char": 8250,
+          "end_char": 8550,
+          "page_start": 2,
+          "page_end": 2,
+          "content": "udio\nphasized that CNN-based architectures performed very well and video simultaneously, while Guan et al. [20] proved the\nin terms of extracting spatial artifacts. The limitation of superiority of multimodal networks over unimodal networks.\nheavy networks affected the computational complexity, whic"
+        },
+        {
+          "chunk_index": 34,
+          "start_char": 8500,
+          "end_char": 8800,
+          "page_start": 2,
+          "page_end": 2,
+          "content": "tworks affected the computational complexity, which However, these existing methods often utilize cumbersome\nmade them inappropriate for compact or scalable models. To fusion techniques, causing heavy computations and hindering\novercome this issue of computational complexity, S. S. T. et the efficac"
+        },
+        {
+          "chunk_index": 35,
+          "start_char": 8750,
+          "end_char": 9050,
+          "page_start": 2,
+          "page_end": 2,
+          "content": " computational complexity, S. S. T. et the efficacy of real-world applications. For instance, meth-\nal. [4] proposed binarized neural networks for deepfake image ods by Reddy et al. [21] and Giansanti et al. [22] do not\ndetection. Although it had efficiency, it still performed as use calibrated conf"
+        },
+        {
+          "chunk_index": 36,
+          "start_char": 9000,
+          "end_char": 9300,
+          "page_start": 2,
+          "page_end": 2,
+          "content": "iciency, it still performed as use calibrated confidence and tend to become less reliable\na unimodal technique that was vulnerable to cross-modal when the domain changes. Although more recent approaches,\nattacks. for example, Guan et al. [23], demonstrate better detection\nLightweight CNN architectur"
+        },
+        {
+          "chunk_index": 37,
+          "start_char": 9250,
+          "end_char": 9550,
+          "page_start": 2,
+          "page_end": 2,
+          "content": "trate better detection\nLightweight CNN architectures, such as MobileNet, were performance, the problems associated with model complexity,\nalso investigated by Kumar et al. [5] and Venu et al. [6] generalization, and resilience to unexplored manipulation are\nfor the task of classifying real and fake "
+        },
+        {
+          "chunk_index": 38,
+          "start_char": 9500,
+          "end_char": 9800,
+          "page_start": 2,
+          "page_end": 2,
+          "content": "ion are\nfor the task of classifying real and fake images. Although yet to be addressed.\nthey achieved competitive performance with reduced inference Systematic reviews by Rana et al. [24] and Mishra et\ntime, their ability was only limited to static image analysis and al. [25] have identified some ch"
+        },
+        {
+          "chunk_index": 39,
+          "start_char": 9750,
+          "end_char": 10050,
+          "page_start": 2,
+          "page_end": 2,
+          "content": "mage analysis and al. [25] have identified some challenges associated with the\ncould not incorporate inconsistencies associated with audio- task of deepfake detection, namely the lack of generalization\nvisual cues in videos. on new data, overconfident predictions, varying modality-level\nTexture-base"
+        },
+        {
+          "chunk_index": 40,
+          "start_char": 10000,
+          "end_char": 10300,
+          "page_start": 2,
+          "page_end": 2,
+          "content": "t predictions, varying modality-level\nTexture-based detection techniques were introduced by understanding, and rising complexity. These areas suggest the\nJhunt et al. [7] and Zhang and Wu [8]. These techniques aimed importance of well-calibrated multimodal models with strong\nat fine-grained surface "
+        },
+        {
+          "chunk_index": 41,
+          "start_char": 10250,
+          "end_char": 10550,
+          "page_start": 2,
+          "page_end": 2,
+          "content": "imodal models with strong\nat fine-grained surface characteristics using waveform-based confidence and consistent reasoning about modalities.\nand texture fusion techniques. Although these techniques have From the literature reviewed, it appears that existing meth-\nbeen able to respond better to some "
+        },
+        {
+          "chunk_index": 42,
+          "start_char": 10500,
+          "end_char": 10800,
+          "page_start": 2,
+          "page_end": 2,
+          "content": "xisting meth-\nbeen able to respond better to some visualization distortions, ods face challenges in dealing with domain shift, modality-\nthey were highly image quality-dependent and performed specific interpretation, and confidence reliability. This forms\npoorly on high-quality deepfakes. Rajesh [9]"
+        },
+        {
+          "chunk_index": 43,
+          "start_char": 10750,
+          "end_char": 11050,
+          "page_start": 2,
+          "page_end": 2,
+          "content": "forms\npoorly on high-quality deepfakes. Rajesh [9] proposed a 3D the motivation for the proposed work, which involves a\nEfficientNetB7 model augmented with spatial attention for lightweight multimodal architecture in conjunction with tem-\ndeepfake detection, achieving improved spatial feature dis- p"
+        },
+        {
+          "chunk_index": 44,
+          "start_char": 11000,
+          "end_char": 11300,
+          "page_start": 2,
+          "page_end": 2,
+          "content": "tection, achieving improved spatial feature dis- perature scaling for confidence calibration and probability-\ncrimination, though at the cost of increased computational based modality reasoning.\noverhead.\nIII. PROPOSED WORK To incorporate temporal information, sequence modeling\napproaches were emplo"
+        },
+        {
+          "chunk_index": 45,
+          "start_char": 11250,
+          "end_char": 11550,
+          "page_start": 2,
+          "page_end": 2,
+          "content": "formation, sequence modeling\napproaches were employed by a number of works. Jha et It is apparent from the literature review that current solutions\nal. [11], Bhati et al. [12], and Xiong et al. [13] used CNN- tend to pose limitations with respect to the challenges of\nLSTM based models to detect fram"
+        },
+        {
+          "chunk_index": 46,
+          "start_char": 11500,
+          "end_char": 11800,
+          "page_start": 2,
+          "page_end": 2,
+          "content": "the challenges of\nLSTM based models to detect frame inconsistency-based ad- domain change, interpretation across modalities, and the relia-\nversarial samples. These models achieved improved detection bility of confidence measures. Therefore, this paper addresses\naccuracy but increased computation du"
+        },
+        {
+          "chunk_index": 47,
+          "start_char": 11750,
+          "end_char": 12050,
+          "page_start": 2,
+          "page_end": 2,
+          "content": "er addresses\naccuracy but increased computation due to the requirement these limitations and aims to provide solutions through the\n\n515Authorized licensed use limited to: China University of Geosciences Wuhan Campus. Downloaded on September 08,2026 at 08:13:50 UTC from IEEE Xplore. Restrictions appl"
+        },
+        {
+          "chunk_index": 48,
+          "start_char": 12000,
+          "end_char": 12300,
+          "page_start": 2,
+          "page_end": 3,
+          "content": "t 08:13:50 UTC from IEEE Xplore. Restrictions apply.\n\n2026 Fourth International Conference on Secure Cyber Computing and Communication (ICSCCC)\n\nfeature consistency. Audio streams are resampled to 16 kHz\nand temporally aligned to the corresponding video clips to\nensure correct synchronization.\nThe a"
+        },
+        {
+          "chunk_index": 49,
+          "start_char": 12250,
+          "end_char": 12550,
+          "page_start": 3,
+          "page_end": 3,
+          "content": "deo clips to\nensure correct synchronization.\nThe amount of preprocessing is kept minimal to prevent\noverfitting to dataset-specific artifacts, preserving real-world\nvariability and generalization performance on novel content\na common challenge in deepfake detection systems that use\naggressive prepro"
+        },
+        {
+          "chunk_index": 50,
+          "start_char": 12500,
+          "end_char": 12800,
+          "page_start": 3,
+          "page_end": 3,
+          "content": "pfake detection systems that use\naggressive preprocessing methods.\n\nC. Visual Feature Extraction Using MobileNetV3\n\nVisual features are extracted using the MobileNetV3 model,\na lightweight convolutional neural network optimized for effi-\nciency. MobileNetV3 generates 576-dimensional embeddings\nfrom "
+        },
+        {
+          "chunk_index": 51,
+          "start_char": 12750,
+          "end_char": 13050,
+          "page_start": 3,
+          "page_end": 3,
+          "content": "leNetV3 generates 576-dimensional embeddings\nfrom facial frames, encoding spatial and texture information\nassociated with facial manipulation, such as blend artifacts,\nboundary inconsistencies, and temporal distortions.\nIn comparison with heavier CNN architectures like ResNet-\n50, MobileNetV3 achiev"
+        },
+        {
+          "chunk_index": 52,
+          "start_char": 13000,
+          "end_char": 13300,
+          "page_start": 3,
+          "page_end": 3,
+          "content": " architectures like ResNet-\n50, MobileNetV3 achieves a substantial decrease in computa-\ntional cost with comparable accuracy. This fills the gap in the\nFig. 1. Architecture for proposed multimodal deepfake detection model literature regarding the high computational cost of inference\nin current state"
+        },
+        {
+          "chunk_index": 53,
+          "start_char": 13250,
+          "end_char": 13550,
+          "page_start": 3,
+          "page_end": 3,
+          "content": "h computational cost of inference\nin current state-of-the-art deepfake detectors.\n\nuse of a lightweight multimodal design and the temperature D. Audio Feature Extraction Using Wav2Vec2\nscaling method for confidence calibration and probability-\nWav2Vec2 is a pre-trained transformer-based self- based "
+        },
+        {
+          "chunk_index": 54,
+          "start_char": 13500,
+          "end_char": 13800,
+          "page_start": 3,
+          "page_end": 3,
+          "content": "c2 is a pre-trained transformer-based self- based modality reasoning. The framework also focuses on\nsupervised speech representation model utilized for audio computational efficiency by using lightweight feature extrac-\nfeature extraction. It extracts 768-dimensional embeddings tors and the simple l"
+        },
+        {
+          "chunk_index": 55,
+          "start_char": 13750,
+          "end_char": 14050,
+          "page_start": 3,
+          "page_end": 3,
+          "content": "s 768-dimensional embeddings tors and the simple late fusion strategy. Such design allows\nthat encode prosodic patterns, spectral characteristics, and separate processing of the video and audio signals, and this\ntemporal dependencies typically influenced by synthetic ensures robustness even when eit"
+        },
+        {
+          "chunk_index": 56,
+          "start_char": 14000,
+          "end_char": 14300,
+          "page_start": 3,
+          "page_end": 3,
+          "content": "nced by synthetic ensures robustness even when either of the two sources lacks\ntext-to-speech generation. sufficient information. This enables the framework to achieve\nBy leveraging pre-trained representations learned from better generalization and resistance to misclassifications when\nlarge-scale u"
+        },
+        {
+          "chunk_index": 57,
+          "start_char": 14250,
+          "end_char": 14550,
+          "page_start": 3,
+          "page_end": 3,
+          "content": "esistance to misclassifications when\nlarge-scale unlabeled audio data, the system avoids hand- faced with unforeseen manipulation techniques or domains.\ncrafted feature engineering and remains robust to diverse voice Finally, the proposed multimodal-based deepfake detection\nsynthesis techniques. The"
+        },
+        {
+          "chunk_index": 58,
+          "start_char": 14500,
+          "end_char": 14800,
+          "page_start": 3,
+          "page_end": 3,
+          "content": "based deepfake detection\nsynthesis techniques. The self-supervised learning paradigm framework architecture is shown in Fig. 1.\nallows the model to capture intrinsic speech characteristics\nA. Dataset while remaining invariant to speaker identity and recording\nThe proposed system is trained and teste"
+        },
+        {
+          "chunk_index": 59,
+          "start_char": 14750,
+          "end_char": 15050,
+          "page_start": 3,
+          "page_end": 3,
+          "content": "recording\nThe proposed system is trained and tested on the conditions.\nFakeAVCeleb dataset, a publicly available multimodal bench-\nE. Multimodal Feature Fusion mark containing synchronized video and audio streams. The\ndataset comprises 9,512 videos belonging to four classes: The resulting embeddings"
+        },
+        {
+          "chunk_index": 60,
+          "start_char": 15000,
+          "end_char": 15300,
+          "page_start": 3,
+          "page_end": 3,
+          "content": "elonging to four classes: The resulting embeddings of images and audio are inte-\n• Real Video + Real Audio grated using a late fusion strategy. Let the visual feature vector\n• Fake Video + Real Audio be\n• Real Video + Fake Audio\n• Fake Video + Fake Audio v ∈R576 (1)\nThe cases cover a large variety o"
+        },
+        {
+          "chunk_index": 61,
+          "start_char": 15250,
+          "end_char": 15550,
+          "page_start": 3,
+          "page_end": 3,
+          "content": "udio v ∈R576 (1)\nThe cases cover a large variety of facial manipulations and\nand the audio feature vector be\naudio synthesis techniques, making it ideal for testing multi-\nmodal deepfake detection models. The dataset is divided into a ∈R768. (2)\ntraining (70%, n = 7,485), validation (20%, n = 1,605)"
+        },
+        {
+          "chunk_index": 62,
+          "start_char": 15500,
+          "end_char": 15800,
+          "page_start": 3,
+          "page_end": 3,
+          "content": "ning (70%, n = 7,485), validation (20%, n = 1,605),\nand testing (10%, n = 802) splits, with no overlap between The fused multimodal representation is achieved by con-\nsplits to prevent data leakage. This division follows standard catenation as\nexperimental practice and ensures objective evaluation. "
+        },
+        {
+          "chunk_index": 63,
+          "start_char": 15750,
+          "end_char": 16050,
+          "page_start": 3,
+          "page_end": 3,
+          "content": "mental practice and ensures objective evaluation. f = [v; a] ∈R1344. (3)\n\nB. Preprocessing and Feature Preparation Late fusion is chosen because it decreases the complexity\nThe input videos are decomposed into image frames and of the architecture, preserves the information particular to\naudio signal"
+        },
+        {
+          "chunk_index": 64,
+          "start_char": 16000,
+          "end_char": 16300,
+          "page_start": 3,
+          "page_end": 3,
+          "content": "eserves the information particular to\naudio signals. The video frames are resized to 224×224 pixels each modality, and enables individual modalities to be updated\nand normalized to remove variations in illumination and ensure without retraining the entire system.\n\n516Authorized licensed use limited "
+        },
+        {
+          "chunk_index": 65,
+          "start_char": 16250,
+          "end_char": 16550,
+          "page_start": 3,
+          "page_end": 4,
+          "content": "ntire system.\n\n516Authorized licensed use limited to: China University of Geosciences Wuhan Campus. Downloaded on September 08,2026 at 08:13:50 UTC from IEEE Xplore. Restrictions apply.\n\n2026 Fourth International Conference on Secure Cyber Computing and Communication (ICSCCC)\n\nF. MLP Classification "
+        },
+        {
+          "chunk_index": 66,
+          "start_char": 16500,
+          "end_char": 16800,
+          "page_start": 4,
+          "page_end": 4,
+          "content": "and Communication (ICSCCC)\n\nF. MLP Classification Architecture\n\nThe fused feature vector is fed to the multilayer perceptron\n(MLP) classifier with the following structure:\n• Input layer: 1344-dimensional fused features\n• Hidden layer 1: 512 neurons, Batch Normalization, ReLU\nactivation, Dropout (p ="
+        },
+        {
+          "chunk_index": 67,
+          "start_char": 16750,
+          "end_char": 17050,
+          "page_start": 4,
+          "page_end": 4,
+          "content": "Batch Normalization, ReLU\nactivation, Dropout (p = 0.3)\n• Hidden layer 2: 256 neurons, Batch Normalization, ReLU\nactivation, Dropout (p = 0.2)\n• Output layer: 4 neurons that generate class logits\nIt has around 1.05 million trainable parameters, amounting\nto a total size of about 3 million parameters"
+        },
+        {
+          "chunk_index": 68,
+          "start_char": 17000,
+          "end_char": 17300,
+          "page_start": 4,
+          "page_end": 4,
+          "content": "ting\nto a total size of about 3 million parameters including feature\nextractors. This compact design supports efficient inference as Fig. 2. The training and validation loss curves of the proposed multimodal\nwell as strong classification performance. The model is trained deepfake detection system\nfo"
+        },
+        {
+          "chunk_index": 69,
+          "start_char": 17250,
+          "end_char": 17550,
+          "page_start": 4,
+          "page_end": 4,
+          "content": " The model is trained deepfake detection system\nfor 30 epochs using cross-entropy loss with class weighting\nto handle class imbalance.\n\nG. Temperature Scaling for Confidence Calibration\n\nTo mitigate overconfident predictions, especially under do-\nmain shift, temperature scaling is performed at infer"
+        },
+        {
+          "chunk_index": 70,
+          "start_char": 17500,
+          "end_char": 17800,
+          "page_start": 4,
+          "page_end": 4,
+          "content": "n shift, temperature scaling is performed at inference time.\nGiven the output logits z and a temperature parameter T, the\ncalibrated class probabilities are computed as\n\nexp(zi/T)\nP(y = i) = (4) Pj exp(zj/T).\nThe temperature value is empirically set to T = 2.0 based\non validation experiments. This h"
+        },
+        {
+          "chunk_index": 71,
+          "start_char": 17750,
+          "end_char": 18050,
+          "page_start": 4,
+          "page_end": 4,
+          "content": "to T = 2.0 based\non validation experiments. This helps in making predictions\nwith greater reliability on unseen samples without compro- Fig. 3. The training and validation accuracy curves of the proposed multi-\nmising on a good balance between accuracy on the trained modal deepfake detection system\n"
+        },
+        {
+          "chunk_index": 72,
+          "start_char": 18000,
+          "end_char": 18300,
+          "page_start": 4,
+          "page_end": 4,
+          "content": "cy on the trained modal deepfake detection system\ndistribution and robustness to distribution drifts, which is a\nproblem faced commonly in deepfake detection architectures.\nand then stabilizes, reflecting effective learning without over- Moreover, temperature scaling reduces overconfidence in pre-\nf"
+        },
+        {
+          "chunk_index": 73,
+          "start_char": 18250,
+          "end_char": 18550,
+          "page_start": 4,
+          "page_end": 4,
+          "content": "mperature scaling reduces overconfidence in pre-\nfitting. Correspondingly, the accuracy curves show consistent dictions by smoothing out the output probability distribution,\nimprovement in both training and validation accuracy, with the producing well-calibrated confidence levels. This calibration\nc"
+        },
+        {
+          "chunk_index": 74,
+          "start_char": 18500,
+          "end_char": 18800,
+          "page_start": 4,
+          "page_end": 4,
+          "content": "l-calibrated confidence levels. This calibration\ncurves converging in later epochs. This behavior confirms the technique further assists in improving the generality of the\nrobustness of the lightweight multimodal architecture and its developed system without adding any extra computational\nstrong gen"
+        },
+        {
+          "chunk_index": 75,
+          "start_char": 18750,
+          "end_char": 19050,
+          "page_start": 4,
+          "page_end": 4,
+          "content": " without adding any extra computational\nstrong generalization capability on unseen data. complexity.\nTable I illustrates the class-wise performance of the pro-\nIV. RESULTS AND DISCUSSION posed multimodal deepfake detection system regarding pre-\nThe proposed multimodal deepfake detection framework ci"
+        },
+        {
+          "chunk_index": 76,
+          "start_char": 19000,
+          "end_char": 19300,
+          "page_start": 4,
+          "page_end": 4,
+          "content": "roposed multimodal deepfake detection framework cision, recall, and F1 score. The findings clearly show high\nwas tested on the FakeAVCeleb dataset consisting of 9,512 performance across all four classes, demonstrating effective\nvideos. The training set consists of videos from four learning of both v"
+        },
+        {
+          "chunk_index": 77,
+          "start_char": 19250,
+          "end_char": 19550,
+          "page_start": 4,
+          "page_end": 4,
+          "content": "et consists of videos from four learning of both visual and audio cues. The Real class achieves\nclasses: Real (Real+Real), FakeVid (Fake+Real), FakeAud high recall, evidencing reduced false-positive predictions —\n(Real+Fake), and BothFake (Fake+Fake). The ratio of splitting critical for deployment. "
+        },
+        {
+          "chunk_index": 78,
+          "start_char": 19500,
+          "end_char": 19800,
+          "page_start": 4,
+          "page_end": 4,
+          "content": ". The ratio of splitting critical for deployment. The FakeVid and BothFake classes\nof the dataset was done as 70:20:10 for training, validation, display near-perfect accuracy, pointing to the robust ability\nand testing, respectively. The lightweight architecture achieved for facial detection and com"
+        },
+        {
+          "chunk_index": 79,
+          "start_char": 19750,
+          "end_char": 20050,
+          "page_start": 4,
+          "page_end": 4,
+          "content": "architecture achieved for facial detection and combined audio-visual manipulation\na training accuracy of 98.44% and a testing accuracy of detection. The FakeAud class also supports a high F1 score,\n98.75%, showcasing strong learning capability and effective ensuring the effectiveness of the audio fe"
+        },
+        {
+          "chunk_index": 80,
+          "start_char": 20000,
+          "end_char": 20300,
+          "page_start": 4,
+          "page_end": 4,
+          "content": "fective ensuring the effectiveness of the audio feature representation.\ngeneralization. A class-wise evaluation considering precision, Overall, the class-wise metrics demonstrate strong general-\nrecall, F1-score, and class support shows consistently high ization capability for the proposed lightweig"
+        },
+        {
+          "chunk_index": 81,
+          "start_char": 20250,
+          "end_char": 20550,
+          "page_start": 4,
+          "page_end": 4,
+          "content": "high ization capability for the proposed lightweight multimodal\nperformance across all categories, indicative of the robustness framework.\nof the model despite class imbalance and diverse audio-visual Fig. 4 illustrates the confusion matrix obtained for the\nmanipulation patterns. proposed multimodal"
+        },
+        {
+          "chunk_index": 82,
+          "start_char": 20500,
+          "end_char": 20800,
+          "page_start": 4,
+          "page_end": 4,
+          "content": "for the\nmanipulation patterns. proposed multimodal deepfake detection system across four\nFigs. 2 and 3 together depict the training behavior for classes: Real (Real+Real), FakeVid (Fake+Real), FakeAud\nthe proposed multimodal deepfake detection framework. The (Real+Fake), and BothFake (Fake+Fake). Th"
+        },
+        {
+          "chunk_index": 83,
+          "start_char": 20750,
+          "end_char": 21050,
+          "page_start": 4,
+          "page_end": 4,
+          "content": "ork. The (Real+Fake), and BothFake (Fake+Fake). The diagonal ele-\ntraining loss shows stable convergence, while the validation ments of the matrix represent correctly classified instances,\nloss exhibits minor fluctuations during the first few epochs while the off-diagonal elements indicate misclassi"
+        },
+        {
+          "chunk_index": 84,
+          "start_char": 21000,
+          "end_char": 21300,
+          "page_start": 4,
+          "page_end": 5,
+          "content": "while the off-diagonal elements indicate misclassifications.\n\n517Authorized licensed use limited to: China University of Geosciences Wuhan Campus. Downloaded on September 08,2026 at 08:13:50 UTC from IEEE Xplore. Restrictions apply.\n\n2026 Fourth International Conference on Secure Cyber Computing and"
+        },
+        {
+          "chunk_index": 85,
+          "start_char": 21250,
+          "end_char": 21550,
+          "page_start": 5,
+          "page_end": 5,
+          "content": "rnational Conference on Secure Cyber Computing and Communication (ICSCCC)\n\nTABLE I V. CONCLUSION\nCLASSIFICATION REPORT FOR THE PROPOSED METHOD\nThe proposed work presents a lightweight multimodal deep-\nClass Precision Recall F1-score fake detection framework that processes both visual and audio\nReal "
+        },
+        {
+          "chunk_index": 86,
+          "start_char": 21500,
+          "end_char": 21800,
+          "page_start": 5,
+          "page_end": 5,
+          "content": "amework that processes both visual and audio\nReal (Real+Real) 0.96 0.9625 0.96\nFakeVid (Fake+Real) 0.98 0.99 0.99 data for accurate classification of manipulated media. The sys-\nFakeAud (Real+Fake) 0.99 0.96 0.97 tem is evaluated on the FakeAVCeleb dataset, which consists\nBothFake (Fake+Fake) 0.99 0"
+        },
+        {
+          "chunk_index": 87,
+          "start_char": 21750,
+          "end_char": 22050,
+          "page_start": 5,
+          "page_end": 5,
+          "content": "ataset, which consists\nBothFake (Fake+Fake) 0.99 0.99 0.99 of synchronized audio-visual samples across four deepfake\nMacro Average 0.98 0.965 0.975\nWeighted Average 0.9891 0.9875 0.9880 categories.\nVisual features are extracted using MobileNetV3, while\naudio representations are obtained using Wav2Ve"
+        },
+        {
+          "chunk_index": 88,
+          "start_char": 22000,
+          "end_char": 22300,
+          "page_start": 5,
+          "page_end": 5,
+          "content": "le\naudio representations are obtained using Wav2Vec2, allowing\neffective learning from both modalities. These features are\ncombined through a late fusion approach and passed to a\ncompact MLP classifier for final prediction.\nThe framework achieves high accuracy on both training and\ntesting data while"
+        },
+        {
+          "chunk_index": 89,
+          "start_char": 22250,
+          "end_char": 22550,
+          "page_start": 5,
+          "page_end": 5,
+          "content": "h accuracy on both training and\ntesting data while maintaining low computational complexity.\nThe results also indicate strong generalization performance\nwith minimal class confusion, even in the presence of class\nimbalance.\nIn future work, the framework can be extended by incor-\nporating adaptive fu"
+        },
+        {
+          "chunk_index": 90,
+          "start_char": 22500,
+          "end_char": 22800,
+          "page_start": 5,
+          "page_end": 5,
+          "content": "ork can be extended by incor-\nporating adaptive fusion strategies to improve cross-modal\ninteraction. Additionally, handling real-world challenges such\nas noisy speech, compressed videos, and partial occlusions\ncan further enhance its applicability. Exploring temporal con-\nsistency and evaluating on"
+        },
+        {
+          "chunk_index": 91,
+          "start_char": 22750,
+          "end_char": 23050,
+          "page_start": 5,
+          "page_end": 5,
+          "content": "Exploring temporal con-\nsistency and evaluating on larger datasets may also improve\nrobustness against evolving deepfake techniques.\n\nREFERENCES\n\n[1] Y. Tian, W. Zhou, and A. U. Haq, “Detection of deepfakes: Protecting\nimages and videos against deepfake,” in Proc. ICCWAMTIP, 2024.\nFig. 4. Confusion "
+        },
+        {
+          "chunk_index": 92,
+          "start_char": 23000,
+          "end_char": 23300,
+          "page_start": 5,
+          "page_end": 5,
+          "content": "ake,” in Proc. ICCWAMTIP, 2024.\nFig. 4. Confusion Matrix of the proposed system [2] G. Chandel et al., “Deepfake detection using AI and machine learning\nalgorithms,” in Proc. IEEE IC2E3, 2025.\n[3] Y. Gupta and S. B. Maind, “Deepfake video detection methods using\ndeep neural networks,” in Proc. IEEE "
+        },
+        {
+          "chunk_index": 93,
+          "start_char": 23250,
+          "end_char": 23550,
+          "page_start": 5,
+          "page_end": 5,
+          "content": "ethods using\ndeep neural networks,” in Proc. IEEE I2CT, 2024.\nAs observed in Fig. 4, the FakeVid and BothFake [4] S. S. T. et al., “An effective approach for deepfake video detection using\nbinarized neural network,” in Proc. ICTACS, 2022.\nclasses achieve almost perfect classification, demonstrating "
+        },
+        {
+          "chunk_index": 94,
+          "start_char": 23500,
+          "end_char": 23800,
+          "page_start": 5,
+          "page_end": 5,
+          "content": "ieve almost perfect classification, demonstrating [5] A. Kumar et al., “A fine-tuned MobileNetV3 model for real and fake\nthe model’s strong capability to detect facial manipulations image classification,” in Proc. ICoICI, 2024.\nand combined audio-visual forgeries. The Real and FakeAud [6] V. S. Venu"
+        },
+        {
+          "chunk_index": 95,
+          "start_char": 23750,
+          "end_char": 24050,
+          "page_start": 5,
+          "page_end": 5,
+          "content": "ual forgeries. The Real and FakeAud [6] V. S. Venu et al., “MobileNetV3 for AI-generated image classification,”\nIEEE Xplore, 2024.\nclasses show a small number of misclassifications, primarily [7] G. S. Jhunt et al., “Enhancing deepfake detection via image waveform,”\ndue to subtle similarities betwee"
+        },
+        {
+          "chunk_index": 96,
+          "start_char": 24000,
+          "end_char": 24300,
+          "page_start": 5,
+          "page_end": 5,
+          "content": "image waveform,”\ndue to subtle similarities between genuine speech and synthe- in Proc. ICTC, 2024.\nsized audio in certain cases. Despite this, the overall predic- [8] T. Zhang and S. Wu, “TFFNet: Texture-based feature fusion for deepfake\ndetection,” in Proc. ICIPMC, 2025.\ntion distribution indicate"
+        },
+        {
+          "chunk_index": 97,
+          "start_char": 24250,
+          "end_char": 24550,
+          "page_start": 5,
+          "page_end": 5,
+          "content": " in Proc. ICIPMC, 2025.\ntion distribution indicates minimal confusion among classes, [9] T. Rajesh, “Deepfake detection using 3D EfficientNetB7 with spatial\nhighlighting the robustness and reliability of the proposed attention,” BIHER Journal, 2024.\nlightweight multimodal framework. [10] J. Chen et "
+        },
+        {
+          "chunk_index": 98,
+          "start_char": 24500,
+          "end_char": 24800,
+          "page_start": 5,
+          "page_end": 5,
+          "content": "lightweight multimodal framework. [10] J. Chen et al., “Deepfake detection using graph representation with\nmulti-dimensional features,” in Proc. IEEE SWC, 2023.\nThe presented figures collectively demonstrate the effective- [11] A. K. Jha et al., “Deep learning based deepfake video detection system,”"
+        },
+        {
+          "chunk_index": 99,
+          "start_char": 24750,
+          "end_char": 25050,
+          "page_start": 5,
+          "page_end": 5,
+          "content": "p learning based deepfake video detection system,”\nness, robustness, and structural clarity of the proposed multi- in Proc. ICDT, 2025.\n[12] S. V. Bhati et al., “Demodulating synthetic videos using deep learning\nmodal deepfake detection framework. Three main integrated models,” in Proc. ICAECT, 2024"
+        },
+        {
+          "chunk_index": 100,
+          "start_char": 25000,
+          "end_char": 25300,
+          "page_start": 5,
+          "page_end": 5,
+          "content": "ree main integrated models,” in Proc. ICAECT, 2024.\nstreams are shown in the diagrams, emphasising a lightweight [13] D. Xiong et al., “Deepfake detection based on LSTM networks with\nand modular design that facilitates effective audio-visual fea- facial geometric features,” in Proc. EICCT, 2025.\ntur"
+        },
+        {
+          "chunk_index": 101,
+          "start_char": 25250,
+          "end_char": 25550,
+          "page_start": 5,
+          "page_end": 5,
+          "content": "ial geometric features,” in Proc. EICCT, 2025.\nture extraction and fusion. All of the deepfake categories have [14] A. H. Soudy et al., “Deepfake detection using convolutional vision\ntransformers,” Neural Computing and Applications, 2024.\nhigh precision, recall, and F1-score, according to the class-"
+        },
+        {
+          "chunk_index": 102,
+          "start_char": 25500,
+          "end_char": 25800,
+          "page_start": 5,
+          "page_end": 5,
+          "content": "ion, recall, and F1-score, according to the class- [15] D. Akmal and V. Suryani, “Audio deepfake detection using Xception\nwise performance figures. Additionally, the confusion matrix model,” in Proc. ICoICT, 2025.\ndemonstrates that there is little confusion and a high degree of [16] S. Giri et al., "
+        },
+        {
+          "chunk_index": 103,
+          "start_char": 25750,
+          "end_char": 26050,
+          "page_start": 5,
+          "page_end": 5,
+          "content": "nfusion and a high degree of [16] S. Giri et al., “Recognising altered audio using deep learning,” in Proc.\nAIMV, 2025.\nseparability between the classes. A well-structured framework [17] J. M. Mart´ın-Do˜nas, “Audio deepfake detection based on Wav2Vec2,”\ndesign is represented by the class diagram vi"
+        },
+        {
+          "chunk_index": 104,
+          "start_char": 26000,
+          "end_char": 26300,
+          "page_start": 5,
+          "page_end": 5,
+          "content": "c2,”\ndesign is represented by the class diagram visualisation. For in Proc. ICASSP, 2022.\nthe deployment of deepfake detection, all of these diagrams [18] Y. Zhou and S.-N. Lim, “Joint audio-visual deepfake detection,” in Proc.\nICCV, 2021.\ndemonstrate that the framework can achieve a reasonable [19]"
+        },
+        {
+          "chunk_index": 105,
+          "start_char": 26250,
+          "end_char": 26550,
+          "page_start": 5,
+          "page_end": 5,
+          "content": "e that the framework can achieve a reasonable [19] S. Sheeranali et al., “DualStreamNet: Robust audio-video deepfake\ntrade-off between efficiency, accuracy, and interpretability. detection,” in Proc. I2CT, 2024.\n\n518Authorized licensed use limited to: China University of Geosciences Wuhan Campus. Do"
+        },
+        {
+          "chunk_index": 106,
+          "start_char": 26500,
+          "end_char": 26800,
+          "page_start": 5,
+          "page_end": 6,
+          "content": ": China University of Geosciences Wuhan Campus. Downloaded on September 08,2026 at 08:13:50 UTC from IEEE Xplore. Restrictions apply.\n\n2026 Fourth International Conference on Secure Cyber Computing and Communication (ICSCCC)\n\n[20] J. Guan et al., “Multimodal deepfake video detection,” in Proc. ICAIC"
+        },
+        {
+          "chunk_index": 107,
+          "start_char": 26750,
+          "end_char": 27050,
+          "page_start": 6,
+          "page_end": 6,
+          "content": "ltimodal deepfake video detection,” in Proc. ICAICA,\n2021.\n[21] G. T. Reddy et al., “Deepfake prediction using attention-based CNN and\nMFCC,” Int. J. Image Graphics, 2024.\n[22] F. Giansanti et al., “A prescriptive deep learning-based architecture for\ndeepfake detection,” in Proc. IEEE PerCom, 2021.\n"
+        },
+        {
+          "chunk_index": 108,
+          "start_char": 27000,
+          "end_char": 27300,
+          "page_start": 6,
+          "page_end": 6,
+          "content": "\ndeepfake detection,” in Proc. IEEE PerCom, 2021.\n[23] J. S. Chung and A. Zisserman, “Out of time: Automated lip sync in the\nwild,” in Proc. ACCV, 2017.\n[24] M. S. Rana et al., “Deepfake detection: A systematic literature review,”\nIEEE Access, vol. 10, 2022.\n[25] A. D. Mishra et al., “Deepfake detec"
+        },
+        {
+          "chunk_index": 109,
+          "start_char": 27250,
+          "end_char": 27535,
+          "page_start": 6,
+          "page_end": 6,
+          "content": "0, 2022.\n[25] A. D. Mishra et al., “Deepfake detection approaches and research\nobstacles,” in Proc. ICCSAI, 2025.\n\n519Authorized licensed use limited to: China University of Geosciences Wuhan Campus. Downloaded on September 08,2026 at 08:13:50 UTC from IEEE Xplore. Restrictions apply."
+        }
+      ]
+    }
+  ]
+}

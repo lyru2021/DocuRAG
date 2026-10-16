@@ -1,8 +1,16 @@
+"""基于字符窗口的文本分块工具。"""
+
 from dataclasses import dataclass
 
 
 @dataclass(frozen=True)
 class TextChunk:
+    """文本分块结果。
+
+    字符区间使用 Python 半开区间 `[start_char, end_char)`，
+    便于直接用 `text[start_char:end_char]` 校验证据。
+    """
+
     chunk_index: int
     content: str
     start_char: int
@@ -22,8 +30,20 @@ def split_text(
     - end_char: exclusive
 
     The returned positions refer to the input text.
+
+    Args:
+        text: 待分块的完整文本。
+        chunk_size: 单个 chunk 的最大字符数。
+        overlap: 相邻 chunk 之间保留的重叠字符数。
+
+    Returns:
+        list[TextChunk]: 按原文顺序排列的非空 chunk。
+
+    Raises:
+        ValueError: `chunk_size` 或 `overlap` 类型/取值不合法。
     """
 
+    # bool 是 int 的子类，显式排除可以避免 True/False 被误当作 1/0。
     if not isinstance(chunk_size, int) or isinstance(chunk_size, bool):
         raise ValueError("chunk_size must be an integer")
 

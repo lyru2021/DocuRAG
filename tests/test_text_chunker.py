@@ -1,3 +1,5 @@
+"""文本分块工具测试。"""
+
 import pytest
 
 from app.services.text_chunker import split_text

@@ -1,3 +1,4 @@
+"""本地 PDF 文件存储服务测试。"""
 
 import hashlib
 from uuid import uuid4

@@ -1,3 +1,7 @@
+"""chunk 持久化服务。
+
+管理文档 Chunk 的切分、页面映射和数据库持久化。
+"""
 
 from sqlalchemy import delete, select
 from sqlalchemy.orm import Session
@@ -12,6 +16,11 @@ from app.services.text_chunker import split_text
 
 
 class ChunkRepository:
+    """文档分块的持久化入口。
+
+    负责把解析后的全文切成可检索片段，并把每个片段映射回 PDF 页码范围。
+    """
+
     def __init__(self, db: Session):
         self.db = db
 
@@ -20,11 +29,25 @@ class ChunkRepository:
         document_id: int,
         chunk_size: int = 300,
         overlap: int = 50,
+        *,
+        auto_commit: bool = True,
     ) -> list[Chunk]:
         """
         Replace document chunks in one transaction.
 
         Also map chunk character offsets to PDF pages.
+
+        Args:
+            document_id: 需要重新分块的文档主键。
+            chunk_size: 单个 chunk 的最大字符长度。
+            overlap: 相邻 chunk 之间复用的字符数。
+
+        Returns:
+            list[Chunk]: 本次新建并提交的 chunk 对象列表。
+
+        Raises:
+            ValueError: 文档不存在、没有可分块文本，或分块结果为空。
+            Exception: 数据库写入失败时回滚当前 Session 后继续抛出原异常。
         """
 
         try:
@@ -69,6 +92,7 @@ class ChunkRepository:
             )
 
             # 5. Build new chunks with page ranges.
+            # 页码范围来自字符区间交集，而不是重新解析 chunk 内容，避免重复文本导致误判。
             chunks = []
 
             for part in parts:
@@ -92,18 +116,35 @@ class ChunkRepository:
 
             # 6. Save all chunks.
             self.db.add_all(chunks)
-            self.db.commit()
+
+            if auto_commit:
+                self.db.commit()
+            else:
+                # 只将 SQL 发送到数据库，不提交事务。
+                # 后续 Worker 可以统一提交 Chunk 与任务状态。
+                self.db.flush()
 
             return chunks
 
         except Exception:
-            self.db.rollback()
+            if auto_commit:
+                self.db.rollback()
+            # auto_commit=False 时，事务归调用方管理。
             raise
 
     def list_document_chunks(
         self,
         document_id: int,
     ) -> list[Chunk]:
+        """按 chunk_index 返回某个文档的全部分块。
+
+        Args:
+            document_id: `documents.id` 主键。
+
+        Returns:
+            list[Chunk]: 按原文顺序排列的 chunk 列表。
+        """
+
         statement = (
             select(Chunk)
             .where(Chunk.document_id == document_id)

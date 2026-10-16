@@ -1,10 +1,8 @@
-import pytest
-from fastapi.testclient import TestClient
+"""文档元数据 CRUD API 测试。"""
 
-from sqlalchemy import delete, select
+from sqlalchemy import select
 
-from app.main import app
-from app.models.document import Document, Chunk
+from app.models.document import Chunk
 
 
 def test_create_document(client):
@@ -169,5 +167,3 @@ def test_delete_document_cascades_chunks(
 
     after = db_session.scalars(stmt).all()
     assert len(after) == 0
-
-

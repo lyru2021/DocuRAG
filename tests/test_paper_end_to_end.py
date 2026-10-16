@@ -1,3 +1,5 @@
+"""文档上传到论文证据查询的端到端测试。"""
+
 import hashlib
 
 import fitz

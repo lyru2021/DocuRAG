@@ -1,3 +1,5 @@
+"""数据库事务回滚行为测试。"""
+
 from unittest.mock import Mock
 
 import pytest
@@ -9,22 +11,23 @@ from app.models.document import Chunk
 from app.schemas.document import DocumentCreate
 from app.services.document_repository import DocumentRepository
 
-def test_rollback_after_duplicate_chunk(db_session,sample_document):
+
+def test_rollback_after_duplicate_chunk(db_session, sample_document):
     document_id = sample_document.id
 
     first_chunk = Chunk(
         document_id=document_id,
         chunk_index=0,
-        content="Original chunk"
+        content="Original chunk",
     )
-    
+
     db_session.add(first_chunk)
     db_session.flush()
 
     duplicate_chunk = Chunk(
         document_id=document_id,
         chunk_index=0,  # Duplicate index
-        content="Duplicate chunk"
+        content="Duplicate chunk",
     )
 
     db_session.add(duplicate_chunk)
@@ -39,7 +42,7 @@ def test_rollback_after_duplicate_chunk(db_session,sample_document):
     )
 
     assert count is not None
-    assert count >=0
+    assert count >= 0
 
 
 def test_repository_rolls_back_on_commit_failure():
@@ -49,7 +52,10 @@ def test_repository_rolls_back_on_commit_failure():
 
     repository = DocumentRepository(mock_db)
 
-    data = DocumentCreate(title = "Rollback Test", filename = "rollback.pdf")
+    data = DocumentCreate(
+        title="Rollback Test",
+        filename="rollback.pdf",
+    )
 
     with pytest.raises(SQLAlchemyError, match="Simulated database failure"):
         repository.create(data)

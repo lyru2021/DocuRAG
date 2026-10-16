@@ -1,0 +1,158 @@
+
+[
+  {
+    "question_id": "q001",
+    "query": "Log-Mel spectrograms",
+    "evidence": [
+      {"document_id": 31, "start_char": 1619, "end_char": 1713}
+    ]
+  },
+  {
+    "question_id": "q002",
+    "query": "raw waveform",
+    "evidence": [
+      {"document_id": 31, "start_char": 1723, "end_char": 1798}
+    ]
+  },
+  {
+    "question_id": "q003",
+    "query": "SingFake dataset",
+    "evidence": [
+      {"document_id": 31, "start_char": 1800, "end_char": 1839}
+    ]
+  },
+  {
+    "question_id": "q004",
+    "query": "separated vocal tracks",
+    "evidence": [
+      {"document_id": 31, "start_char": 1868, "end_char": 1934}
+    ]
+  },
+  {
+    "question_id": "q005",
+    "query": "spectrogram-based models",
+    "evidence": [
+      {"document_id": 31, "start_char": 1966, "end_char": 2086}
+    ]
+  },
+
+  {
+    "question_id": "q006",
+    "query": "imbalanced datasets",
+    "evidence": [
+      {
+        "document_id": 31,
+        "start_char": 33496,
+        "end_char": 33548
+      }
+    ]
+  },
+  {
+    "question_id": "q007",
+    "query": "Precision, Recall, and F1-score",
+    "evidence": [
+      {
+        "document_id": 31,
+        "start_char": 33287,
+        "end_char": 33326
+      }
+    ]
+  },
+  {
+    "question_id": "q008",
+    "query": "late fusion scheme",
+    "evidence": [
+      {
+        "document_id": 32,
+        "start_char": 1147,
+        "end_char": 1165
+      }
+    ]
+  },
+  {
+    "question_id": "q009",
+    "query": "four classes",
+    "evidence": [
+      {
+        "document_id": 32,
+        "start_char": 1878,
+        "end_char": 1937
+      }
+    ]
+  },
+  {
+    "question_id": "q010",
+    "query": "temperature scaling",
+    "evidence": [
+      {
+        "document_id": 32,
+        "start_char": 1958,
+        "end_char": 1989
+      },
+      {
+        "document_id": 32,
+        "start_char": 2071,
+        "end_char": 2104
+      }
+    ]
+  },
+    
+  {
+    "question_id": "q011",
+    "query": "Equal Error Rate",
+    "evidence": [
+      {
+        "document_id": 31,
+        "start_char": 2133,
+        "end_char": 2149
+      }
+    ]
+  },
+  {
+    "question_id": "q012",
+    "query": "AUC",
+    "evidence": [
+      {
+        "document_id": 31,
+        "start_char": 2183,
+        "end_char": 2186
+      }
+    ]
+  },
+  {
+    "question_id": "q013",
+    "query": "98.75%",
+    "evidence": [
+      {
+        "document_id": 32,
+        "start_char": 2352,
+        "end_char": 2358
+      }
+    ]
+  },
+  {
+    "question_id": "q014",
+    "query": "multilayer perceptron",
+    "evidence": [
+      {
+        "document_id": 32,
+        "start_char": 1496,
+        "end_char": 1517
+      }
+    ]
+  },
+  {
+    "question_id": "q015",
+    "query": "probabilistic modality reasoning",
+    "evidence": [
+      {
+        "document_id": 32,
+        "start_char": 2306,
+        "end_char": 2338
+      }
+    ]
+  }
+
+]
+
+

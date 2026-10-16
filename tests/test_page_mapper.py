@@ -1,3 +1,5 @@
+"""chunk 字符区间到 PDF 页码区间的映射测试。"""
+
 from app.models.document import DocumentPage
 from app.services.page_mapper import find_chunk_page_range
 

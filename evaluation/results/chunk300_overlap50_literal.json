@@ -1,0 +1,520 @@
+{
+  "experiment_id": "chunk300_overlap50",
+  "retrieval_method": "snapshot_literal",
+  "top_k": 5,
+  "snapshot_sha256": "55f26c67cecdc84bd7811b322ca8c0c47072e55cb42733f052d083aa65469c6b",
+  "questions_sha256": "822aa24988364287967fd812e544a5a9559d3119897d70faee94a0eaf353d9d6",
+  "document_ids": [
+    31,
+    32
+  ],
+  "chunk_size": 300,
+  "overlap": 50,
+  "total_chunks": 375,
+  "executed_at": "2026-10-16T10:40:40.658954+00:00",
+  "environment": {
+    "python_version": "3.11.17 (main, Oct  1 2026, 20:17:42) [GCC 14.3.0]",
+    "platform": "Linux-6.6.114.1-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+    "processor": ""
+  },
+  "summary": {
+    "question_count": 15,
+    "evidence_recall_at_5": 0.9333333333333333,
+    "hit_at_5": 0.9333333333333333,
+    "mrr_at_5": 0.8666666666666667,
+    "mean_latency_ms": 0.49204000000000003,
+    "max_latency_ms": 0.8181,
+    "min_latency_ms": 0.3813
+  },
+  "questions": [
+    {
+      "question_id": "q001",
+      "evidence_recall_at_k": 1.0,
+      "hit_at_k": 1,
+      "reciprocal_rank_at_k": 1.0,
+      "first_complete_rank": 1,
+      "query": "Log-Mel spectrograms",
+      "latency_ms": 0.7235,
+      "retrieved_chunks": [
+        {
+          "document_id": 31,
+          "chunk_index": 6,
+          "start_char": 1500,
+          "end_char": 1800
+        },
+        {
+          "document_id": 31,
+          "chunk_index": 23,
+          "start_char": 5750,
+          "end_char": 6050
+        },
+        {
+          "document_id": 31,
+          "chunk_index": 40,
+          "start_char": 10000,
+          "end_char": 10300
+        },
+        {
+          "document_id": 31,
+          "chunk_index": 41,
+          "start_char": 10250,
+          "end_char": 10550
+        },
+        {
+          "document_id": 31,
+          "chunk_index": 239,
+          "start_char": 59750,
+          "end_char": 60050
+        }
+      ]
+    },
+    {
+      "question_id": "q002",
+      "evidence_recall_at_k": 1.0,
+      "hit_at_k": 1,
+      "reciprocal_rank_at_k": 1.0,
+      "first_complete_rank": 1,
+      "query": "raw waveform",
+      "latency_ms": 0.8181,
+      "retrieved_chunks": [
+        {
+          "document_id": 31,
+          "chunk_index": 6,
+          "start_char": 1500,
+          "end_char": 1800
+        },
+        {
+          "document_id": 31,
+          "chunk_index": 26,
+          "start_char": 6500,
+          "end_char": 6800
+        },
+        {
+          "document_id": 31,
+          "chunk_index": 59,
+          "start_char": 14750,
+          "end_char": 15050
+        },
+        {
+          "document_id": 31,
+          "chunk_index": 102,
+          "start_char": 25500,
+          "end_char": 25800
+        },
+        {
+          "document_id": 31,
+          "chunk_index": 131,
+          "start_char": 32750,
+          "end_char": 33050
+        }
+      ]
+    },
+    {
+      "question_id": "q003",
+      "evidence_recall_at_k": 1.0,
+      "hit_at_k": 1,
+      "reciprocal_rank_at_k": 1.0,
+      "first_complete_rank": 1,
+      "query": "SingFake dataset",
+      "latency_ms": 0.7144,
+      "retrieved_chunks": [
+        {
+          "document_id": 31,
+          "chunk_index": 7,
+          "start_char": 1750,
+          "end_char": 2050
+        },
+        {
+          "document_id": 31,
+          "chunk_index": 36,
+          "start_char": 9000,
+          "end_char": 9300
+        },
+        {
+          "document_id": 31,
+          "chunk_index": 37,
+          "start_char": 9250,
+          "end_char": 9550
+        },
+        {
+          "document_id": 31,
+          "chunk_index": 72,
+          "start_char": 18000,
+          "end_char": 18300
+        },
+        {
+          "document_id": 31,
+          "chunk_index": 75,
+          "start_char": 18750,
+          "end_char": 19050
+        }
+      ]
+    },
+    {
+      "question_id": "q004",
+      "evidence_recall_at_k": 1.0,
+      "hit_at_k": 1,
+      "reciprocal_rank_at_k": 1.0,
+      "first_complete_rank": 1,
+      "query": "separated vocal tracks",
+      "latency_ms": 0.5264,
+      "retrieved_chunks": [
+        {
+          "document_id": 31,
+          "chunk_index": 7,
+          "start_char": 1750,
+          "end_char": 2050
+        },
+        {
+          "document_id": 31,
+          "chunk_index": 125,
+          "start_char": 31250,
+          "end_char": 31550
+        }
+      ]
+    },
+    {
+      "question_id": "q005",
+      "evidence_recall_at_k": 0.0,
+      "hit_at_k": 0,
+      "reciprocal_rank_at_k": 0.0,
+      "first_complete_rank": null,
+      "query": "spectrogram-based models",
+      "latency_ms": 0.4466,
+      "retrieved_chunks": [
+        {
+          "document_id": 31,
+          "chunk_index": 7,
+          "start_char": 1750,
+          "end_char": 2050
+        },
+        {
+          "document_id": 31,
+          "chunk_index": 9,
+          "start_char": 2250,
+          "end_char": 2550
+        },
+        {
+          "document_id": 31,
+          "chunk_index": 70,
+          "start_char": 17500,
+          "end_char": 17800
+        },
+        {
+          "document_id": 31,
+          "chunk_index": 135,
+          "start_char": 33750,
+          "end_char": 34050
+        },
+        {
+          "document_id": 31,
+          "chunk_index": 151,
+          "start_char": 37750,
+          "end_char": 38050
+        }
+      ]
+    },
+    {
+      "question_id": "q006",
+      "evidence_recall_at_k": 1.0,
+      "hit_at_k": 1,
+      "reciprocal_rank_at_k": 1.0,
+      "first_complete_rank": 1,
+      "query": "imbalanced datasets",
+      "latency_ms": 0.4135,
+      "retrieved_chunks": [
+        {
+          "document_id": 31,
+          "chunk_index": 133,
+          "start_char": 33250,
+          "end_char": 33550
+        }
+      ]
+    },
+    {
+      "question_id": "q007",
+      "evidence_recall_at_k": 1.0,
+      "hit_at_k": 1,
+      "reciprocal_rank_at_k": 0.5,
+      "first_complete_rank": 2,
+      "query": "Precision, Recall, and F1-score",
+      "latency_ms": 0.3949,
+      "retrieved_chunks": [
+        {
+          "document_id": 31,
+          "chunk_index": 127,
+          "start_char": 31750,
+          "end_char": 32050
+        },
+        {
+          "document_id": 31,
+          "chunk_index": 133,
+          "start_char": 33250,
+          "end_char": 33550
+        },
+        {
+          "document_id": 31,
+          "chunk_index": 141,
+          "start_char": 35250,
+          "end_char": 35550
+        },
+        {
+          "document_id": 31,
+          "chunk_index": 142,
+          "start_char": 35500,
+          "end_char": 35800
+        },
+        {
+          "document_id": 31,
+          "chunk_index": 148,
+          "start_char": 37000,
+          "end_char": 37300
+        }
+      ]
+    },
+    {
+      "question_id": "q008",
+      "evidence_recall_at_k": 1.0,
+      "hit_at_k": 1,
+      "reciprocal_rank_at_k": 1.0,
+      "first_complete_rank": 1,
+      "query": "late fusion scheme",
+      "latency_ms": 0.4168,
+      "retrieved_chunks": [
+        {
+          "document_id": 32,
+          "chunk_index": 4,
+          "start_char": 1000,
+          "end_char": 1300
+        }
+      ]
+    },
+    {
+      "question_id": "q009",
+      "evidence_recall_at_k": 1.0,
+      "hit_at_k": 1,
+      "reciprocal_rank_at_k": 1.0,
+      "first_complete_rank": 1,
+      "query": "four classes",
+      "latency_ms": 0.4344,
+      "retrieved_chunks": [
+        {
+          "document_id": 32,
+          "chunk_index": 7,
+          "start_char": 1750,
+          "end_char": 2050
+        },
+        {
+          "document_id": 32,
+          "chunk_index": 59,
+          "start_char": 14750,
+          "end_char": 15050
+        },
+        {
+          "document_id": 32,
+          "chunk_index": 60,
+          "start_char": 15000,
+          "end_char": 15300
+        },
+        {
+          "document_id": 32,
+          "chunk_index": 76,
+          "start_char": 19000,
+          "end_char": 19300
+        }
+      ]
+    },
+    {
+      "question_id": "q010",
+      "evidence_recall_at_k": 1.0,
+      "hit_at_k": 1,
+      "reciprocal_rank_at_k": 0.5,
+      "first_complete_rank": 2,
+      "query": "temperature scaling",
+      "latency_ms": 0.4535,
+      "retrieved_chunks": [
+        {
+          "document_id": 32,
+          "chunk_index": 7,
+          "start_char": 1750,
+          "end_char": 2050
+        },
+        {
+          "document_id": 32,
+          "chunk_index": 8,
+          "start_char": 2000,
+          "end_char": 2300
+        },
+        {
+          "document_id": 32,
+          "chunk_index": 10,
+          "start_char": 2500,
+          "end_char": 2800
+        },
+        {
+          "document_id": 32,
+          "chunk_index": 11,
+          "start_char": 2750,
+          "end_char": 3050
+        },
+        {
+          "document_id": 32,
+          "chunk_index": 14,
+          "start_char": 3500,
+          "end_char": 3800
+        }
+      ]
+    },
+    {
+      "question_id": "q011",
+      "evidence_recall_at_k": 1.0,
+      "hit_at_k": 1,
+      "reciprocal_rank_at_k": 1.0,
+      "first_complete_rank": 1,
+      "query": "Equal Error Rate",
+      "latency_ms": 0.4051,
+      "retrieved_chunks": [
+        {
+          "document_id": 31,
+          "chunk_index": 8,
+          "start_char": 2000,
+          "end_char": 2300
+        },
+        {
+          "document_id": 31,
+          "chunk_index": 119,
+          "start_char": 29750,
+          "end_char": 30050
+        },
+        {
+          "document_id": 31,
+          "chunk_index": 152,
+          "start_char": 38000,
+          "end_char": 38300
+        },
+        {
+          "document_id": 31,
+          "chunk_index": 153,
+          "start_char": 38250,
+          "end_char": 38550
+        },
+        {
+          "document_id": 31,
+          "chunk_index": 228,
+          "start_char": 57000,
+          "end_char": 57300
+        }
+      ]
+    },
+    {
+      "question_id": "q012",
+      "evidence_recall_at_k": 1.0,
+      "hit_at_k": 1,
+      "reciprocal_rank_at_k": 1.0,
+      "first_complete_rank": 1,
+      "query": "AUC",
+      "latency_ms": 0.42,
+      "retrieved_chunks": [
+        {
+          "document_id": 31,
+          "chunk_index": 8,
+          "start_char": 2000,
+          "end_char": 2300
+        },
+        {
+          "document_id": 31,
+          "chunk_index": 21,
+          "start_char": 5250,
+          "end_char": 5550
+        },
+        {
+          "document_id": 31,
+          "chunk_index": 73,
+          "start_char": 18250,
+          "end_char": 18550
+        },
+        {
+          "document_id": 31,
+          "chunk_index": 126,
+          "start_char": 31500,
+          "end_char": 31800
+        },
+        {
+          "document_id": 31,
+          "chunk_index": 128,
+          "start_char": 32000,
+          "end_char": 32300
+        }
+      ]
+    },
+    {
+      "question_id": "q013",
+      "evidence_recall_at_k": 1.0,
+      "hit_at_k": 1,
+      "reciprocal_rank_at_k": 1.0,
+      "first_complete_rank": 1,
+      "query": "98.75%",
+      "latency_ms": 0.3813,
+      "retrieved_chunks": [
+        {
+          "document_id": 32,
+          "chunk_index": 9,
+          "start_char": 2250,
+          "end_char": 2550
+        },
+        {
+          "document_id": 32,
+          "chunk_index": 16,
+          "start_char": 4000,
+          "end_char": 4300
+        },
+        {
+          "document_id": 32,
+          "chunk_index": 79,
+          "start_char": 19750,
+          "end_char": 20050
+        }
+      ]
+    },
+    {
+      "question_id": "q014",
+      "evidence_recall_at_k": 1.0,
+      "hit_at_k": 1,
+      "reciprocal_rank_at_k": 1.0,
+      "first_complete_rank": 1,
+      "query": "multilayer perceptron",
+      "latency_ms": 0.3961,
+      "retrieved_chunks": [
+        {
+          "document_id": 32,
+          "chunk_index": 5,
+          "start_char": 1250,
+          "end_char": 1550
+        },
+        {
+          "document_id": 32,
+          "chunk_index": 66,
+          "start_char": 16500,
+          "end_char": 16800
+        }
+      ]
+    },
+    {
+      "question_id": "q015",
+      "evidence_recall_at_k": 1.0,
+      "hit_at_k": 1,
+      "reciprocal_rank_at_k": 1.0,
+      "first_complete_rank": 1,
+      "query": "probabilistic modality reasoning",
+      "latency_ms": 0.436,
+      "retrieved_chunks": [
+        {
+          "document_id": 32,
+          "chunk_index": 9,
+          "start_char": 2250,
+          "end_char": 2550
+        }
+      ]
+    }
+  ]
+}

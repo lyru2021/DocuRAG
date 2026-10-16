@@ -1,3 +1,5 @@
+"""论文章节检测结果的持久化服务。"""
+
 from sqlalchemy import select
 from sqlalchemy.orm import Session
 
@@ -7,6 +9,8 @@ from app.services.section_detector import detect_sections
 
 
 class PaperSectionRepository:
+    """论文结构章节的检测与保存入口。"""
+
     def __init__(self, db: Session):
         self.db = db
 
@@ -14,6 +18,19 @@ class PaperSectionRepository:
         self,
         document_id: int,
     ) -> list[PaperSection]:
+        """检测论文标题并保存为候选章节。
+
+        Args:
+            document_id: 已解析 PDF 文档的主键。
+
+        Returns:
+            list[PaperSection]: 当前文档下按 start_char 排序的全部章节。
+
+        Raises:
+            ValueError: 文档不存在、没有解析文本，或缺少 PDF 页码映射。
+            Exception: 数据库提交失败时回滚当前 Session 后继续抛出原异常。
+        """
+
         try:
             document = self.db.get(Document, document_id)
 
@@ -64,6 +81,7 @@ class PaperSectionRepository:
                 if existing is not None:
                     # Never overwrite a manually confirmed
                     # or rejected section.
+                    # 重新检测只补充新章节，不覆盖人工校验过的状态。
                     continue
 
                 section = PaperSection(
@@ -88,5 +106,6 @@ class PaperSectionRepository:
             )
 
         except Exception:
+            # 章节检测会批量新增记录；失败时回滚，避免保存部分候选结果。
             self.db.rollback()
             raise

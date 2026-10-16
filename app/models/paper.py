@@ -1,10 +1,17 @@
+"""论文元数据和章节结构的 ORM 模型。"""
+
 from sqlalchemy import ForeignKey, Integer, JSON, String, UniqueConstraint
-from sqlalchemy.orm import Mapped, mapped_column, relationship
+from sqlalchemy.orm import Mapped, mapped_column
 
 from app.db.base import Base
 
 
 class PaperMetadata(Base):
+    """论文元数据模型。
+
+    与 `documents` 一对一关联，保存标题、作者、年份、DOI 等可验证信息。
+    """
+
     __tablename__ = "paper_metadata"
 
     id: Mapped[int] = mapped_column(primary_key=True)
@@ -48,6 +55,11 @@ class PaperMetadata(Base):
 
 
 class PaperSection(Base):
+    """论文结构章节模型。
+
+    当前章节由规则检测产生，`verification_status` 用于区分候选、人工确认或拒绝状态。
+    """
+
     __tablename__ = "paper_sections"
 
     __table_args__ = (

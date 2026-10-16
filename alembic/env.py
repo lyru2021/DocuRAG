@@ -1,13 +1,15 @@
 import os
-from dotenv import dotenv_values
 from logging.config import fileConfig
 
-from sqlalchemy import create_engine, pool
 from alembic import context
+from dotenv import dotenv_values
+from sqlalchemy import create_engine, pool
 
 from app.db.base import Base
-from app.models.document import Document, Chunk, DocumentPage
+from app.models.document import Chunk, Document, DocumentPage
 from app.models.paper import PaperMetadata, PaperSection
+from app.models.processing_job import ProcessingJob
+from app.models.file_cleanup_job import FileCleanupJob
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
@@ -35,16 +37,22 @@ def run_migrations_offline():
 
 
 def run_migrations_online():
-    database_url = ( 
+    """使用显式迁移账号运行在线迁移。
+
+    迁移连接优先读取环境变量，其次从 `ENV_FILE` 指向的配置文件读取。
+    这样应用账号和迁移账号可以分离，降低运行时账号误改结构的风险。
+    """
+
+    database_url = (
         os.environ.get("MIGRATION_DATABASE_URL")
         or dotenv_values(
-            os.environ.get("ENV_FILE",".env")
+            os.environ.get("ENV_FILE", ".env")
         ).get("MIGRATION_DATABASE_URL")
     )
 
     if not database_url:
-        raise RuntimeError("MIGRATION_DATABASE_URL is not required.")
-    
+        raise RuntimeError("MIGRATION_DATABASE_URL is required.")
+
     engine = create_engine(
         database_url,
         poolclass=pool.NullPool,
@@ -53,13 +61,16 @@ def run_migrations_online():
     try:
         with engine.connect() as connection:
             context.configure(
-                connection=connection, target_metadata=target_metadata, compare_type=True
+                connection=connection,
+                target_metadata=target_metadata,
+                compare_type=True,
             )
 
             with context.begin_transaction():
                 context.run_migrations()
     finally:
         engine.dispose()
+
 
 if context.is_offline_mode():
     run_migrations_offline()

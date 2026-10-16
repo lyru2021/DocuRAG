@@ -1,4 +1,5 @@
-import fitz
+"""原始 PDF 上传、下载和失败清理测试。"""
+
 from unittest.mock import patch
 
 import fitz
@@ -12,8 +13,6 @@ def test_upload_and_download_original_pdf(
     tmp_path,
     monkeypatch,
 ):
-    
-    from app.core.config import get_settings
     monkeypatch.setattr(
         get_settings(),
         "UPLOAD_DIR",

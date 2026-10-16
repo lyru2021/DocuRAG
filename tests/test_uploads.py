@@ -1,8 +1,10 @@
+"""文档上传 API 和上传后持久化结果测试。"""
+
 import fitz
 from sqlalchemy import func, select
 
-from app.services.chunk_repository import ChunkRepository
 from app.models.document import Document, DocumentPage
+from app.services.chunk_repository import ChunkRepository
 
 
 def upload_file(client, filename, content, content_type):

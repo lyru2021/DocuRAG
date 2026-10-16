@@ -1,11 +1,15 @@
-from fastapi.testclient import TestClient   #FastAPI 提供的测试客户端，可以向应用模拟 HTTP 请求
+"""应用健康检查和 Swagger 文档入口测试。"""
+
+from fastapi.testclient import TestClient
+
 from app.main import app
 
 client = TestClient(app)
 
+
 def test_health_status_code():
     response = client.get("/health")
-    assert response.status_code == 200  #如果条件为真，测试继续；如果条件为假，就触发 AssertionError
+    assert response.status_code == 200
 
 
 def test_health_response_body():

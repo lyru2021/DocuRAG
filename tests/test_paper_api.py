@@ -1,3 +1,5 @@
+"""论文查询 API 测试。"""
+
 from app.models.document import Chunk, Document, DocumentPage
 
 

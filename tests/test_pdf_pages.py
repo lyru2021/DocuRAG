@@ -1,3 +1,5 @@
+"""PDF 页面文本和全文偏移映射测试。"""
+
 import fitz
 
 from app.services.document_parser import (

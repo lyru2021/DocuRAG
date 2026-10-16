@@ -1,3 +1,5 @@
+"""论文章节检测仓储测试。"""
+
 from sqlalchemy import select
 
 from app.models.document import Document, DocumentPage

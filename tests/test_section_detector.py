@@ -1,3 +1,5 @@
+"""基于规则的论文章节标题检测测试。"""
+
 from app.services.document_parser import ParsedPage
 from app.services.section_detector import detect_sections
 
@@ -73,3 +75,5 @@ def test_missing_page_mapping_does_not_invent_page():
     results = detect_sections(text, [])
 
     assert results == []
+
+
