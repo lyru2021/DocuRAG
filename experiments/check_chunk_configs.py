@@ -1,3 +1,5 @@
+"""手动比较不同 chunk 配置的实验脚本。"""
+
 from statistics import mean
 
 from sqlalchemy import select
@@ -14,6 +16,8 @@ CONFIGS = [
 
 
 def main():
+    """对已解析文档比较不同 chunk 配置产生的长度分布。"""
+
     with SessionLocal() as db:
         documents = db.scalars(
             select(Document)

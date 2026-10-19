@@ -1,13 +1,18 @@
+"""手动检查文档 chunk 与 PDF 页码映射的实验脚本。"""
+
 from sqlalchemy import select
 
 from app.db.session import SessionLocal
 from app.models.document import Chunk, Document
 from app.services.chunk_repository import ChunkRepository
 
-DOCUMENT_ID = 30  # 改成刚才真实上传的 ID
+# 手动实验脚本：运行前把这里改成真实上传后的文档 ID。
+DOCUMENT_ID = 30
 
 
 def main():
+    """重新生成指定文档的 chunk，并打印前几个 chunk 的页码映射。"""
+
     with SessionLocal() as db:
         document = db.get(Document, DOCUMENT_ID)
 

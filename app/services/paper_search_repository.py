@@ -1,9 +1,10 @@
 """基于 PostgreSQL 的论文元数据过滤服务。"""
 
-from sqlalchemy import select
+from sqlalchemy import select, func, Select
 from sqlalchemy.orm import Session
 
 from app.models.document import Document
+from app.models.paper import PaperMetadata
 
 
 class PaperSearchRepository:
@@ -19,6 +20,7 @@ class PaperSearchRepository:
         title: str | None = None,
         author: str | None = None,
         year: int | None = None,
+        doi: str | None = None,
         limit: int = 20,
     ) -> list[Document]:
         """执行组合过滤，返回真实文档记录。"""
@@ -27,6 +29,20 @@ class PaperSearchRepository:
             raise ValueError("limit must be between 1 and 100")
 
         statement = select(Document)
+
+        # 仅在请求 DOI 时关联论文元数据表，避免影响普通检索。
+        if doi is not None:
+            doi = doi.strip()
+
+            if not doi:
+                raise ValueError("doi must not be empty")
+
+            statement = statement.join(
+                PaperMetadata,
+                PaperMetadata.document_id == Document.id,
+            ).where(
+                func.lower(PaperMetadata.doi) == doi.lower()
+            )
 
         if document_id is not None:
             statement = statement.where(

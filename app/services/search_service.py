@@ -25,6 +25,7 @@ class SearchService:
         title: str | None = None,
         author: str | None = None,
         year: int | None = None,
+        doi: str | None = None,
         limit: int = 20,
     ) -> list[SearchResult]:
         """按元数据查找论文。"""
@@ -34,6 +35,7 @@ class SearchService:
             title=title,
             author=author,
             year=year,
+            doi=doi,
             limit=limit,
         )
 

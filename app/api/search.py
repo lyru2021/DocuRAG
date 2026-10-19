@@ -32,6 +32,7 @@ def search_papers(
     title: str | None = None,
     author: str | None = None,
     year: int | None = Query(default=None, ge=1000, le=2100),
+    doi: str | None = Query(default=None, min_length=1, max_length=255),
     limit: int = Query(default=20, ge=1, le=100),
     db: Session = Depends(get_db),
 ):

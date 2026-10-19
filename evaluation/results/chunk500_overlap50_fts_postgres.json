@@ -1,0 +1,568 @@
+{
+  "experiment_id": "chunk500_overlap50",
+  "strategy": "fts",
+  "top_k": 5,
+  "chunk_size": 500,
+  "overlap": 50,
+  "total_chunks": 209,
+  "document_ids": [
+    31,
+    32
+  ],
+  "snapshot_sha256": "2099f60f37c86056a4a90502eb212154f2ce3884f6ade4c8ceec98d2c7222051",
+  "questions_sha256": "822aa24988364287967fd812e544a5a9559d3119897d70faee94a0eaf353d9d6",
+  "executed_at": "2026-10-19T07:38:27.125422+00:00",
+  "environment": {
+    "database": "docurag_dev",
+    "python_version": "3.11.17 (main, Oct  1 2026, 20:17:42) [GCC 14.3.0]",
+    "platform": "Linux-6.6.114.1-microsoft-standard-WSL2-x86_64-with-glibc2.43"
+  },
+  "timing_scope": "PostgreSQL retrieval calls and Python fusion; excludes file I/O",
+  "summary": {
+    "question_count": 15,
+    "evidence_recall_at_5": 0.9333333333333333,
+    "hit_at_5": 0.9333333333333333,
+    "mrr_at_5": 0.6722222222222223,
+    "mean_latency_ms": 3.7347134666666673,
+    "min_latency_ms": 1.4622,
+    "max_latency_ms": 12.961001
+  },
+  "questions": [
+    {
+      "question_id": "q001",
+      "evidence_recall_at_k": 1.0,
+      "hit_at_k": 1,
+      "reciprocal_rank_at_k": 1.0,
+      "first_complete_rank": 1,
+      "query": "Log-Mel spectrograms",
+      "latency_ms": 5.0036,
+      "retrieved_chunks": [
+        {
+          "document_id": 31,
+          "chunk_index": 3,
+          "start_char": 1350,
+          "end_char": 1850,
+          "retrieval_source": "postgres_fts"
+        },
+        {
+          "document_id": 31,
+          "chunk_index": 13,
+          "start_char": 5850,
+          "end_char": 6350,
+          "retrieval_source": "postgres_fts"
+        },
+        {
+          "document_id": 31,
+          "chunk_index": 22,
+          "start_char": 9900,
+          "end_char": 10400,
+          "retrieval_source": "postgres_fts"
+        },
+        {
+          "document_id": 31,
+          "chunk_index": 133,
+          "start_char": 59850,
+          "end_char": 60350,
+          "retrieval_source": "postgres_fts"
+        }
+      ]
+    },
+    {
+      "question_id": "q002",
+      "evidence_recall_at_k": 1.0,
+      "hit_at_k": 1,
+      "reciprocal_rank_at_k": 0.25,
+      "first_complete_rank": 4,
+      "query": "raw waveform",
+      "latency_ms": 3.507501,
+      "retrieved_chunks": [
+        {
+          "document_id": 31,
+          "chunk_index": 102,
+          "start_char": 45900,
+          "end_char": 46400,
+          "retrieval_source": "postgres_fts"
+        },
+        {
+          "document_id": 31,
+          "chunk_index": 99,
+          "start_char": 44550,
+          "end_char": 45050,
+          "retrieval_source": "postgres_fts"
+        },
+        {
+          "document_id": 31,
+          "chunk_index": 56,
+          "start_char": 25200,
+          "end_char": 25700,
+          "retrieval_source": "postgres_fts"
+        },
+        {
+          "document_id": 31,
+          "chunk_index": 3,
+          "start_char": 1350,
+          "end_char": 1850,
+          "retrieval_source": "postgres_fts"
+        },
+        {
+          "document_id": 31,
+          "chunk_index": 14,
+          "start_char": 6300,
+          "end_char": 6800,
+          "retrieval_source": "postgres_fts"
+        }
+      ]
+    },
+    {
+      "question_id": "q003",
+      "evidence_recall_at_k": 1.0,
+      "hit_at_k": 1,
+      "reciprocal_rank_at_k": 0.25,
+      "first_complete_rank": 4,
+      "query": "SingFake dataset",
+      "latency_ms": 3.3312,
+      "retrieved_chunks": [
+        {
+          "document_id": 31,
+          "chunk_index": 43,
+          "start_char": 19350,
+          "end_char": 19850,
+          "retrieval_source": "postgres_fts"
+        },
+        {
+          "document_id": 31,
+          "chunk_index": 32,
+          "start_char": 14400,
+          "end_char": 14900,
+          "retrieval_source": "postgres_fts"
+        },
+        {
+          "document_id": 31,
+          "chunk_index": 78,
+          "start_char": 35100,
+          "end_char": 35600,
+          "retrieval_source": "postgres_fts"
+        },
+        {
+          "document_id": 31,
+          "chunk_index": 3,
+          "start_char": 1350,
+          "end_char": 1850,
+          "retrieval_source": "postgres_fts"
+        },
+        {
+          "document_id": 31,
+          "chunk_index": 4,
+          "start_char": 1800,
+          "end_char": 2300,
+          "retrieval_source": "postgres_fts"
+        }
+      ]
+    },
+    {
+      "question_id": "q004",
+      "evidence_recall_at_k": 1.0,
+      "hit_at_k": 1,
+      "reciprocal_rank_at_k": 1.0,
+      "first_complete_rank": 1,
+      "query": "separated vocal tracks",
+      "latency_ms": 1.8151,
+      "retrieved_chunks": [
+        {
+          "document_id": 31,
+          "chunk_index": 4,
+          "start_char": 1800,
+          "end_char": 2300,
+          "retrieval_source": "postgres_fts"
+        },
+        {
+          "document_id": 31,
+          "chunk_index": 69,
+          "start_char": 31050,
+          "end_char": 31550,
+          "retrieval_source": "postgres_fts"
+        }
+      ]
+    },
+    {
+      "question_id": "q005",
+      "evidence_recall_at_k": 1.0,
+      "hit_at_k": 1,
+      "reciprocal_rank_at_k": 0.3333333333333333,
+      "first_complete_rank": 3,
+      "query": "spectrogram-based models",
+      "latency_ms": 4.9043,
+      "retrieved_chunks": [
+        {
+          "document_id": 31,
+          "chunk_index": 103,
+          "start_char": 46350,
+          "end_char": 46850,
+          "retrieval_source": "postgres_fts"
+        },
+        {
+          "document_id": 31,
+          "chunk_index": 5,
+          "start_char": 2250,
+          "end_char": 2750,
+          "retrieval_source": "postgres_fts"
+        },
+        {
+          "document_id": 31,
+          "chunk_index": 4,
+          "start_char": 1800,
+          "end_char": 2300,
+          "retrieval_source": "postgres_fts"
+        },
+        {
+          "document_id": 31,
+          "chunk_index": 75,
+          "start_char": 33750,
+          "end_char": 34250,
+          "retrieval_source": "postgres_fts"
+        },
+        {
+          "document_id": 31,
+          "chunk_index": 84,
+          "start_char": 37800,
+          "end_char": 38300,
+          "retrieval_source": "postgres_fts"
+        }
+      ]
+    },
+    {
+      "question_id": "q006",
+      "evidence_recall_at_k": 1.0,
+      "hit_at_k": 1,
+      "reciprocal_rank_at_k": 1.0,
+      "first_complete_rank": 1,
+      "query": "imbalanced datasets",
+      "latency_ms": 2.7572,
+      "retrieved_chunks": [
+        {
+          "document_id": 31,
+          "chunk_index": 74,
+          "start_char": 33300,
+          "end_char": 33800,
+          "retrieval_source": "postgres_fts"
+        }
+      ]
+    },
+    {
+      "question_id": "q007",
+      "evidence_recall_at_k": 1.0,
+      "hit_at_k": 1,
+      "reciprocal_rank_at_k": 0.25,
+      "first_complete_rank": 4,
+      "query": "Precision, Recall, and F1-score",
+      "latency_ms": 12.961001,
+      "retrieved_chunks": [
+        {
+          "document_id": 31,
+          "chunk_index": 79,
+          "start_char": 35550,
+          "end_char": 36050,
+          "retrieval_source": "postgres_fts"
+        },
+        {
+          "document_id": 31,
+          "chunk_index": 81,
+          "start_char": 36450,
+          "end_char": 36950,
+          "retrieval_source": "postgres_fts"
+        },
+        {
+          "document_id": 31,
+          "chunk_index": 82,
+          "start_char": 36900,
+          "end_char": 37400,
+          "retrieval_source": "postgres_fts"
+        },
+        {
+          "document_id": 31,
+          "chunk_index": 73,
+          "start_char": 32850,
+          "end_char": 33350,
+          "retrieval_source": "postgres_fts"
+        },
+        {
+          "document_id": 32,
+          "chunk_index": 56,
+          "start_char": 25200,
+          "end_char": 25700,
+          "retrieval_source": "postgres_fts"
+        }
+      ]
+    },
+    {
+      "question_id": "q008",
+      "evidence_recall_at_k": 1.0,
+      "hit_at_k": 1,
+      "reciprocal_rank_at_k": 1.0,
+      "first_complete_rank": 1,
+      "query": "late fusion scheme",
+      "latency_ms": 2.8548,
+      "retrieved_chunks": [
+        {
+          "document_id": 32,
+          "chunk_index": 2,
+          "start_char": 900,
+          "end_char": 1400,
+          "retrieval_source": "postgres_fts"
+        }
+      ]
+    },
+    {
+      "question_id": "q009",
+      "evidence_recall_at_k": 1.0,
+      "hit_at_k": 1,
+      "reciprocal_rank_at_k": 0.5,
+      "first_complete_rank": 2,
+      "query": "four classes",
+      "latency_ms": 2.702,
+      "retrieved_chunks": [
+        {
+          "document_id": 32,
+          "chunk_index": 42,
+          "start_char": 18900,
+          "end_char": 19400,
+          "retrieval_source": "postgres_fts"
+        },
+        {
+          "document_id": 32,
+          "chunk_index": 4,
+          "start_char": 1800,
+          "end_char": 2300,
+          "retrieval_source": "postgres_fts"
+        },
+        {
+          "document_id": 32,
+          "chunk_index": 33,
+          "start_char": 14850,
+          "end_char": 15350,
+          "retrieval_source": "postgres_fts"
+        },
+        {
+          "document_id": 32,
+          "chunk_index": 45,
+          "start_char": 20250,
+          "end_char": 20750,
+          "retrieval_source": "postgres_fts"
+        }
+      ]
+    },
+    {
+      "question_id": "q010",
+      "evidence_recall_at_k": 1.0,
+      "hit_at_k": 1,
+      "reciprocal_rank_at_k": 1.0,
+      "first_complete_rank": 1,
+      "query": "temperature scaling",
+      "latency_ms": 3.3163,
+      "retrieved_chunks": [
+        {
+          "document_id": 32,
+          "chunk_index": 4,
+          "start_char": 1800,
+          "end_char": 2300,
+          "retrieval_source": "postgres_fts"
+        },
+        {
+          "document_id": 32,
+          "chunk_index": 38,
+          "start_char": 17100,
+          "end_char": 17600,
+          "retrieval_source": "postgres_fts"
+        },
+        {
+          "document_id": 32,
+          "chunk_index": 6,
+          "start_char": 2700,
+          "end_char": 3200,
+          "retrieval_source": "postgres_fts"
+        },
+        {
+          "document_id": 32,
+          "chunk_index": 7,
+          "start_char": 3150,
+          "end_char": 3650,
+          "retrieval_source": "postgres_fts"
+        },
+        {
+          "document_id": 32,
+          "chunk_index": 8,
+          "start_char": 3600,
+          "end_char": 4100,
+          "retrieval_source": "postgres_fts"
+        }
+      ]
+    },
+    {
+      "question_id": "q011",
+      "evidence_recall_at_k": 1.0,
+      "hit_at_k": 1,
+      "reciprocal_rank_at_k": 0.5,
+      "first_complete_rank": 2,
+      "query": "Equal Error Rate",
+      "latency_ms": 3.261,
+      "retrieved_chunks": [
+        {
+          "document_id": 31,
+          "chunk_index": 127,
+          "start_char": 57150,
+          "end_char": 57650,
+          "retrieval_source": "postgres_fts"
+        },
+        {
+          "document_id": 31,
+          "chunk_index": 4,
+          "start_char": 1800,
+          "end_char": 2300,
+          "retrieval_source": "postgres_fts"
+        },
+        {
+          "document_id": 31,
+          "chunk_index": 66,
+          "start_char": 29700,
+          "end_char": 30200,
+          "retrieval_source": "postgres_fts"
+        },
+        {
+          "document_id": 31,
+          "chunk_index": 84,
+          "start_char": 37800,
+          "end_char": 38300,
+          "retrieval_source": "postgres_fts"
+        },
+        {
+          "document_id": 31,
+          "chunk_index": 85,
+          "start_char": 38250,
+          "end_char": 38750,
+          "retrieval_source": "postgres_fts"
+        }
+      ]
+    },
+    {
+      "question_id": "q012",
+      "evidence_recall_at_k": 0.0,
+      "hit_at_k": 0,
+      "reciprocal_rank_at_k": 0.0,
+      "first_complete_rank": null,
+      "query": "AUC",
+      "latency_ms": 3.6861,
+      "retrieved_chunks": [
+        {
+          "document_id": 31,
+          "chunk_index": 71,
+          "start_char": 31950,
+          "end_char": 32450,
+          "retrieval_source": "postgres_fts"
+        },
+        {
+          "document_id": 31,
+          "chunk_index": 73,
+          "start_char": 32850,
+          "end_char": 33350,
+          "retrieval_source": "postgres_fts"
+        },
+        {
+          "document_id": 31,
+          "chunk_index": 88,
+          "start_char": 39600,
+          "end_char": 40100,
+          "retrieval_source": "postgres_fts"
+        },
+        {
+          "document_id": 31,
+          "chunk_index": 90,
+          "start_char": 40500,
+          "end_char": 41000,
+          "retrieval_source": "postgres_fts"
+        },
+        {
+          "document_id": 31,
+          "chunk_index": 93,
+          "start_char": 41850,
+          "end_char": 42350,
+          "retrieval_source": "postgres_fts"
+        }
+      ]
+    },
+    {
+      "question_id": "q013",
+      "evidence_recall_at_k": 1.0,
+      "hit_at_k": 1,
+      "reciprocal_rank_at_k": 1.0,
+      "first_complete_rank": 1,
+      "query": "98.75%",
+      "latency_ms": 2.3368,
+      "retrieved_chunks": [
+        {
+          "document_id": 32,
+          "chunk_index": 5,
+          "start_char": 2250,
+          "end_char": 2750,
+          "retrieval_source": "postgres_fts"
+        },
+        {
+          "document_id": 32,
+          "chunk_index": 9,
+          "start_char": 4050,
+          "end_char": 4550,
+          "retrieval_source": "postgres_fts"
+        },
+        {
+          "document_id": 32,
+          "chunk_index": 44,
+          "start_char": 19800,
+          "end_char": 20300,
+          "retrieval_source": "postgres_fts"
+        }
+      ]
+    },
+    {
+      "question_id": "q014",
+      "evidence_recall_at_k": 1.0,
+      "hit_at_k": 1,
+      "reciprocal_rank_at_k": 1.0,
+      "first_complete_rank": 1,
+      "query": "multilayer perceptron",
+      "latency_ms": 2.1216,
+      "retrieved_chunks": [
+        {
+          "document_id": 32,
+          "chunk_index": 3,
+          "start_char": 1350,
+          "end_char": 1850,
+          "retrieval_source": "postgres_fts"
+        },
+        {
+          "document_id": 32,
+          "chunk_index": 36,
+          "start_char": 16200,
+          "end_char": 16700,
+          "retrieval_source": "postgres_fts"
+        }
+      ]
+    },
+    {
+      "question_id": "q015",
+      "evidence_recall_at_k": 1.0,
+      "hit_at_k": 1,
+      "reciprocal_rank_at_k": 1.0,
+      "first_complete_rank": 1,
+      "query": "probabilistic modality reasoning",
+      "latency_ms": 1.4622,
+      "retrieved_chunks": [
+        {
+          "document_id": 32,
+          "chunk_index": 5,
+          "start_char": 2250,
+          "end_char": 2750,
+          "retrieval_source": "postgres_fts"
+        }
+      ]
+    }
+  ]
+}

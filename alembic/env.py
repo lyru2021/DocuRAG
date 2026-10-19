@@ -10,6 +10,7 @@ from app.models.document import Chunk, Document, DocumentPage
 from app.models.paper import PaperMetadata, PaperSection
 from app.models.processing_job import ProcessingJob
 from app.models.file_cleanup_job import FileCleanupJob
+from app.models.retrieval_experiment_chunk import RetrievalExperimentChunk
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
