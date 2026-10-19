@@ -63,3 +63,9 @@ Hybrid 相比 FTS 改善证据覆盖，但未超过 Literal 的排名表现。
 保留 Metadata、Literal、FTS 和显式 Hybrid 四类检索能力。
 暂不根据小样本结果调整生产默认路由。
 后续优先扩大查询类型和论文数量，再评估自动策略选择。
+
+## 代码版本
+
+- Git Commit：`2ce9df57d66cce679b4ec6f10bcf5a04ea483095`
+- 实验结果：六份 PostgreSQL JSON
+- 输入完整性：快照 SHA-256 与问题集 SHA-256 已核验
