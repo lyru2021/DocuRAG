@@ -10,6 +10,8 @@ from fastapi.testclient import TestClient
 from sqlalchemy import create_engine
 from sqlalchemy.engine import make_url
 from sqlalchemy.orm import Session
+from app.api.agent import get_tool_session_factory
+from app.agent.tool_db import make_test_tool_session
 
 
 def get_test_database_url() -> str:
@@ -85,12 +87,14 @@ def client(db_session):
         yield db_session
 
     app.dependency_overrides[get_db] = override_get_db
+    app.dependency_overrides[get_tool_session_factory] = (lambda: make_test_tool_session(db_session))
 
     try:
         with TestClient(app) as test_client:
             yield test_client
     finally:
         app.dependency_overrides.pop(get_db, None)
+        app.dependency_overrides.pop(get_tool_session_factory,None)
 
 
 @pytest.fixture

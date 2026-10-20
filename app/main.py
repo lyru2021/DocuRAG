@@ -12,6 +12,7 @@ from app.core.config import get_settings
 from app.api.tasks import router as tasks_router
 from app.api.search import router as search_router
 from app.api.search_orchestrated import router as orchestrated_search_router
+from app.api.agent import router as agent_router
 
 settings = get_settings()
 
@@ -21,12 +22,14 @@ app = FastAPI(
     description="Document knowledge base API",
 )
 
+app.include_router(agent_router)
 app.include_router(documents_router)
 app.include_router(uploads_router)
 app.include_router(search_router)
 app.include_router(papers_router)
 app.include_router(tasks_router)
 app.include_router(orchestrated_search_router)
+
 
 
 @app.get("/health", status_code=200)

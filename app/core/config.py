@@ -4,7 +4,9 @@
 """
 import os
 from functools import lru_cache
+from typing import Literal
 
+from pydantic import SecretStr, Field
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
@@ -22,6 +24,26 @@ class Settings(BaseSettings):
 
     DATABASE_URL: str
     REDIS_URL: str = "redis://localhost:6379/0"
+
+    # Agent 模型配置：默认 Mock，避免意外产生 API 费用。
+    LLM_PROVIDER: Literal["mock", "openai", "deepseek"] = "mock"
+
+    OPENAI_API_KEY: SecretStr | None = None
+    OPENAI_MODEL: str = "gpt-5-mini"
+
+    # DeepSeek API：兼容 OpenAI Responses API。
+    DEEPSEEK_API_KEY: SecretStr | None = None
+
+    DEEPSEEK_MODEL: str = "deepseek-flash"
+
+    DEEPSEEK_TIMEOUT_SECONDS: float = Field(
+        default=30.0,
+        ge=1.0,
+        le=120.0,
+    )
+
+    # 单次模型请求超时，单位：秒。
+    OPENAI_TIMEOUT_SECONDS: float = Field(default=30.0, ge=1.0, le=120.0)
 
     model_config = SettingsConfigDict(
         env_file=os.getenv("ENV_FILE", ".env"),

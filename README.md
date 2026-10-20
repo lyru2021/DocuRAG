@@ -217,3 +217,14 @@ remain available after the FastAPI application restarts.
 Database integration tests use a separate PostgreSQL test database and
 SQLAlchemy SAVEPOINT-based transaction isolation. Tests cover document CRUD,
 request validation, missing resources, and cascading deletes.
+
+### Running tests
+
+Run the test suite using the isolated database bootstrap:
+
+python -m scripts.run_tests -q --tb=short
+
+The bootstrap validates that the target database is docurag_test
+before importing pytest or application modules.
+
+Do not run database integration tests against docurag_dev.
