@@ -42,3 +42,4 @@ local_samples/
 data/uploads
 
 celerybeat-schedule*
+evaluation/results/day12_real_*/
