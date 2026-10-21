@@ -38,6 +38,8 @@ TEST_DATABASE_URL = get_test_database_url()
 
 os.environ["DATABASE_URL"] = TEST_DATABASE_URL
 os.environ["ENV_FILE"] = ".env.test"
+os.environ["APP_ENV"] = "test"
+os.environ["AUTH_ENABLED"] = "false"
 
 
 from app.db.session import get_db

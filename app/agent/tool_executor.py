@@ -1,5 +1,5 @@
 """验证并执行白名单工具，记录状态和限制输出大小。"""
-
+import logging
 import json
 from dataclasses import dataclass
 from time import perf_counter
@@ -12,7 +12,10 @@ from app.agent.tool_registry import (
     UnknownToolError,
 )
 from app.agent.tool_schemas import ToolCall
+from app.core.request_logging import request_id_context
 
+
+logger = logging.getLogger("docurag.agent.tools")
 
 @dataclass(frozen=True)
 class ToolExecutionResult:
@@ -167,7 +170,7 @@ class ToolExecutor:
     ) -> ToolExecutionResult:
         """生成统一执行记录。"""
 
-        return ToolExecutionResult(
+        result = ToolExecutionResult(
             call_id=call.call_id,
             name=call.name,
             status=status,
@@ -175,3 +178,21 @@ class ToolExecutor:
             elapsed_ms=(perf_counter() - start) * 1000,
             error_type=error_type,
         )
+
+        # 只记录工具执行元数据，不记录参数、结果或异常正文。
+        logger.info(
+            json.dumps(
+                {
+                    "event": "agent_tool_call",
+                    "request_id": request_id_context.get(),
+                    "call_id": result.call_id,
+                    "tool_name": result.name,
+                    "status": result.status,
+                    "duration_ms": round(result.elapsed_ms, 2),
+                    "error_type": result.error_type,
+                },
+                ensure_ascii=False,
+            )
+        )
+
+        return result

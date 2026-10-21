@@ -1,0 +1,130 @@
+
+name: docurag
+
+x-app-env: &app-env
+  DATABASE_URL: ${DATABASE_URL:?DATABASE_URL is required}
+  REDIS_URL: ${REDIS_URL:-redis://redis:6379/0}
+  APP_ENV: ${APP_ENV:-development}
+  DEBUG: ${DEBUG:-false}
+  LLM_PROVIDER: ${LLM_PROVIDER:-mock}
+  UPLOAD_DIR: /app/data/uploads
+  ENV_FILE: /dev/null
+  AUTH_ENABLED: ${AUTH_ENABLED:-true}
+  DOCURAG_API_KEY: ${DOCURAG_API_KEY:?DOCURAG_API_KEY is required}
+
+x-app-common: &app-common
+  image: docurag:day13
+  environment: *app-env
+  volumes:
+    - paper_uploads:/app/data/uploads
+  restart: unless-stopped
+
+services:
+  postgres:
+    image: pgvector/pgvector:pg16
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-docurag}
+      POSTGRES_USER: ${POSTGRES_USER:-docurag}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?POSTGRES_PASSWORD is required}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - pg_isready -U "$$POSTGRES_USER" -d "$$POSTGRES_DB"
+      interval: 5s
+      timeout: 5s
+      retries: 15
+    restart: unless-stopped
+
+  redis:
+    image: redis:7-alpine
+    command: ["redis-server", "--save", "60", "1"]
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 15
+    restart: unless-stopped
+
+  migrate:
+    <<: *app-common
+    restart: "no"
+    environment:
+      <<: *app-env
+      MIGRATION_DATABASE_URL: ${MIGRATION_DATABASE_URL:?MIGRATION_DATABASE_URL is required}
+    command: ["alembic", "upgrade", "head"]
+    volumes: []
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  api:
+    <<: *app-common
+    ports:
+      - "127.0.0.1:8000:8000"
+    command:
+      - uvicorn
+      - app.main:app
+      - --host
+      - 0.0.0.0
+      - --port
+      - "8000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      migrate:
+        condition: service_completed_successfully
+    healthcheck:
+      test:
+        - CMD
+        - python
+        - -c
+        - "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health', timeout=3)"
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 20s
+
+  worker:
+    <<: *app-common
+    command:
+      - celery
+      - -A
+      - app.worker.celery_app:celery_app
+      - worker
+      - --loglevel=INFO
+      - --concurrency=2
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      migrate:
+        condition: service_completed_successfully
+
+  beat:
+    <<: *app-common
+    command:
+      - celery
+      - -A
+      - app.worker.celery_app:celery_app
+      - beat
+      - --loglevel=INFO
+      - --schedule=/tmp/celerybeat-schedule
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      migrate:
+        condition: service_completed_successfully
+
+volumes:
+  postgres_data:
+  redis_data:
+  paper_uploads:

@@ -24,6 +24,9 @@ depends_on: Union[str, Sequence[str], None] = None
 def upgrade() -> None:
     """创建论文全文和子串检索索引。"""
 
+    # 三元组 GIN 索引依赖 PostgreSQL 的 pg_trgm 扩展。
+    op.execute("CREATE EXTENSION IF NOT EXISTS pg_trgm")
+
     op.execute(
         """
         CREATE INDEX ix_chunks_content_fts

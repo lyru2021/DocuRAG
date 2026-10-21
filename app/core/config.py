@@ -42,6 +42,10 @@ class Settings(BaseSettings):
         le=120.0,
     )
 
+    # 单用户 MVP 的入口密钥；关闭鉴权仅用于本地测试。
+    AUTH_ENABLED: bool = True
+    DOCURAG_API_KEY: SecretStr | None = None
+
     # 单次模型请求超时，单位：秒。
     OPENAI_TIMEOUT_SECONDS: float = Field(default=30.0, ge=1.0, le=120.0)
 

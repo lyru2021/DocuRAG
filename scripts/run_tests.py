@@ -28,6 +28,9 @@ def main() -> int:
     # 必须在导入 pytest 之前执行。
     os.environ["DATABASE_URL"] = url
     os.environ["ENV_FILE"] = ".env.test"
+    # 普通业务测试使用明确的测试环境，不依赖开发环境密钥。
+    os.environ["APP_ENV"] = "test"
+    os.environ["AUTH_ENABLED"] = "false"
 
     import pytest
 

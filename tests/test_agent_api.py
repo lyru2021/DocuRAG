@@ -186,6 +186,147 @@ def test_agent_query_executes_tool_through_http(
         )
 
 
+def test_agent_http_request_id_reaches_tool_logs(
+    client,
+    db_session,
+    caplog,
+):
+    """验证 HTTP 请求 ID 能传播到 Agent 工具执行日志。"""
+
+    import json
+    import logging
+
+    from app.main import app
+    from app.agent.llm_adapter import LLMResponse
+    from app.agent.mock_llm import MockLLMAdapter
+    from app.agent.tool_schemas import ToolCall
+    from app.api.agent import get_llm_adapter
+    from app.models.document import Document, Chunk
+
+    # 创建测试论文，避免使用真实私人论文。
+    document = Document(
+        title="Trace Integration Paper",
+        filename="trace_integration.pdf",
+        parse_status="parsed",
+    )
+    db_session.add(document)
+    db_session.flush()
+
+    content = "Traceable spectrogram evidence for audio detection."
+
+    chunk = Chunk(
+        document_id=document.id,
+        chunk_index=0,
+        content=content,
+        start_char=0,
+        end_char=len(content),
+        page_start=1,
+        page_end=1,
+    )
+    db_session.add(chunk)
+    db_session.commit()
+
+    # 第一次模型响应要求调用工具，第二次生成最终答案。
+    mock = MockLLMAdapter([
+        LLMResponse(
+            response_type="tool_calls",
+            tool_calls=[
+                ToolCall(
+                    call_id="trace-tool-001",
+                    name="search_chunks",
+                    arguments={
+                        "query": "Traceable",
+                        "mode": "literal",
+                        "document_id": document.id,
+                    },
+                )
+            ],
+            provider="mock",
+            model="mock-function-calling",
+        ),
+        LLMResponse(
+            response_type="final_answer",
+            content="Trace integration verified.",
+            provider="mock",
+            model="mock-function-calling",
+        ),
+    ])
+
+    app.dependency_overrides[get_llm_adapter] = lambda: mock
+
+    try:
+        with caplog.at_level(logging.INFO):
+            response = client.post(
+                "/agent/query",
+                headers={
+                    "X-Request-ID": "research-trace-001",
+                },
+                json={
+                    "question": "Find traceable evidence",
+                },
+            )
+
+        assert response.status_code == 200
+        assert response.headers["X-Request-ID"] == (
+            "research-trace-001"
+        )
+
+        data = response.json()
+        assert data["tool_calls"] == 1
+        assert data["tools"][0]["status"] == "success"
+
+        # 提取本次请求相关的结构化日志。
+        http_logs = []
+        tool_logs = []
+
+        for record in caplog.records:
+            if record.name not in {
+                "docurag.http",
+                "docurag.agent.tools",
+            }:
+                continue
+
+            payload = json.loads(record.message)
+
+            if record.name == "docurag.http":
+                http_logs.append(payload)
+            else:
+                tool_logs.append(payload)
+
+        # HTTP 和工具日志应共享同一个 request_id。
+        assert any(
+            item["request_id"] == "research-trace-001"
+            and item["status_code"] == 200
+            for item in http_logs
+        )
+
+        assert any(
+            item["request_id"] == "research-trace-001"
+            and item["tool_name"] == "search_chunks"
+            and item["status"] == "success"
+            for item in tool_logs
+        )
+
+        # 日志不应泄露论文内容或工具查询参数。
+        log_text = "\n".join(
+            record.message
+            for record in caplog.records
+            if record.name in {
+                "docurag.http",
+                "docurag.agent.tools",
+            }
+        )
+
+        assert content not in log_text
+        assert "Traceable" not in log_text
+
+    finally:
+        app.dependency_overrides.pop(
+            get_llm_adapter,
+            None,
+        )
+
+
 def create_agent_evidence(db_session):
     """创建具有真实页码和原文的 Agent 测试证据。"""
 
