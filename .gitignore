@@ -43,3 +43,6 @@ data/uploads
 
 celerybeat-schedule*
 evaluation/results/day12_real_*/
+
+# Day 13 synthetic demonstration artifacts
+/evaluation/demo/*.pdf

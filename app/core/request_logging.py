@@ -12,7 +12,22 @@ from starlette.middleware.base import BaseHTTPMiddleware
 from starlette.responses import Response
 
 
+# 使用独立的应用日志，明确输出到 stderr。
+# Docker 会收集容器进程的 stdout/stderr。
 logger = logging.getLogger("docurag.http")
+logger.setLevel(logging.INFO)
+
+if not logger.handlers:
+    handler = logging.StreamHandler()
+    handler.setLevel(logging.INFO)
+    handler.setFormatter(
+        logging.Formatter("%(message)s")
+    )
+    logger.addHandler(handler)
+
+# 测试环境中的 caplog 通过根 Logger 捕获日志。
+logger.propagate = True
+
 # 当前请求的关联标识，避免并发请求相互覆盖。
 request_id_context: ContextVar[str | None] = ContextVar(
     "request_id",
