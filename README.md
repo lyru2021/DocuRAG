@@ -228,3 +228,39 @@ The bootstrap validates that the target database is docurag_test
 before importing pytest or application modules.
 
 Do not run database integration tests against docurag_dev.
+
+
+
+## Multi-Step Research Agent (Day 12)
+
+DocuRAG includes a bounded, LangGraph-based research workflow for comparing evidence across multiple academic papers.
+
+The workflow supports document-aware retrieval, structured fact extraction, source quotation verification, evidence coverage assessment, and one supplementary retrieval round. It uses PostgreSQL-backed tools and can run with a DeepSeek LLM adapter.
+
+**Current limitations:** Exact quotation verification does not guarantee semantic correctness. The generated reports distinguish verified source quotations from unreviewed model claims, and task-specific research conclusions may require additional human validation.
+
+### Evaluation
+
+Five real cross-paper research questions were executed using two PostgreSQL-stored documents.
+
+| Metric | Result |
+|---|---:|
+| Research questions executed | 5 |
+| Tool calls | 21 |
+| Verified quotations | 46 |
+| Rejected quotations | 8 |
+| Exact quotation match rate | 85.2% |
+| LLM tokens | 57,074 |
+
+These metrics reflect execution and source matching, not end-to-end answer accuracy.
+
+### Run
+
+```bash
+python -m scripts.run_tests -q --tb=short
+python -m scripts.evaluate_day12_real --question 1
+```
+
+Real evaluation requires a configured PostgreSQL database, the evaluation documents, and a DeepSeek API key. Document IDs are currently specific to the local evaluation database.
+
+For implementation details, measured results, and known limitations, see [Day 12 Evaluation Report](docs/day12_report.md).
